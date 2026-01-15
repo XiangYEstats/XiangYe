@@ -1,11 +1,41 @@
 ---
-title: "Welcome"
+title: "Xiang Ye"
 output: html_document
 ---
 
-Hello! I am Xiang Ye. This is my new R Markdown website.
+<style>
+  /* This hides the default large title at the top so your profile stands out */
+  .title { display: none; }
+</style>
 
-### My Data Analysis
-```{r}
-summary(cars)
-plot(cars)
+<div class="row">
+  <div class="col-sm-4">
+    <center>
+      <img src="profile.jpg" width="100%" style="border-radius: 50%; border: 2px solid #eee;">
+      
+      <h3>Xiang Ye</h3>
+      <p><em>PhD Candidate in Bayesian computational statistics</em></p>
+      
+      <p>
+        <a href="mailto:xiang.ye@kaust.edu.sa" class="btn btn-primary btn-sm">Email</a>
+        <a href="https://github.com/XiangYEstats" class="btn btn-default btn-sm">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=08io_8cAAAAJ&hl=en&oi=sra" class="btn btn-default btn-sm">Google Scholar</a>
+      </p>
+    </center>
+  </div>
+
+  <div class="col-sm-8">
+  
+  ## About Me
+  
+  I am a PhD candidate in the Bayesian Computational Statistics and Modeling Research Group at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.
+  
+  My research focuses on... (Write your bio here).
+  
+  ### Research Interests
+  * Bayesian Statistics
+  * R Programming
+  * Data Visualization
+  
+  </div>
+</div>
