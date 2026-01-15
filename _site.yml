@@ -1,0 +1,10 @@
+name: "XiangYe-Website"
+output_dir: "docs"
+navbar:
+  title: "Xiang Ye"
+  left:
+    - text: "Home"
+      href: index.html
+output:
+  html_document:
+    theme: cosmo

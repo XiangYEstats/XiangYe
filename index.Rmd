@@ -1,0 +1,11 @@
+---
+title: "Welcome"
+output: html_document
+---
+
+Hello! I am Xiang Ye. This is my new R Markdown website.
+
+### My Data Analysis
+```{r}
+summary(cars)
+plot(cars)
