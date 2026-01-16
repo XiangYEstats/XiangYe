@@ -12,14 +12,19 @@ output: html_document
 
 ## 2025
 
-* **Conference Presentation**: Presented a poster on *Bayesian Latent Variable Models* at the ISBA World Meeting (June 2025).
-* **Workshop**: Attended the Advanced MCMC workshop in Valencia.
+* **Conference Presentation**: Poster presentation, *Principled priors for Bayesian inference of circular models*, Objective Bayes Methodology Conference, Athens, Greece, June 6-12
+* **Workshop Presentation**: Poster presentation, *Principled priors for Bayesian inference of circular models*, "INLA: past, present, and future" workshop, Glasgow, UK, May 21-23
 
 ## 2024
 
-* **Paper Accepted**: "Title of your paper" accepted in *Journal of Bayesian Analysis*.
-* **Teaching Assistant**: Led tutorial sessions for STAT 210 (Introduction to Probability).
+* **Summer School**: VIBASS7 - València International Bayesian Summer School, València, Spain, July 8-12
 
-## 2023
+## 2022
 
-* **PhD Start**: Joined the Bayesian Computational Statistics group at KAUST.
+* **Dissertation Award**: Department Prize for Best Computational Dissertation for *Spatial Statistical Modeling with INLA*
+
+## 2020
+
+* **Meritorious Winner & Student Advisor**, Mathematical Contest in Modeling (MCM)  
+  – Analyzed product sales data and customer reviews to identify patterns and forecast demand.  
+  – Developed predictive models to support strategic recommendations for Amazon market entry.

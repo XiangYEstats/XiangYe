@@ -31,6 +31,14 @@ output: html_document
     flex-wrap: nowrap;
     width: 100%;
   }
+
+  /* Styling for the quotes */
+  .quote-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+  }
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -58,6 +66,18 @@ output: html_document
   </a>
 </div>
 
+<div class="quote-text">
+  <p>
+    <strong>“志存高远，脚踏实地。”</strong><br>
+    <em>“Aim high, stay grounded.”</em>
+  </p>
+
+  <p>
+    <strong>“行百里者半于九十。”</strong><br>
+    <em>“The last mile is the hardest.”</em>
+  </p>
+</div>
+
 </center>
 </div>
 
@@ -72,8 +92,8 @@ My research focuses on **Bayesian latent variable models**, from *Prior Specific
 ### Education
 
 * **PhD in Statistics** | King Abdullah University of Science and Technology, Saudi Arabia (2023-present)
-* **MSc in Statistics** | Lancaster University (2021-2022)
-* **BSc in Applied Mathematics** | University of Liverpool & Xi’an Jiaotong‑Liverpool University (2017-2021)
+* **MSc in Statistics** | Lancaster University, UK (2021-2022)
+* **BSc in Applied Mathematics** | University of Liverpool & Xi’an Jiaotong‑Liverpool University, Suzhou, China (2017-2021)
 
 ### Research Interests
 
@@ -81,12 +101,25 @@ My research focuses on **Bayesian latent variable models**, from *Prior Specific
 * **Probabilistic learning** – developing tractable and explainable probabilistic models for complex data
 * **Prior specification** – designing principled prior construction and selection frameworks to improve model stability and inferential accuracy
 * **Modeling variables on non-linear spaces** – developing methodology for statistical models involving variables defined on non-linear domains (e.g. manifolds)
+* **Deep learning methodology** - developing accurate and efficient deep learning methods
 
 ### Publications
 
 * Ye, X., Van Niekerk, J. and Rue, H., 2025. Principled priors for Bayesian inference of circular models. arXiv preprint arXiv:2502.18223.
 
+### Intern and Research Experience
 
+* **Research and Development Intern** | Tech View Info Limited Liability Company, Guangzhou, China (2023)
+* **Project Marketing Intern** | Guangdong Zhujiang Investment CO LTD, Guangzhou, China (2019)
+
+### Skills
+
+* **Programming**: R (INLA, Stan, brms, ggplot2, caret, keras...), Python, C++, MATLAB
+* **Tools & Software**: LaTeX, Microsoft Office, Adobe Photoshop, Adobe Premiere Pro
+* **Languages**:
+    * English (Professional proficiency; IELTS 7.0, 2021)
+    * Chinese (Mandarin & Cantonese; native proficiency)
+    * German (A2)
 
 </div>
 </div>

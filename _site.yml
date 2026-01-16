@@ -7,6 +7,8 @@ navbar:
       href: index.html
     - text: "Activity"
       href: activity.html
+    - text: "Interests"
+      href: interests.html
 output:
   html_document:
     theme: cosmo
