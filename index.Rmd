@@ -4,38 +4,83 @@ output: html_document
 ---
 
 <style>
-  /* This hides the default large title at the top so your profile stands out */
   .title { display: none; }
+  
+  /* Button Styling */
+  .btn-outline {
+    background-color: transparent;
+    color: #4a4a4a;
+    border: 1px solid #4a4a4a;
+    padding: 5px 10px;
+    margin: 0px 2px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 13px;
+  }
+  
+  .btn-outline:hover {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  /* This container forces the buttons to stay in one line */
+  .button-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
 </style>
 
-<div class="row">
-  <div class="col-sm-4">
-    <center>
-      <img src="profile.jpg" width="100%" style="border-radius: 50%; border: 2px solid #eee;">
-      
-      <h3>Xiang Ye</h3>
-      <p><em>PhD Candidate in Bayesian computational statistics</em></p>
-      
-      <p>
-        <a href="mailto:xiang.ye@kaust.edu.sa" class="btn btn-primary btn-sm">Email</a>
-        <a href="https://github.com/XiangYEstats" class="btn btn-default btn-sm">GitHub</a>
-        <a href="https://scholar.google.com/citations?user=08io_8cAAAAJ&hl=en&oi=sra" class="btn btn-default btn-sm">Google Scholar</a>
-      </p>
-    </center>
-  </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-  <div class="col-sm-8">
-  
-  ## About Me
-  
-  I am a PhD candidate in the Bayesian Computational Statistics and Modeling Research Group at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.
-  
-  My research focuses on... (Write your bio here).
-  
-  ### Research Interests
-  * Bayesian Statistics
-  * R Programming
-  * Data Visualization
-  
-  </div>
+<div class="row">
+<div class="col-sm-4">
+<center>
+
+<img src="profile.jpg" width="100%" style="border-radius: 50%; border: 2px solid #eee;">
+
+<h3>Xiang Ye</h3>
+<p><em>PhD Candidate in Bayesian computational statistics</em></p>
+
+<div class="button-row">
+  <a href="mailto:xiang.ye@kaust.edu.sa" class="btn btn-outline">
+    <i class="fas fa-envelope"></i> Email
+  </a>
+
+  <a href="https://github.com/XiangYEstats" class="btn btn-outline">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+
+  <a href="https://scholar.google.com/citations?user=08io_8cAAAAJ&hl=en&oi=sra" class="btn btn-outline">
+    <i class="fas fa-graduation-cap"></i> Scholar
+  </a>
+</div>
+
+</center>
+</div>
+
+<div class="col-sm-8">
+
+## About Me
+
+I am a PhD candidate in the **Bayesian Computational Statistics and Modeling Research Group** at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.
+
+My research focuses on **Bayesian latent variable models**, from *Prior Specification* to *model construction*.
+
+### Education
+
+* **PhD in Statistics** | King Abdullah University of Science and Technology, Saudi Arabia (2023-present)
+* **MSc in Statistics** | Lancaster University (2021-2022)
+* **BSc in Applied Mathematics** | University of Liverpool & Xi’an Jiaotong‑Liverpool University (2017-2021)
+
+### Research Interests
+
+* **Hierarchical Bayesian latent variable modeling** – modeling unobservable structures and information underlying observed data
+* **Probabilistic learning** – developing tractable and explainable probabilistic models for complex data
+* **Prior specification** – designing principled prior construction and selection frameworks to improve model stability and inferential accuracy
+* **Modeling variables on non-linear spaces** – developing methodology for statistical models involving variables defined on non-linear domains (e.g. manifolds)
+
+</div>
 </div>

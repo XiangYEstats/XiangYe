@@ -263,32 +263,91 @@ $(document).ready(function () {
 
 
 <style>
-  /* This hides the default large title at the top so your profile stands out */
   .title { display: none; }
+  
+  /* Button Styling */
+  .btn-outline {
+    background-color: transparent;
+    color: #4a4a4a;
+    border: 1px solid #4a4a4a;
+    padding: 5px 10px;
+    margin: 0px 2px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 13px;
+  }
+  
+  .btn-outline:hover {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  /* This container forces the buttons to stay in one line */
+  .button-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
 </style>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></p>
 <div class="row">
 <div class="col-sm-4">
-<pre><code>&lt;center&gt;
-  &lt;img src=&quot;profile.jpg&quot; width=&quot;100%&quot; style=&quot;border-radius: 50%; border: 2px solid #eee;&quot;&gt;
-  
-  &lt;h3&gt;Xiang Ye&lt;/h3&gt;
-  &lt;p&gt;&lt;em&gt;PhD Candidate in Bayesian computational statistics&lt;/em&gt;&lt;/p&gt;
-  
-  &lt;p&gt;
-    &lt;a href=&quot;mailto:xiang.ye@kaust.edu.sa&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;Email&lt;/a&gt;
-    &lt;a href=&quot;https://github.com/XiangYEstats&quot; class=&quot;btn btn-default btn-sm&quot;&gt;GitHub&lt;/a&gt;
-    &lt;a href=&quot;https://scholar.google.com/citations?user=08io_8cAAAAJ&amp;hl=en&amp;oi=sra&quot; class=&quot;btn btn-default btn-sm&quot;&gt;Google Scholar&lt;/a&gt;
-  &lt;/p&gt;
-&lt;/center&gt;</code></pre>
+<center>
+<p><img src="profile.jpg" width="100%" style="border-radius: 50%; border: 2px solid #eee;"></p>
+<h3>
+Xiang Ye
+</h3>
+<p>
+<em>PhD Candidate in Bayesian computational statistics</em>
+</p>
+<div class="button-row">
+<p><a href="mailto:xiang.ye@kaust.edu.sa" class="btn btn-outline">
+<i class="fas fa-envelope"></i> Email </a></p>
+<p><a href="https://github.com/XiangYEstats" class="btn btn-outline">
+<i class="fab fa-github"></i> GitHub </a></p>
+<p><a href="https://scholar.google.com/citations?user=08io_8cAAAAJ&hl=en&oi=sra" class="btn btn-outline">
+<i class="fas fa-graduation-cap"></i> Scholar </a></p>
 </div>
-<div class="col-sm-8">
-<p>## About Me</p>
-<p>I am a PhD candidate in the Bayesian Computational Statistics and
-Modeling Research Group at King Abdullah University of Science and
-Technology (KAUST), under the supervision of Professor Håvard Rue.</p>
-<p>My research focuses on… (Write your bio here).</p>
-<p>### Research Interests * Bayesian Statistics * R Programming * Data
-Visualization</p>
+</center>
+</div>
+<div id="about-me" class="section level2 col-sm-8">
+<h2>About Me</h2>
+<p>I am a PhD candidate in the <strong>Bayesian Computational Statistics
+and Modeling Research Group</strong> at King Abdullah University of
+Science and Technology (KAUST), under the supervision of Professor
+Håvard Rue.</p>
+<p>My research focuses on <strong>Bayesian latent variable
+models</strong>, from <em>Prior Specification</em> to <em>model
+construction</em>.</p>
+<div id="education" class="section level3">
+<h3>Education</h3>
+<ul>
+<li><strong>PhD in Statistics</strong> | King Abdullah University of
+Science and Technology, Saudi Arabia (2023-present)</li>
+<li><strong>MSc in Statistics</strong> | Lancaster University
+(2021-2022)</li>
+<li><strong>BSc in Applied Mathematics</strong> | University of
+Liverpool &amp; Xi’an Jiaotong‑Liverpool University (2017-2021)</li>
+</ul>
+</div>
+<div id="research-interests" class="section level3">
+<h3>Research Interests</h3>
+<ul>
+<li><strong>Hierarchical Bayesian latent variable modeling</strong> –
+modeling unobservable structures and information underlying observed
+data</li>
+<li><strong>Probabilistic learning</strong> – developing tractable and
+explainable probabilistic models for complex data</li>
+<li><strong>Prior specification</strong> – designing principled prior
+construction and selection frameworks to improve model stability and
+inferential accuracy</li>
+<li><strong>Modeling variables on non-linear spaces</strong> –
+developing methodology for statistical models involving variables
+defined on non-linear domains (e.g. manifolds)</li>
+</ul>
+</div>
 </div>
 </div>
 
