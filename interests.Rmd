@@ -3,15 +3,6 @@ title: "Interests"
 output: html_document
 ---
 
-<style>
-  body {
-    font-size: 16px;
-  }
-  h2 {
-    margin-top: 25px; /* Adds breathing room between sections */
-  }
-</style>
-
 ## Sports
 I enjoy a wide range of sports, particularly football, basketball, and table tennis. My favorite sport is swimming, which I practice weekly.
 

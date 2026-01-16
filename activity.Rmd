@@ -3,18 +3,17 @@ title: "Activities"
 output: html_document
 ---
 
-<style>
-  /* Optional: slightly increase text size for readability */
-  body {
-    font-size: 16px;
-  }
-</style>
-
 ## 2025
 
+* **Workshop Presentation**: Poster presentation, *Bayesian Regression Framework for Models with Circular Components*, KAUST Statistics Workshop "Statistics for Learning from Complex Data: Foundations and Applications", November 2-6
 * **Conference Presentation**: Poster presentation, *Principled priors for Bayesian inference of circular models*, Objective Bayes Methodology Conference, Athens, Greece, June 6-12
 * **Workshop Presentation**: Poster presentation, *Principled priors for Bayesian inference of circular models*, "INLA: past, present, and future" workshop, Glasgow, UK, May 21-23
 
 ## 2024
 
+* **Workshop Presentation**: Poster presentation, *Principled priors for Bayesian inference of circular models*, KAUST Statistics Workshop "Statistics for Learning from Complex Data: Foundations and Applications", November 17-21
 * **Summer School**: VIBASS7 - València International Bayesian Summer School, València, Spain, July 8-12
+
+## 2023
+
+* **Workshop**: KAUST Statistics Workshop "Frontier Statistics & Data Science for a Sustainable World", November 17-21
