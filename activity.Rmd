@@ -28,3 +28,4 @@ output: html_document
 * **Meritorious Winner & Student Advisor**, Mathematical Contest in Modeling (MCM)  
   – Analyzed product sales data and customer reviews to identify patterns and forecast demand.  
   – Developed predictive models to support strategic recommendations for Amazon market entry.
+
