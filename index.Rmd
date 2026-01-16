@@ -90,7 +90,7 @@ output: html_document
 
 I am a PhD candidate in the *Bayesian Computational Statistics and Modeling Research Group* at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.
 
-My research focuses on *Bayesian latent variable models*, spanning *prior specification* and *model construction*. During my PhD, I have developed these ideas in the context of *directional (circular) statistics*.
+My research focuses on *Bayesian latent variable models*, spanning *prior specification* and *model construction*, and their applications. During my PhD, I have developed these ideas in the context of *directional (circular) statistics*.
 
 ### Education
 
