@@ -1,0 +1,31 @@
+---
+title: "Interests"
+output: html_document
+---
+
+<style>
+  body {
+    font-size: 16px;
+  }
+  h2 {
+    margin-top: 25px; /* Adds breathing room between sections */
+  }
+</style>
+
+## Sports
+I enjoy a wide range of sports, particularly football, basketball, and table tennis. My favorite sport is swimming, which I practice weekly.
+
+## Arts
+I enjoy drawing. I received the First Class Prize at the National Drawing Contest for Middle School Students of China in 2011 (a small achievement from an earlier chapter of life, fondly remembered).
+
+## Music
+I enjoy music and singing, and have learned to play the violin, piano, and saxophone. I also taught myself the Chinese bamboo flute.
+
+## Reading
+I enjoy reading, with *The Count of Monte Cristo* and *One Hundred Years of Solitude* among my favorites.
+
+## Video Games
+I enjoy competitive video games, particularly MOBA and FPS genres such as League of Legend and Counter-Strike, and appreciate the teamwork and strategy involved.
+
+## Cooking
+I enjoy cooking, I am proficient in making many Chinese dishes and like experimenting new cuisines.

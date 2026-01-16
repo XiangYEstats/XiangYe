@@ -1,0 +1,25 @@
+---
+title: "Activities"
+output: html_document
+---
+
+<style>
+  /* Optional: slightly increase text size for readability */
+  body {
+    font-size: 16px;
+  }
+</style>
+
+## 2025
+
+* **Conference Presentation**: Presented a poster on *Bayesian Latent Variable Models* at the ISBA World Meeting (June 2025).
+* **Workshop**: Attended the Advanced MCMC workshop in Valencia.
+
+## 2024
+
+* **Paper Accepted**: "Title of your paper" accepted in *Journal of Bayesian Analysis*.
+* **Teaching Assistant**: Led tutorial sessions for STAT 210 (Introduction to Probability).
+
+## 2023
+
+* **PhD Start**: Joined the Bayesian Computational Statistics group at KAUST.

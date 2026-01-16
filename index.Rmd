@@ -82,5 +82,11 @@ My research focuses on **Bayesian latent variable models**, from *Prior Specific
 * **Prior specification** – designing principled prior construction and selection frameworks to improve model stability and inferential accuracy
 * **Modeling variables on non-linear spaces** – developing methodology for statistical models involving variables defined on non-linear domains (e.g. manifolds)
 
+### Publications
+
+* Ye, X., Van Niekerk, J. and Rue, H., 2025. Principled priors for Bayesian inference of circular models. arXiv preprint arXiv:2502.18223.
+
+
+
 </div>
 </div>
