@@ -1,30 +1,52 @@
-/* 1. FUSION THEME NAVBAR (Slate & Cambridge) */
+/* --- 1. LAYOUT & SCALING (The Fix) --- */
+
+/* This makes the website wider on big screens */
+.main-container {
+  max-width: 1200px !important; /* Was roughly 900px before */
+  width: 95%;                   /* Uses 95% of screen on smaller laptops */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Increase text size to match Paul Burkner's site */
+body {
+  font-size: 18px;       /* Increased from 16px */
+  line-height: 1.8;      /* Adds breathing room between lines */
+  color: #333333;        /* Slightly softer black for reading */
+}
+
+/* Make headers stand out more */
+h1, h2, h3 {
+  font-weight: 700;
+  margin-top: 35px;      /* More space before new sections */
+  margin-bottom: 15px;
+}
+
+/* --- 2. FUSION THEME NAVBAR (Slate & Cambridge) --- */
 .navbar-default {
   background-image: linear-gradient(to right, #2C3E50, #5D7B6F);
   border: none;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
+
 .navbar-default .navbar-brand, 
 .navbar-default .navbar-nav > li > a {
   color: #ffffff !important;
+  font-size: 16px;       /* Menu text slightly smaller than body text */
   font-weight: bold;
   letter-spacing: 0.5px;
 }
+
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > .active > a {
   background-color: rgba(163, 193, 173, 0.2) !important;
   color: #A3C1AD !important;
 }
 
-/* 2. GLOBAL TEXT STYLES (From your Activity/Interests pages) */
-body {
-  font-size: 16px;
-}
-h2 {
-  margin-top: 25px; /* Adds breathing room between sections */
-}
+/* --- 3. PAGE SPECIFIC ELEMENTS --- */
 
-/* 3. CONTACT PAGE ICONS */
+/* Contact Page Icons */
 .fa, .fab {
   color: #2C3E50;
+  margin-right: 8px;
 }

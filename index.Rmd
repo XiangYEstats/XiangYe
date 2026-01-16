@@ -38,17 +38,17 @@ output: html_document
   /* Styling for the quotes */
   .quote-text {
     margin-top: 20px;
-    font-size: 14px;
-    color: #555;
-    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2C3E50;
+    line-height: 1.5;
   }
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <div class="row">
-<div class="col-sm-4">
-<center>
+<div class="col-sm-5">  <center>
 
 <img src="profile.jpg" width="100%" style="border-radius: 50%; border: 2px solid #eee;">
 
@@ -84,7 +84,7 @@ output: html_document
 </center>
 </div>
 
-<div class="col-sm-8">
+<div class="col-sm-7">
 
 ## About Me
 
