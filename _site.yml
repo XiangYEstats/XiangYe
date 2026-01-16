@@ -9,6 +9,8 @@ navbar:
       href: activity.html
     - text: "Interests"
       href: interests.html
+    - text: "Contact"
+      href: contact.html
 output:
   html_document:
     theme: cosmo

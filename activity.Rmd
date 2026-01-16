@@ -18,14 +18,3 @@ output: html_document
 ## 2024
 
 * **Summer School**: VIBASS7 - València International Bayesian Summer School, València, Spain, July 8-12
-
-## 2022
-
-* **Dissertation Award**: Department Prize for Best Computational Dissertation for *Spatial Statistical Modeling with INLA*
-
-## 2020
-
-* **Meritorious Winner & Student Advisor**, Mathematical Contest in Modeling (MCM)  
-  – Analyzed product sales data and customer reviews to identify patterns and forecast demand.  
-  – Developed predictive models to support strategic recommendations for Amazon market entry.
-

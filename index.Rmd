@@ -39,6 +39,28 @@ output: html_document
     color: #555;
     line-height: 1.6;
   }
+  
+  /* 1. The Gradient: Dark Slate fading into Deep Cambridge Green */
+  .navbar-default {
+    background-image: linear-gradient(to right, #2C3E50, #5D7B6F);
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Adds a subtle shadow for depth */
+  }
+  
+  /* 2. Text Color: White for maximum readability */
+  .navbar-default .navbar-brand, 
+  .navbar-default .navbar-nav > li > a {
+    color: #ffffff !important;
+    font-weight: bold;
+    letter-spacing: 0.5px; /* Makes it look more modern */
+  }
+  
+  /* 3. Hover Effect: The button glows Cambridge Blue when you touch it */
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-nav > .active > a {
+    background-color: rgba(163, 193, 173, 0.2) !important; /* Subtle Green Glow */
+    color: #A3C1AD !important; /* Text turns Cambridge Blue */
+  }
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -106,6 +128,13 @@ My research focuses on *Bayesian latent variable models*, from *Prior Specificat
 ### Publications
 
 * Ye, X., Van Niekerk, J. and Rue, H., 2025. Principled priors for Bayesian inference of circular models. arXiv preprint arXiv:2502.18223.
+
+### Award
+
+* **Master Dissertation Award**: Department Prize for Best Computational Dissertation for *Spatial Statistical Modeling with INLA*, 2022
+* **Meritorious Winner & Student Advisor**, Mathematical Contest in Modeling (MCM), 2020
+  – Analyzed product sales data and customer reviews to identify patterns and forecast demand.  
+  – Developed predictive models to support strategic recommendations for Amazon market entry.
 
 ### Intern and Research Experience
 
