@@ -103,8 +103,8 @@ My research focuses on *Bayesian latent variable models*, spanning *prior specif
 * **Hierarchical Bayesian latent variable modeling** – modeling unobservable structures and information underlying observed data
 * **Probabilistic learning** – developing tractable and explainable probabilistic models for complex data
 * **Prior specification** – designing principled prior construction and selection frameworks to improve model stability and inferential accuracy
-* **Modeling variables on non-linear spaces** – developing methodology for statistical models involving variables defined on non-linear domains (e.g. manifolds)
 * **Deep learning methodology** - developing accurate and efficient deep learning methods
+* **Directional statistics** – developing methodology for statistical models involving variables defined on manifold-valued spaces (e.g. circular, spherical models)
 
 ### Publications
 
