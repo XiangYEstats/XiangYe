@@ -92,6 +92,8 @@ I am a PhD candidate in the *Bayesian Computational Statistics and Modeling Rese
 
 My PhD research focuses on *Bayesian latent variable models*, spanning *prior specification* and *model construction*, and their applications. During my PhD, I have developed these ideas in the context of *directional (circular) statistics*.
 
+I am seeking postdoctoral and research positions. Please feel free to contact me at any time.
+
 ### Education
 
 * **PhD in Statistics** | King Abdullah University of Science and Technology, Saudi Arabia (2023-present)
@@ -127,7 +129,7 @@ My research interests lie in a broad domain related to tractable and explainable
 
 ### Skills
 
-* Programming: R (INLA, Stan, brms, ggplot2, caret, keras...), Python, C++, MATLAB
+* Programming: R (INLA, Stan, ggplot2, caret, keras...), Python, C++, MATLAB
 * Tools & Software: LaTeX, Microsoft Office, Adobe Photoshop, Adobe Premiere Pro
 * Languages:
     * English (Professional proficiency; IELTS 7.0, 2021)

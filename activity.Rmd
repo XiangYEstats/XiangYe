@@ -1,5 +1,5 @@
 ---
-title: "Activities"
+title: "Research Activities"
 output: html_document
 ---
 
