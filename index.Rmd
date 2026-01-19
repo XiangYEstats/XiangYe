@@ -90,7 +90,7 @@ output: html_document
 
 I am a PhD candidate in the *Bayesian Computational Statistics and Modeling Research Group* at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.
 
-My research focuses on *Bayesian latent variable models*, spanning *prior specification* and *model construction*, and their applications. During my PhD, I have developed these ideas in the context of *directional (circular) statistics*.
+My PhD research focuses on *Bayesian latent variable models*, spanning *prior specification* and *model construction*, and their applications. During my PhD, I have developed these ideas in the context of *directional (circular) statistics*.
 
 ### Education
 
@@ -100,7 +100,10 @@ My research focuses on *Bayesian latent variable models*, spanning *prior specif
 
 ### Research Interests
 
+My research interests lie in a broad domain related to tractable and explainable approaches to learning from data. I am especially interested in using Bayesian philosophy to develop methodologies for solving real-world problems.
+
 * **Hierarchical Bayesian latent variable modeling** – modeling unobservable structures and information underlying observed data
+* **scalable probabilistic modeling** – using structured latent representations to handle high-dimentional data
 * **Probabilistic learning** – developing tractable and explainable probabilistic models for complex data
 * **Prior specification** – designing principled prior construction and selection frameworks to improve model stability and inferential accuracy
 * **Deep learning methodology** - developing accurate and efficient deep learning methods
