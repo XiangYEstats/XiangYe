@@ -112,21 +112,21 @@ My research focuses on *Bayesian latent variable models*, spanning *prior specif
 
 ### Award
 
-* **Master Dissertation Award**: Department Prize for Best Computational Dissertation for *Spatial Statistical Modeling with INLA*, 2022
-* **Meritorious Winner & Student Advisor**, Mathematical Contest in Modeling (MCM), 2020
+* Master Dissertation Award: Department Prize for Best Computational Dissertation for *Spatial Statistical Modeling with INLA*, 2022
+* Meritorious Winner & Student Advisor, Mathematical Contest in Modeling (MCM), 2020
     + Analyzed product sales data and customer reviews to identify patterns and forecast demand.
     + Developed predictive models to support strategic recommendations for Amazon market entry.
 
 ### Intern and Research Experience
 
-* **Research and Development Intern** | Tech View Info Limited Liability Company, Guangzhou, China (2023)
-* **Project Marketing Intern** | Guangdong Zhujiang Investment CO LTD, Guangzhou, China (2019)
+* Research and Development Intern | Tech View Info Limited Liability Company, Guangzhou, China (2023)
+* Project Marketing Intern | Guangdong Zhujiang Investment CO LTD, Guangzhou, China (2019)
 
 ### Skills
 
-* **Programming**: R (INLA, Stan, brms, ggplot2, caret, keras...), Python, C++, MATLAB
-* **Tools & Software**: LaTeX, Microsoft Office, Adobe Photoshop, Adobe Premiere Pro
-* **Languages**:
+* Programming: R (INLA, Stan, brms, ggplot2, caret, keras...), Python, C++, MATLAB
+* Tools & Software: LaTeX, Microsoft Office, Adobe Photoshop, Adobe Premiere Pro
+* Languages:
     * English (Professional proficiency; IELTS 7.0, 2021)
     * Chinese (Mandarin & Cantonese; native proficiency)
     * German (A2)
