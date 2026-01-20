@@ -11,6 +11,8 @@ navbar:
       href: about_me.html
     - text: "Contact"
       href: contact.html
+    - text: "CV"
+      href: files/cv.pdf
 output:
   html_document:
     theme: cosmo
