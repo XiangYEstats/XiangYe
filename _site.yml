@@ -7,8 +7,8 @@ navbar:
       href: index.html
     - text: "Activity"
       href: activity.html
-    - text: "Interests"
-      href: interests.html
+    - text: "About Me"
+      href: about_me.html
     - text: "Contact"
       href: contact.html
 output:

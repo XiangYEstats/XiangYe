@@ -102,10 +102,10 @@ I am seeking postdoctoral and research positions. Please feel free to contact me
 
 ### Research Interests
 
-My research interests lie in a broad domain related to tractable and explainable approaches to learning from data. I am especially interested in using Bayesian philosophy to develop methodologies for solving real-world problems.
+My research interests lie in a broad domain related to efficient, tractable, and explainable approaches to learning from data. I am especially interested in the synergy between Bayesian philosophy and modern high-dimensional learning frameworks and inference algorithms for developing methodologies to solve real-world problems.
 
 * **Hierarchical Bayesian latent variable modeling** – modeling unobservable structures and information underlying observed data
-* **scalable probabilistic modeling** – using structured latent representations to handle high-dimentional data
+* **scalable probabilistic modeling** – using structured latent representations to handle high-dimensional data
 * **Probabilistic learning** – developing tractable and explainable probabilistic models for complex data
 * **Prior specification** – designing principled prior construction and selection frameworks to improve model stability and inferential accuracy
 * **Deep learning methodology** - developing accurate and efficient deep learning methods
