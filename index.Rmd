@@ -99,14 +99,12 @@ I am seeking postdoctoral and research positions. Please feel free to contact me
 * **BSc in Applied Mathematics** | University of Liverpool & Xi’an Jiaotong‑Liverpool University, Suzhou, China (2017-2021)
 
 ### Research Interests
+My research interests center on efficient, tractable, and explainable approaches to statistical inference and learning from data. I am especially interested in the synergy between Bayesian inference and modern high-dimensional learning frameworks to develop methodologies for real-world problems.
 
-My research interests lie in a broad domain related to efficient, tractable, and explainable approaches to learning from data. I am especially interested in the synergy between Bayesian philosophy and modern high-dimensional learning frameworks and inference algorithms for developing methodologies to solve real-world problems.
-
-* **Hierarchical Bayesian latent variable modeling** – modeling unobservable structures and information underlying observed data
-* **scalable probabilistic modeling** – using structured latent representations to handle high-dimensional data
-* **Probabilistic learning** – developing tractable and explainable probabilistic models for complex data
-* **Prior specification** – designing principled prior construction and selection frameworks to improve model stability and inferential accuracy
-* **Deep learning methodology** - developing accurate and efficient deep learning methods
+* **Scalable probabilistic modeling** – Using structured latent representations and hierarchical Bayesian models to handle high-dimensional data
+* **Uncertainty quantification** – Developing frameworks to estimate predictive uncertainty and improve model calibration in complex systems
+* **Prior specification** – Designing principled frameworks for prior construction to improve model stability and inferential accuracy
+* **Bayesian deep learning** - Integrating Bayesian principles with deep neural networks to develop accurate, efficient, and statistically robust learning methods
 * **Directional statistics** – developing methodology for statistical models involving variables defined on manifold-valued spaces (e.g. circular, spherical models)
 
 ### Publications
