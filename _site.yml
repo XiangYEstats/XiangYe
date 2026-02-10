@@ -3,8 +3,6 @@ output_dir: "docs"
 navbar:
   title: "Xiang Ye"
   left:
-    - text: "Home"
-      href: index.html
     - text: "Activity"
       href: activity.html
     - text: "About Me"

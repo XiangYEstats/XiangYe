@@ -86,9 +86,9 @@ output: html_document
 
 <div class="col-sm-7">
 
-I am a PhD candidate in the *Bayesian Computational Statistics and Modeling Research Group* at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.
+I am a PhD candidate in the Bayesian Computational Statistics and Modeling Research Group at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.
 
-My PhD research focuses on *Bayesian latent variable models*, spanning *prior specification* and *model construction*, and their applications. During my PhD, I have developed these ideas in the context of *directional (circular) statistics*.
+My PhD research focuses on Bayesian latent variable models, spanning prior specification and model construction, and their applications. During my PhD, I have developed these ideas in the context of directional (circular) statistics, implementing these methodologies into the Integrated Nested Laplace Approximation (INLA) R package.
 
 I am seeking postdoctoral and research positions. Please feel free to contact me at any time.
 
@@ -99,7 +99,7 @@ I am seeking postdoctoral and research positions. Please feel free to contact me
 * **BSc in Applied Mathematics** | University of Liverpool & Xi’an Jiaotong‑Liverpool University, Suzhou, China (2017-2021)
 
 ### Research Interests
-My research interests center on efficient, tractable, and explainable approaches to statistical inference and learning from data. I am especially interested in the synergy between Bayesian inference and modern high-dimensional learning frameworks to develop methodologies for real-world problems.
+My research interests center on efficient, tractable, and explainable approaches to statistical inference and learning from data. I am especially interested in the synergy between Bayesian inference and modern high-dimensional learning algorithms to develop methodologies for real-world problems.
 
 * **Scalable probabilistic modeling** – Using structured latent representations and hierarchical Bayesian models to handle high-dimensional data
 * **Uncertainty quantification** – Developing frameworks to estimate predictive uncertainty and improve model calibration in complex systems
@@ -109,11 +109,12 @@ My research interests center on efficient, tractable, and explainable approaches
 
 ### Publications
 
+* Ye, X., Van Niekerk, J. and Rue, H., 2026. A Bayesian regression framework for circular models with INLA. arXiv preprint arXiv:2602.08413.
 * Ye, X., Van Niekerk, J. and Rue, H., 2025. Principled priors for Bayesian inference of circular models. arXiv preprint arXiv:2502.18223.
 
 ### Award
 
-* Master Dissertation Award: Department Prize for Best Computational Dissertation for *Spatial Statistical Modeling with INLA*, 2022
+* Master Dissertation Award: Department Prize for Best Computational Dissertation for "Spatial Statistical Modeling with INLA", 2022
 * Meritorious Winner & Student Advisor, Mathematical Contest in Modeling (MCM), 2020
     + Analyzed product sales data and customer reviews to identify patterns and forecast demand.
     + Developed predictive models to support strategic recommendations for Amazon market entry.

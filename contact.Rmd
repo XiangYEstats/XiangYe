@@ -7,7 +7,7 @@ output: html_document
 
 
 
-I am seeking postdoctoral and research positions in Bayesian methodology, probabilistic learning, latent variable modeling, causal modeling, deep learning and their applications. I would be delighted to discuss potential opportunities and collaborations.
+I am seeking postdoctoral and research positions in Bayesian computational statistics, Bayesian deep learning, probabilistic learning, latent variable modeling, causal modeling and their applications. I would be delighted to discuss potential opportunities and collaborations.
 
 I am also always open to conversations on research collaboration and the development of new statistical methodology.
 
