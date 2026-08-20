@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "source": "Google Scholar",
+  "profile_id": "08io_8cAAAAJ",
+  "profile_url": "https://scholar.google.com/citations?user=08io_8cAAAAJ&hl=en&oi=sra",
+  "synced_at": "2026-08-20T14:34:01Z",
+  "publications": [
+    {
+      "title": "A Bayesian regression framework for circular models with INLA",
+      "authors": "X Ye, J Van Niekerk, H Rue",
+      "venue": "arXiv preprint arXiv:2602.08413",
+      "year": "2026",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=08io_8cAAAAJ&citation_for_view=08io_8cAAAAJ%3Aj3f4tGmQtD8C"
+    },
+    {
+      "title": "Penalizing complexity priors for Bayesian inference of circular models",
+      "authors": "X Ye, J Van Niekerk, H Rue",
+      "venue": "Statistical Modelling",
+      "year": "2026",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=08io_8cAAAAJ&citation_for_view=08io_8cAAAAJ%3AaqlVkmm33-oC"
+    }
+  ]
+}

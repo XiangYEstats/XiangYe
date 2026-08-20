@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Publication records are synchronized from Google Scholar by
+     scripts/sync_scholar.py and cached in data/publications.json. -->
+<section class="page-hero page-hero--publications section-shell">
+  <div data-reveal>
+    <p class="eyebrow"><span></span> Published work · 著述</p>
+    <h1>Publications</h1>
+    <p>
+      This list follows my Google Scholar profile automatically. Select any title
+      to open its corresponding record in Google Scholar.
+    </p>
+  </div>
+
+  {% set verse = poetry[page.verse] %}
+  <aside class="page-verse" data-reveal data-reveal-delay="1">
+    <p class="page-verse__cn" lang="zh-Hans">
+      {% for line in verse.chinese_lines %}
+      {{ line }}{% if not loop.last %}<br>{% endif %}
+      {% endfor %}
+    </p>
+    <p class="page-verse__en">
+      {% for line in verse.english_lines %}
+      {{ line }}{% if not loop.last %}<br>{% endif %}
+      {% endfor %}
+    </p>
+    <small>{{ verse.source }}</small>
+  </aside>
+
+  <span class="page-mark" aria-hidden="true">{{ page.mark }}</span>
+</section>
+
+<section class="publications-section section-shell">
+  <header class="publications-toolbar" data-reveal>
+    <p>
+      <strong>{{ publication_data.publications|length }}</strong>
+      publication{% if publication_data.publications|length != 1 %}s{% endif %}
+    </p>
+    <a class="button button--quiet" href="{{ scholar_profile_url }}" target="_blank" rel="noopener">
+      View Google Scholar profile <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  {% if publication_data.publications %}
+  <ol class="publication-list">
+    {% for publication in publication_data.publications %}
+    <li class="publication-entry" data-reveal>
+      <time>{{ publication.year or "—" }}</time>
+
+      <article>
+        <h2>
+          <a href="{{ publication.scholar_url }}" target="_blank" rel="noopener">
+            <span>{{ publication.title }}</span>
+            <i aria-hidden="true">↗</i>
+          </a>
+        </h2>
+        {% if publication.authors or publication.venue %}
+        <p class="publication-meta">
+          {% if publication.authors %}<span class="publication-authors">{{ publication.authors }}</span>{% endif %}
+          {% if publication.venue %}<span class="publication-venue">{{ publication.venue }}</span>{% endif %}
+        </p>
+        {% endif %}
+      </article>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <div class="publications-empty" data-reveal>
+    <p>The synchronized publication list is temporarily unavailable.</p>
+    <a href="{{ scholar_profile_url }}" target="_blank" rel="noopener">
+      View the Google Scholar profile <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+  {% endif %}
+
+  <p class="publications-sync-note">
+    Synchronized daily from Google Scholar. The last successful copy remains visible if Scholar is temporarily unavailable.
+  </p>
+</section>
+{% endblock %}

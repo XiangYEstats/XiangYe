@@ -1,499 +1,439 @@
-<!DOCTYPE html>
-
-<html>
+<!doctype html>
+<html lang="en" data-theme="light">
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bayesian computational statistician working on latent variable models, principled priors, directional statistics, and scalable inference with INLA.">
+  <meta name="author" content="Xiang Ye">
+  <meta name="theme-color" content="#dce4dc">
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+    content="Xiang Ye — Bayesian Statistics &amp; Research">
+  <meta property="og:description" content="Bayesian computational statistician working on latent variable models, principled priors, directional statistics, and scalable inference with INLA.">
+  <meta property="og:image" content="https://xiangyestats.github.io/XiangYe/assets/images/profile.jpg">
+  <meta property="og:url" content="https://xiangyestats.github.io/XiangYe/index.html">
+  <title>Xiang Ye — Bayesian Statistics &amp; Research</title>
 
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Xiang Ye</title>
-
-<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="styles.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
+  <!-- Apply the saved palette before the page paints, preventing a flash. -->
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      const savedTheme = localStorage.getItem("xiangye-theme");
+      if (savedTheme === "ink" || savedTheme === "light" || savedTheme === "night") {
+        /* "night" migrates the preference used by the previous design. */
+        document.documentElement.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+      }
+    } catch (error) {
+      /* Celadon daylight remains the safe default. */
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css?v=20260820">
 </head>
 
-<body>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
+  <!-- Purely decorative Southern Song layers: celadon crackle and qin strings. -->
+  <div class="celadon-crackle" aria-hidden="true"></div>
+  <div class="page-wash page-wash--one" aria-hidden="true"></div>
+  <div class="page-wash page-wash--two" aria-hidden="true"></div>
 
-<div class="container-fluid main-container">
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Xiang Ye — home">
+        <!-- Edit the seal character here if the family mark ever changes. -->
+        <span class="brand-seal" aria-hidden="true">葉</span>
+        <span class="brand-wordmark">
+          <strong>Xiang Ye</strong>
+          <small>Bayesian · KAUST</small>
+        </span>
+      </a>
 
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation>
+        <a class="nav-link is-active" href="index.html"  aria-current="page" >
+          Home
+        </a>
+        <a class="nav-link" href="research.html" >
+          Research
+        </a>
+        <a class="nav-link" href="publications.html" >
+          Publications
+        </a>
+        <a class="nav-link" href="activity.html" >
+          Activity
+        </a>
+        <a class="nav-link" href="about_me.html" >
+          About
+        </a>
+        <a class="nav-link" href="contact.html" >
+          Contact
+        </a>
+      </nav>
 
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Xiang Ye</a>
+      <div class="header-actions">
+        <a class="cv-link" href="files/cv.pdf" target="_blank" rel="noopener">
+          Download CV <span aria-hidden="true">↗</span>
+        </a>
+        <button class="theme-toggle" type="button" aria-label="Use ink theme" data-theme-toggle>
+          <span class="theme-toggle__light" aria-hidden="true">☼</span>
+          <span class="theme-toggle__ink" aria-hidden="true">墨</span>
+        </button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"
+          aria-label="Open navigation" data-menu-toggle>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li>
-  <a href="activity.html">Activity</a>
-</li>
-<li>
-  <a href="about_me.html">About Me</a>
-</li>
-<li>
-  <a href="contact.html">Contact</a>
-</li>
-<li>
-  <a href="files/cv.pdf">CV</a>
-</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
+  </header>
 
-<div id="header">
+  <main id="main-content" tabindex="-1">
+<!-- ======================================================================
+     HOMEPAGE HERO
+     The asymmetric "one-corner" layout borrows Southern Song composition:
+     atmosphere remains open while portrait, inscription, and name gather at
+     the lower-right.  Most wording comes from site_data.py.
+     ====================================================================== -->
+<section class="song-hero section-shell">
+  <span class="page-mark page-mark--home" aria-hidden="true"></span>
+  <div class="qin-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
+  <aside class="hero-inscription" data-reveal>
+    <p class="inscription-cn" lang="zh-Hans">
+      问渠哪得清如许？<br>      为有源头活水来。    </p>
 
+    <p class="inscription-en">
+      How does the channel stay so clear?<br>      From its living source, fresh waters appear.    </p>
 
-<h1 class="title toc-ignore">Xiang Ye</h1>
+    <small>Zhu Xi · 朱熹 · 《观书有感二首·其一》</small>
+  </aside>
 
-</div>
+  <figure class="moon-portrait" data-reveal data-reveal-delay="1" data-parallax>
+    <div class="moon-window">
+      <img src="assets/images/profile.jpg" alt="Portrait of Xiang Ye" width="3840" height="2160">
+    </div>
+    <span class="portrait-motto portrait-motto--top" lang="zh-Hans">志存高远</span>
+    <span class="portrait-motto portrait-motto--bottom" lang="zh-Hans">脚踏实地</span>
+    <figcaption>
+      <span>Bayesian Statistics · Computation · Methodology</span>
+      <small>Aim high, stay grounded.</small>
+    </figcaption>
+  </figure>
 
+  <div class="hero-copy" data-reveal data-reveal-delay="2">
+    <p class="eyebrow"><span></span> Bayesian computational statistics</p>
+    <div class="hero-name-lockup">
+      <h1 class="hero-title">Xiang <em>Ye</em></h1>
+      <p class="hero-name-cn" lang="zh-Hans">叶翔</p>
+    </div>
+    <p class="hero-role">PhD Candidate · KAUST</p>
+    <p class="hero-summary">
+      Building modern Bayesian methods—from mathematical foundations to practical solutions.
+    </p>
 
-<style>
-  .title { display: none; }
-  
-  /* --- PAGE-SPECIFIC STYLES --- */
-  /* (Menu bar styles are now in styles.css) */
+    <div class="hero-actions">
+      <a class="button button--primary" href="#profile">
+        About me <span aria-hidden="true">↓</span>
+      </a>
+      <a class="button button--quiet" href="files/cv.pdf" target="_blank" rel="noopener">
+        Curriculum vitae <span aria-hidden="true">↗</span>
+      </a>
+    </div>
 
-  /* Button Styling */
-  .btn-outline {
-    background-color: transparent;
-    color: #4a4a4a;
-    border: 1px solid #4a4a4a;
-    padding: 5px 10px;
-    margin: 0px 2px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    font-size: 13px;
-  }
-  
-  .btn-outline:hover {
-    background-color: #4a4a4a;
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  /* Container to force buttons into one line */
-  .button-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    width: 100%;
-  }
+    <div class="social-row" aria-label="Professional links">
+      <a href="mailto:xiang.ye@kaust.edu.sa" >
+        Email <span aria-hidden="true">↗</span>
+      </a>
+      <a href="https://github.com/XiangYEstats"  target="_blank" rel="noopener" >
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
+      <a href="https://scholar.google.com/citations?user=08io_8cAAAAJ&amp;hl=en&amp;oi=sra"  target="_blank" rel="noopener" >
+        Google Scholar <span aria-hidden="true">↗</span>
+      </a>
+      <a href="https://www.linkedin.com/in/xiang-ye-228648191/"  target="_blank" rel="noopener" >
+        LinkedIn <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
 
-  /* Styling for the quotes */
-  .quote-text {
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #2C3E50;
-    line-height: 1.5;
-  }
-</style>
-<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></p>
-<div class="row">
-<div class="col-sm-5">
-<center>
-<p><img src="profile.jpg" width="100%" style="border-radius: 50%; border: 2px solid #eee;"></p>
-<h3>
-Xiang Ye
-</h3>
-<p>
-<em>PhD Candidate in Bayesian computational statistics</em>
-</p>
-<div class="button-row">
-<p><a href="mailto:xiang.ye@kaust.edu.sa" class="btn btn-outline">
-<i class="fas fa-envelope"></i> Email </a></p>
-<p><a href="https://github.com/XiangYEstats" class="btn btn-outline">
-<i class="fab fa-github"></i> GitHub </a></p>
-<p><a href="https://scholar.google.com/citations?user=08io_8cAAAAJ&hl=en&oi=sra" class="btn btn-outline">
-<i class="fas fa-graduation-cap"></i> Scholar </a></p>
-</div>
-<div class="quote-text">
-<p>
-<strong>“志存高远，脚踏实地。”</strong><br> <em>“Aim high, stay
-grounded.”</em>
-</p>
-<p>
-<strong>“行百里者半于九十。”</strong><br> <em>“The last mile is the
-longest.”</em>
-</p>
-</div>
-</center>
-</div>
-<div class="col-sm-7">
-<p>I am a PhD candidate in the Bayesian Computational Statistics and
-Modeling Research Group at King Abdullah University of Science and
-Technology (KAUST), under the supervision of Professor Håvard Rue.</p>
-<p>My PhD research focuses on Bayesian latent variable models, spanning
-prior specification and model construction, and their applications.
-During my PhD, I have developed these ideas in the context of
-directional (circular) statistics, implementing these methodologies into
-the Integrated Nested Laplace Approximation (INLA) R package.</p>
-<p>I am seeking postdoctoral and research positions. Please feel free to
-contact me at any time.</p>
-<div id="education" class="section level3">
-<h3>Education</h3>
-<ul>
-<li><strong>PhD in Statistics</strong> | King Abdullah University of
-Science and Technology, Saudi Arabia (2023-present)</li>
-<li><strong>MSc in Statistics</strong> | Lancaster University, UK
-(2021-2022)</li>
-<li><strong>BSc in Applied Mathematics</strong> | University of
-Liverpool &amp; Xi’an Jiaotong‑Liverpool University, Suzhou, China
-(2017-2021)</li>
-</ul>
-</div>
-<div id="research-interests" class="section level3">
-<h3>Research Interests</h3>
-<p>My research interests center on efficient, tractable, and explainable
-approaches to statistical inference and learning from data. I am
-especially interested in the synergy between Bayesian inference and
-modern high-dimensional learning algorithms to develop methodologies for
-real-world problems.</p>
-<ul>
-<li><strong>Scalable probabilistic modeling</strong> – Using structured
-latent representations and hierarchical Bayesian models to handle
-high-dimensional data</li>
-<li><strong>Uncertainty quantification</strong> – Developing frameworks
-to estimate predictive uncertainty and improve model calibration in
-complex systems</li>
-<li><strong>Prior specification</strong> – Designing principled
-frameworks for prior construction to improve model stability and
-inferential accuracy</li>
-<li><strong>Bayesian deep learning</strong> - Integrating Bayesian
-principles with deep neural networks to develop accurate, efficient, and
-statistically robust learning methods</li>
-<li><strong>Directional statistics</strong> – developing methodology for
-statistical models involving variables defined on manifold-valued spaces
-(e.g. circular, spherical models)</li>
-</ul>
-</div>
-<div id="publications" class="section level3">
-<h3>Publications</h3>
-<ul>
-<li>Ye, X., Van Niekerk, J. and Rue, H., 2026. A Bayesian regression
-framework for circular models with INLA. arXiv preprint
-arXiv:2602.08413.</li>
-<li>Ye, X., Van Niekerk, J. and Rue, H., 2025. Principled priors for
-Bayesian inference of circular models. arXiv preprint
-arXiv:2502.18223.</li>
-</ul>
-</div>
-<div id="award" class="section level3">
-<h3>Award</h3>
-<ul>
-<li>Master Dissertation Award: Department Prize for Best Computational
-Dissertation for “Spatial Statistical Modeling with INLA”, 2022</li>
-<li>Meritorious Winner &amp; Student Advisor, Mathematical Contest in
-Modeling (MCM), 2020
-<ul>
-<li>Analyzed product sales data and customer reviews to identify
-patterns and forecast demand.</li>
-<li>Developed predictive models to support strategic recommendations for
-Amazon market entry.</li>
-</ul></li>
-<li>Excellent Team Member of ENACTUS, 2017-2019
-<ul>
-<li>Helping to protect and maintain the traditional legacy of
-nut‑cutting handicraft through business operating mode.</li>
-</ul></li>
-</ul>
-</div>
-<div id="intern-and-research-experience" class="section level3">
-<h3>Intern and Research Experience</h3>
-<ul>
-<li>Research and Development Intern | Tech View Info Limited Liability
-Company, Guangzhou, China (2023)</li>
-<li>Project Marketing Intern | Guangdong Zhujiang Investment CO LTD,
-Guangzhou, China (2019)</li>
-</ul>
-</div>
-<div id="skills" class="section level3">
-<h3>Skills</h3>
-<ul>
-<li>Programming: R (INLA, Stan, ggplot2, caret, keras…), Python, C++,
-MATLAB</li>
-<li>Tools &amp; Software: LaTeX, Microsoft Office, Adobe Photoshop,
-Adobe Premiere Pro</li>
-<li>Languages:
-<ul>
-<li>English (Professional proficiency; IELTS 7.0, 2021)</li>
-<li>Chinese (Mandarin &amp; Cantonese; native proficiency)</li>
-<li>German (A2)</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
+  <aside class="question-index" data-reveal data-reveal-delay="2">
+    <span>Current questions</span>
+<p>How can priors stabilize and improve inference?</p><p>How can Bayesian methods improve reasoning under uncertainty in deep learning?</p><p>How can Bayesian inference be both fast and accurate?</p>  </aside>
 
+  <div class="hero-scroll" aria-hidden="true"><span>Scroll to read</span><i></i></div>
+</section>
 
+<!-- Compact editorial index: a practical strength retained from the finished site. -->
+<section class="research-ribbon" aria-label="Research interests">
+  <div class="research-ribbon__title">
+    <span lang="zh-Hans">研究札记</span>
+    <h2>Research notes</h2>
+  </div>
+  <a href="research.html">
+    <span>01</span>
+    <strong>Scalable probabilistic modeling</strong>
+    <span aria-hidden="true">↗</span>
+  </a>
+  <a href="research.html">
+    <span>02</span>
+    <strong>Bayesian deep learning</strong>
+    <span aria-hidden="true">↗</span>
+  </a>
+  <a href="research.html">
+    <span>03</span>
+    <strong>Principled prior specification</strong>
+    <span aria-hidden="true">↗</span>
+  </a>
+  <a href="research.html">
+    <span>04</span>
+    <strong>Uncertainty quantification</strong>
+    <span aria-hidden="true">↗</span>
+  </a>
+  <a href="research.html">
+    <span>05</span>
+    <strong>Directional statistics</strong>
+    <span aria-hidden="true">↗</span>
+  </a>
+</section>
 
+<section class="profile-section paper-section section-shell" id="profile">
+  <div class="section-heading" data-reveal>
+    <p class="section-number">〇一</p>
+    <div>
+      <p class="section-kicker">About me · 自述</p>
+      <h2>Bayesian methods with structure,<br>clarity, and purpose.</h2>
+    </div>
+  </div>
 
-</div>
+  <div class="profile-grid">
+    <div class="profile-prose" data-reveal>
+<p>I am a PhD candidate in the Bayesian Computational Statistics and Modeling Research Group at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.</p><p>My PhD research focuses on Bayesian latent variable models and joint modelling, from prior specification and model construction to computation and applications. I develop these ideas for directional and circular statistics and implement the resulting methodology for Integrated Nested Laplace Approximation (INLA).</p><p>Looking ahead, I am interested in the theory, methodology, and applications of fast Bayesian inference, particularly for increasingly complex and high-dimensional models. I am also interested in bringing Bayesian ideas into modern deep learning, especially generative models, to improve uncertainty quantification and computational efficiency, while encouraging more structured, transparent, and reliable reasoning.</p>      <p>
+        I am always happy to discuss new ideas and potential collaborations,
+        especially around statistical methodology, Bayesian computation, and
+        related interdisciplinary problems.
+      </p>
+    </div>
 
-<script>
+    <aside class="verse-card" data-reveal data-reveal-delay="1">
+      <span class="verse-card__seal" aria-hidden="true">志</span>
 
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
+      <blockquote>
+        <p lang="zh-Hans">志存高远，脚踏实地</p>
+        <footer>Aim high, stay grounded.</footer>
+      </blockquote>
 
+      <div class="availability-dot">
+        <i aria-hidden="true"></i>
+        Open to collaboration
+      </div>
+    </aside>
+  </div>
+</section>
 
-</script>
+<section class="interests-section section-shell">
+  <div class="section-heading" data-reveal>
+    <p class="section-number">〇二</p>
+    <div>
+      <p class="section-kicker">Research interests · 志趣</p>
+      <h2>My research interests.</h2>
+    </div>
+  </div>
 
-<!-- tabsets -->
+  <div class="interest-grid">
+    <article class="interest-card" data-reveal data-reveal-delay="0">
+      <span class="interest-number">01</span>
+      <h3>Scalable probabilistic modeling</h3>
+      <p>Structured latent representations and hierarchical Bayesian models for high-dimensional data.</p>
+      <span class="card-line" aria-hidden="true"></span>
+    </article>
+    <article class="interest-card" data-reveal data-reveal-delay="1">
+      <span class="interest-number">02</span>
+      <h3>Bayesian deep learning</h3>
+      <p>Bayesian principles for accurate, efficient, and statistically robust neural learning methods.</p>
+      <span class="card-line" aria-hidden="true"></span>
+    </article>
+    <article class="interest-card" data-reveal data-reveal-delay="2">
+      <span class="interest-number">03</span>
+      <h3>Principled prior specification</h3>
+      <p>Prior constructions that improve model stability, interpretability, and inferential accuracy.</p>
+      <span class="card-line" aria-hidden="true"></span>
+    </article>
+    <article class="interest-card" data-reveal data-reveal-delay="0">
+      <span class="interest-number">04</span>
+      <h3>Uncertainty quantification</h3>
+      <p>Frameworks for model and predictive uncertainty and better calibration in complex systems.</p>
+      <span class="card-line" aria-hidden="true"></span>
+    </article>
+    <article class="interest-card" data-reveal data-reveal-delay="1">
+      <span class="interest-number">05</span>
+      <h3>Directional statistics</h3>
+      <p>Statistical methodology for circular, spherical, and other manifold-valued observations.</p>
+      <span class="card-line" aria-hidden="true"></span>
+    </article>
+  </div>
+</section>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
+<section class="education-section paper-section section-shell">
+  <div class="section-heading" data-reveal>
+    <p class="section-number">〇三</p>
+    <div>
+      <p class="section-kicker">Education · 问学</p>
+      <h2>My academic journey.</h2>
+    </div>
+  </div>
 
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
+  <div class="education-layout">
+    <div class="education-list">
+      <article class="education-item" data-reveal>
+        <time>2023—2026</time>
+        <div>
+          <h3>PhD in Statistics</h3>
+          <p>King Abdullah University of Science and Technology</p>
+          <span>Jeddah, Saudi Arabia</span>
+        </div>
+      </article>
+      <article class="education-item" data-reveal>
+        <time>2021—2022</time>
+        <div>
+          <h3>MSc in Statistics</h3>
+          <p>Lancaster University</p>
+          <span>Lancaster, United Kingdom</span>
+        </div>
+      </article>
+      <article class="education-item" data-reveal>
+        <time>2017—2021</time>
+        <div>
+          <h3>BSc in Applied Mathematics</h3>
+          <p>University of Liverpool &amp; Xi’an Jiaotong-Liverpool University</p>
+          <span>Suzhou, China</span>
+        </div>
+      </article>
+    </div>
 
-<!-- code folding -->
+    <aside class="verse-card education-verse" data-reveal data-reveal-delay="1">
+      <span class="verse-card__seal" aria-hidden="true">求</span>
 
+      <blockquote>
+        <p lang="zh-Hans">
+          路漫漫其修远兮，<br>          吾将上下而求索。        </p>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
+        <footer>
+          The road is long, its reaches far;<br>          still I shall seek where answers are.        </footer>
+      </blockquote>
 
+      <small>Qu Yuan · 屈原 · 《离骚》</small>
+    </aside>
+  </div>
+</section>
+
+<section class="experience-section section-shell">
+  <div class="section-heading" data-reveal>
+    <p class="section-number">〇四</p>
+    <div>
+      <p class="section-kicker">Professional experience · 践履</p>
+      <h2>My work experience.</h2>
+    </div>
+  </div>
+
+  <div class="experience-layout">
+    <div class="experience-list">
+      <article class="experience-item" data-reveal>
+        <time>2023</time>
+
+        <div>
+          <h3>Research and Development Intern</h3>
+          <p>Tech View Info Limited Liability Company</p>
+          <span>Guangzhou, China</span>
+        </div>
+      </article>
+      <article class="experience-item" data-reveal>
+        <time>2019</time>
+
+        <div>
+          <h3>Project Marketing Intern</h3>
+          <p>Guangdong Zhujiang Investment Co. Ltd.</p>
+          <span>Guangzhou, China</span>
+        </div>
+      </article>
+    </div>
+
+    <aside class="verse-card experience-verse" data-reveal data-reveal-delay="1">
+      <span class="verse-card__seal" aria-hidden="true">践</span>
+
+      <blockquote>
+        <p lang="zh-Hans">
+          纸上得来终觉浅，<br>          绝知此事要躬行。        </p>
+
+        <footer>
+          What books alone can teach remains but shallow;<br>          true understanding comes through practice.        </footer>
+      </blockquote>
+
+      <small>Lu You · 陆游 · 《冬夜读书示子聿》</small>
+    </aside>
+  </div>
+</section>
+
+<section class="closing-panel section-shell" data-reveal>
+  <div class="closing-rule" aria-hidden="true">
+    <span></span><i></i><span></span>
+  </div>
+
+  <p class="section-kicker">Explore · 一览</p>
+
+  <h2>Continue through my research,<br>writing, and journey.</h2>
+
+  <nav class="closing-nav" aria-label="Explore the rest of the site">
+    <a class="closing-nav__link" href="research.html">
+      <span>Research</span>
+      <i aria-hidden="true">↗</i>
+    </a>
+    <a class="closing-nav__link" href="publications.html">
+      <span>Publications</span>
+      <i aria-hidden="true">↗</i>
+    </a>
+    <a class="closing-nav__link" href="activity.html">
+      <span>Activity</span>
+      <i aria-hidden="true">↗</i>
+    </a>
+    <a class="closing-nav__link" href="about_me.html">
+      <span>About</span>
+      <i aria-hidden="true">↗</i>
+    </a>
+    <a class="closing-nav__link" href="contact.html">
+      <span>Contact</span>
+      <i aria-hidden="true">↗</i>
+    </a>
+  </nav>
+</section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-signature">
+        <span class="footer-seal" aria-hidden="true">葉</span>
+        <div>
+          <strong>Xiang Ye</strong>
+          <span>Thuwal, Saudi Arabia</span>
+        </div>
+      </div>
+
+      <p class="footer-verse">
+        <span lang="zh-Hans">志存高远，脚踏实地</span>
+        <small>Aim high, stay grounded.</small>
+      </p>
+
+      <div class="footer-meta">
+        <a href="mailto:xiang.ye@kaust.edu.sa">xiang.ye@kaust.edu.sa</a>
+        <span>© 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <script src="assets/js/site.js?v=20260820" defer></script>
 </body>
+
 </html>

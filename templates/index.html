@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- ======================================================================
+     HOMEPAGE HERO
+     The asymmetric "one-corner" layout borrows Southern Song composition:
+     atmosphere remains open while portrait, inscription, and name gather at
+     the lower-right.  Most wording comes from site_data.py.
+     ====================================================================== -->
+<section class="song-hero section-shell">
+  <span class="page-mark page-mark--home" aria-hidden="true"></span>
+  <div class="qin-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <aside class="hero-inscription" data-reveal>
+    <p class="inscription-cn" lang="zh-Hans">
+      {% for line in poetry.living_source.chinese_lines %}
+      {{ line }}{% if not loop.last %}<br>{% endif %}
+      {% endfor %}
+    </p>
+
+    <p class="inscription-en">
+      {% for line in poetry.living_source.english_lines %}
+      {{ line }}{% if not loop.last %}<br>{% endif %}
+      {% endfor %}
+    </p>
+
+    <small>{{ poetry.living_source.source }}</small>
+  </aside>
+
+  <figure class="moon-portrait" data-reveal data-reveal-delay="1" data-parallax>
+    <div class="moon-window">
+      <img src="assets/images/profile.jpg" alt="Portrait of Xiang Ye" width="3840" height="2160">
+    </div>
+    <span class="portrait-motto portrait-motto--top" lang="zh-Hans">志存高远</span>
+    <span class="portrait-motto portrait-motto--bottom" lang="zh-Hans">脚踏实地</span>
+    <figcaption>
+      <span>Bayesian Statistics · Computation · Methodology</span>
+      <small>{{ poetry.motto.english }}</small>
+    </figcaption>
+  </figure>
+
+  <div class="hero-copy" data-reveal data-reveal-delay="2">
+    <p class="eyebrow"><span></span> Bayesian computational statistics</p>
+    <div class="hero-name-lockup">
+      <h1 class="hero-title">Xiang <em>Ye</em></h1>
+      <p class="hero-name-cn" lang="zh-Hans">{{ site.name_cn }}</p>
+    </div>
+    <p class="hero-role">{{ site.role }} · KAUST</p>
+    <p class="hero-summary">
+      Building modern Bayesian methods—from mathematical foundations to practical solutions.
+    </p>
+
+    <div class="hero-actions">
+      <a class="button button--primary" href="#profile">
+        About me <span aria-hidden="true">↓</span>
+      </a>
+      <a class="button button--quiet" href="files/cv.pdf" target="_blank" rel="noopener">
+        Curriculum vitae <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <div class="social-row" aria-label="Professional links">
+      {% for link in social_links %}
+      <a href="{{ link.href }}" {% if link.external %} target="_blank" rel="noopener" {% endif %}>
+        {{ link.label }} <span aria-hidden="true">↗</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <aside class="question-index" data-reveal data-reveal-delay="2">
+    <span>Current questions</span>
+    {% for question in current_questions %}<p>{{ question }}</p>{% endfor %}
+  </aside>
+
+  <div class="hero-scroll" aria-hidden="true"><span>Scroll to read</span><i></i></div>
+</section>
+
+<!-- Compact editorial index: a practical strength retained from the finished site. -->
+<section class="research-ribbon" aria-label="Research interests">
+  <div class="research-ribbon__title">
+    <span lang="zh-Hans">研究札记</span>
+    <h2>Research notes</h2>
+  </div>
+  {% for interest in research_interests %}
+  <a href="research.html">
+    <span>{{ interest.number }}</span>
+    <strong>{{ interest.title }}</strong>
+    <span aria-hidden="true">↗</span>
+  </a>
+  {% endfor %}
+</section>
+
+<section class="profile-section paper-section section-shell" id="profile">
+  <div class="section-heading" data-reveal>
+    <p class="section-number">〇一</p>
+    <div>
+      <p class="section-kicker">About me · 自述</p>
+      <h2>Bayesian methods with structure,<br>clarity, and purpose.</h2>
+    </div>
+  </div>
+
+  <div class="profile-grid">
+    <div class="profile-prose" data-reveal>
+      {% for paragraph in intro_paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+      <p>
+        I am always happy to discuss new ideas and potential collaborations,
+        especially around statistical methodology, Bayesian computation, and
+        related interdisciplinary problems.
+      </p>
+    </div>
+
+    <aside class="verse-card" data-reveal data-reveal-delay="1">
+      <span class="verse-card__seal" aria-hidden="true">志</span>
+
+      <blockquote>
+        <p lang="zh-Hans">{{ poetry.motto.chinese }}</p>
+        <footer>{{ poetry.motto.english }}</footer>
+      </blockquote>
+
+      <div class="availability-dot">
+        <i aria-hidden="true"></i>
+        Open to collaboration
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="interests-section section-shell">
+  <div class="section-heading" data-reveal>
+    <p class="section-number">〇二</p>
+    <div>
+      <p class="section-kicker">Research interests · 志趣</p>
+      <h2>My research interests.</h2>
+    </div>
+  </div>
+
+  <div class="interest-grid">
+    {% for interest in research_interests %}
+    <article class="interest-card" data-reveal data-reveal-delay="{{ loop.index0 % 3 }}">
+      <span class="interest-number">{{ interest.number }}</span>
+      <h3>{{ interest.title }}</h3>
+      <p>{{ interest.text }}</p>
+      <span class="card-line" aria-hidden="true"></span>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="education-section paper-section section-shell">
+  <div class="section-heading" data-reveal>
+    <p class="section-number">〇三</p>
+    <div>
+      <p class="section-kicker">Education · 问学</p>
+      <h2>My academic journey.</h2>
+    </div>
+  </div>
+
+  <div class="education-layout">
+    <div class="education-list">
+      {% for item in education %}
+      <article class="education-item" data-reveal>
+        <time>{{ item.years }}</time>
+        <div>
+          <h3>{{ item.degree }}</h3>
+          <p>{{ item.institution }}</p>
+          <span>{{ item.place }}</span>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <aside class="verse-card education-verse" data-reveal data-reveal-delay="1">
+      <span class="verse-card__seal" aria-hidden="true">求</span>
+
+      <blockquote>
+        <p lang="zh-Hans">
+          {% for line in poetry.long_road.chinese_lines %}
+          {{ line }}{% if not loop.last %}<br>{% endif %}
+          {% endfor %}
+        </p>
+
+        <footer>
+          {% for line in poetry.long_road.english_lines %}
+          {{ line }}{% if not loop.last %}<br>{% endif %}
+          {% endfor %}
+        </footer>
+      </blockquote>
+
+      <small>{{ poetry.long_road.source }}</small>
+    </aside>
+  </div>
+</section>
+
+<section class="experience-section section-shell">
+  <div class="section-heading" data-reveal>
+    <p class="section-number">〇四</p>
+    <div>
+      <p class="section-kicker">Professional experience · 践履</p>
+      <h2>My work experience.</h2>
+    </div>
+  </div>
+
+  <div class="experience-layout">
+    <div class="experience-list">
+      {% for item in experience %}
+      <article class="experience-item" data-reveal>
+        <time>{{ item.year }}</time>
+
+        <div>
+          <h3>{{ item.role }}</h3>
+          <p>{{ item.organisation }}</p>
+          <span>{{ item.place }}</span>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <aside class="verse-card experience-verse" data-reveal data-reveal-delay="1">
+      <span class="verse-card__seal" aria-hidden="true">践</span>
+
+      <blockquote>
+        <p lang="zh-Hans">
+          {% for line in poetry.practice.chinese_lines %}
+          {{ line }}{% if not loop.last %}<br>{% endif %}
+          {% endfor %}
+        </p>
+
+        <footer>
+          {% for line in poetry.practice.english_lines %}
+          {{ line }}{% if not loop.last %}<br>{% endif %}
+          {% endfor %}
+        </footer>
+      </blockquote>
+
+      <small>{{ poetry.practice.source }}</small>
+    </aside>
+  </div>
+</section>
+
+<section class="closing-panel section-shell" data-reveal>
+  <div class="closing-rule" aria-hidden="true">
+    <span></span><i></i><span></span>
+  </div>
+
+  <p class="section-kicker">Explore · 一览</p>
+
+  <h2>Continue through my research,<br>writing, and journey.</h2>
+
+  <nav class="closing-nav" aria-label="Explore the rest of the site">
+    {% for item in navigation %}
+    {% if item.key != "home" %}
+    <a class="closing-nav__link" href="{{ item.href }}">
+      <span>{{ item.label }}</span>
+      <i aria-hidden="true">↗</i>
+    </a>
+    {% endif %}
+    {% endfor %}
+  </nav>
+</section>
+{% endblock %}

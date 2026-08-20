@@ -1,0 +1,59 @@
+name: Sync Google Scholar publications
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: google-scholar-publications
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install website dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Synchronize Google Scholar
+        run: python scripts/sync_scholar.py
+
+      - name: Detect publication changes
+        id: publication_changes
+        run: |
+          if git diff --quiet -- data/publications.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Google Scholar has no publication changes."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Rebuild and validate the site
+        if: steps.publication_changes.outputs.changed == 'true'
+        run: |
+          python build.py
+          python validate.py
+
+      - name: Commit a changed publication list
+        if: steps.publication_changes.outputs.changed == 'true'
+        run: |
+          git add data/publications.json docs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update publications from Google Scholar"
+          git push
