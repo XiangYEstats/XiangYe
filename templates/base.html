@@ -7,12 +7,16 @@
   <meta name="description" content="{{ page.description }}">
   <meta name="author" content="{{ site.name }}">
   <meta name="theme-color" content="#dce4dc">
-  <meta property="og:type" content="website">
+  <link rel="canonical" href="{{ base_url }}/{{ page.output }}">
+  <meta property="og:type" content="{{ page.og_type|default('website') }}">
   <meta property="og:title"
     content="{{ site.name }}{% if page.active == 'home' %} — Bayesian Statistics &amp; Research{% else %} — {{ page.title }}{% endif %}">
   <meta property="og:description" content="{{ page.description }}">
+  {% if not page.is_note|default(false) %}
   <meta property="og:image" content="{{ base_url }}/assets/images/profile.jpg">
+  {% endif %}
   <meta property="og:url" content="{{ base_url }}/{{ page.output }}">
+  {% if page.published_time|default(false) %}<meta property="article:published_time" content="{{ page.published_time }}">{% endif %}
   <title>{{ site.name }}{% if page.active == "home" %} — Bayesian Statistics &amp; Research{% else %} — {{ page.title
     }}{% endif %}</title>
 
@@ -29,7 +33,7 @@
       /* Celadon daylight remains the safe default. */
     }
   </script>
-  <link rel="stylesheet" href="assets/css/site.css?v=20260820">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260902">
 </head>
 
 <body data-page="{{ page.active }}">
@@ -64,6 +68,14 @@
         <a class="cv-link" href="files/cv.pdf" target="_blank" rel="noopener">
           Download CV <span aria-hidden="true">↗</span>
         </a>
+        <button class="like-toggle" type="button" aria-label="Like this website" aria-pressed="false"
+          title="Like this website" data-like-toggle data-like-endpoint="{{ site.like_api_url }}">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path>
+          </svg>
+          <span class="like-count" aria-hidden="true" data-like-count>—</span>
+        </button>
+        <span class="visually-hidden" aria-live="polite" data-like-status></span>
         <button class="theme-toggle" type="button" aria-label="Use ink theme" data-theme-toggle>
           <span class="theme-toggle__light" aria-hidden="true">☼</span>
           <span class="theme-toggle__ink" aria-hidden="true">墨</span>
@@ -106,7 +118,7 @@
     <span aria-hidden="true">↑</span>
   </button>
 
-  <script src="assets/js/site.js?v=20260820" defer></script>
+  <script src="assets/js/site.js?v=20260902" defer></script>
 </body>
 
 </html>

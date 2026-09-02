@@ -21,12 +21,17 @@ SITE = {
     "github": "https://github.com/XiangYEstats",
     "scholar": "https://scholar.google.com/citations?user=08io_8cAAAAJ&hl=en&oi=sra",
     "linkedin": "https://www.linkedin.com/in/xiang-ye-228648191/",
+    # After deploying the small counter in ``like-counter/``, paste its
+    # public ``/likes`` endpoint here. An empty value keeps the heart local.
+    "like_api_url": "",
 }
 
 NAVIGATION = [
     {"key": "home", "label": "Home", "href": "index.html"},
     {"key": "research", "label": "Research", "href": "research.html"},
     {"key": "publications", "label": "Publications", "href": "publications.html"},
+    {"key": "resources", "label": "Resources", "href": "resources.html"},
+    {"key": "notes", "label": "Notes", "href": "notes.html"},
     {"key": "activity", "label": "Activity", "href": "activity.html"},
     {"key": "about", "label": "About", "href": "about_me.html"},
     {"key": "contact", "label": "Contact", "href": "contact.html"},
@@ -97,6 +102,30 @@ POETRY = {
         ],
         "source": "The Doctrine of the Mean · 《礼记·中庸》",
     },
+    # Resources page
+    "tools_for_work": {
+        "chinese_lines": [
+            "工欲善其事，",
+            "必先利其器。",
+        ],
+        "english_lines": [
+            "To do good work,",
+            "one must first sharpen one's tools.",
+        ],
+        "source": "Confucius · 孔子 · 《论语·卫灵公》",
+    },
+    # Notes page
+    "notes_and_writing": {
+        "chinese_lines": [
+            "读书破万卷，",
+            "下笔如有神。",
+        ],
+        "english_lines": [
+            "Read through ten thousand volumes;",
+            "then the brush moves as if inspired.",
+        ],
+        "source": "Du Fu · 杜甫 · 《奉赠韦左丞丈二十二韵》",
+    },
     # Education
     "long_road": {
         "chinese_lines": [
@@ -159,13 +188,9 @@ POETRY = {
     },
 }
 
-# Three concise questions in the homepage's editorial index.  They act as a
-# compact statement of research character, not as navigation.
-CURRENT_QUESTIONS = [
-    "How can priors stabilize and improve inference?",
-    "How can Bayesian methods improve reasoning under uncertainty in deep learning?",
-    "How can Bayesian inference be both fast and accurate?",
-]
+# Add questions here whenever they are ready.  The entire homepage panel is
+# hidden while this list is empty and appears automatically after the rebuild.
+CURRENT_QUESTIONS = []
 
 INTRO_PARAGRAPHS = [
     (
@@ -257,9 +282,10 @@ RESEARCH_INTERESTS = [
 # RESEARCH PAGE
 # ---------------------------------------------------------------------------
 # Each item below is one research-direction window. Add a URL to ``href`` when
-# its dedicated page is ready; until then, the direction and its projects are
-# deliberately presented as non-clickable editorial cards. Related papers can
-# be added to ``articles`` with the same optional ``href`` field.
+# its dedicated website is ready; a compact "Website" button then appears next
+# to the direction title. Related papers can be added to ``articles`` and
+# optional learning material can be added to ``tutorials``. Each record accepts
+# an optional ``href``; entries without one remain readable, non-clickable text.
 RESEARCH_DIRECTIONS = [
     {
         "number": "01",
@@ -303,8 +329,31 @@ RESEARCH_DIRECTIONS = [
             },
         ],
         "articles": [],
+        "tutorials": [
+            {
+                "title": "A first look at circular data",
+                "description": (
+                    "Temporary preview entry; the complete tutorial and its "
+                    "materials will be linked here later."
+                ),
+                "href": None,
+            },
+        ],
     },
 ]
+
+# ---------------------------------------------------------------------------
+# RESOURCES PAGE
+# ---------------------------------------------------------------------------
+# Packages are the main focus of the Resources page.  Add one dictionary per
+# package; ``href`` should point to its documentation, repository, or website.
+# ``language`` and ``status`` are optional short labels.
+PACKAGES = []
+
+# These are general tutorials that do not belong to one research direction.
+# Direction-specific tutorials should instead be added to the matching
+# ``RESEARCH_DIRECTIONS`` item above.
+RESOURCE_TUTORIALS = []
 
 TOOLS = ["R", "INLA", "Stan", "Python", "C++", "MATLAB"]
 

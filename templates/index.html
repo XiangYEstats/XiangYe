@@ -33,17 +33,16 @@
     </div>
     <span class="portrait-motto portrait-motto--top" lang="zh-Hans">志存高远</span>
     <span class="portrait-motto portrait-motto--bottom" lang="zh-Hans">脚踏实地</span>
-    <figcaption>
-      <span>Bayesian Statistics · Computation · Methodology</span>
-      <small>{{ poetry.motto.english }}</small>
-    </figcaption>
+    <figcaption>{{ poetry.motto.english }}</figcaption>
   </figure>
 
   <div class="hero-copy" data-reveal data-reveal-delay="2">
     <p class="eyebrow"><span></span> Bayesian computational statistics</p>
     <div class="hero-name-lockup">
       <h1 class="hero-title">Xiang <em>Ye</em></h1>
-      <p class="hero-name-cn" lang="zh-Hans">{{ site.name_cn }}</p>
+      <span class="hero-name-cn" lang="zh-Hans" role="img" aria-label="{{ site.name_cn }}">
+        <span class="hero-name-cn__art" aria-hidden="true"></span>
+      </span>
     </div>
     <p class="hero-role">{{ site.role }} · KAUST</p>
     <p class="hero-summary">
@@ -68,65 +67,76 @@
     </div>
   </div>
 
-  <aside class="question-index" data-reveal data-reveal-delay="2">
+  {% if current_questions %}
+  <aside class="question-index question-index--{{ current_questions|length }}" data-reveal data-reveal-delay="2">
     <span>Current questions</span>
     {% for question in current_questions %}<p>{{ question }}</p>{% endfor %}
   </aside>
+  {% endif %}
 
   <div class="hero-scroll" aria-hidden="true"><span>Scroll to read</span><i></i></div>
 </section>
 
-<!-- Compact editorial index: a practical strength retained from the finished site. -->
-<section class="research-ribbon" aria-label="Research interests">
-  <div class="research-ribbon__title">
-    <span lang="zh-Hans">研究札记</span>
-    <h2>Research notes</h2>
+<!-- The newest five Markdown notes appear here automatically after a rebuild. -->
+<section class="notes-ribbon" aria-label="Latest notes">
+  <div class="notes-ribbon__title">
+    <span lang="zh-Hans">随笔</span>
+    <h2>Latest notes</h2>
   </div>
-  {% for interest in research_interests %}
-  <a href="research.html">
-    <span>{{ interest.number }}</span>
-    <strong>{{ interest.title }}</strong>
+  {% if latest_notes %}
+  {% for note in latest_notes %}
+  <a href="{{ note.output }}">
+    <time datetime="{{ note.date_iso }}">{{ note.date_label }}</time>
+    <strong>{{ note.title }}</strong>
     <span aria-hidden="true">↗</span>
   </a>
   {% endfor %}
+  {% else %}
+  <div class="notes-ribbon__empty" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i>
+  </div>
+  {% endif %}
 </section>
 
-<section class="profile-section paper-section section-shell" id="profile">
-  <div class="section-heading" data-reveal>
-    <p class="section-number">〇一</p>
-    <div>
-      <p class="section-kicker">About me · 自述</p>
-      <h2>Bayesian methods with structure,<br>clarity, and purpose.</h2>
-    </div>
-  </div>
-
-  <div class="profile-grid">
-    <div class="profile-prose" data-reveal>
-      {% for paragraph in intro_paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
-      <p>
-        I am always happy to discuss new ideas and potential collaborations,
-        especially around statistical methodology, Bayesian computation, and
-        related interdisciplinary problems.
-      </p>
-    </div>
-
-    <aside class="verse-card" data-reveal data-reveal-delay="1">
-      <span class="verse-card__seal" aria-hidden="true">志</span>
-
-      <blockquote>
-        <p lang="zh-Hans">{{ poetry.motto.chinese }}</p>
-        <footer>{{ poetry.motto.english }}</footer>
-      </blockquote>
-
-      <div class="availability-dot">
-        <i aria-hidden="true"></i>
-        Open to collaboration
+<section class="profile-section paper-section" id="profile">
+  <div class="section-shell">
+    <div class="section-heading" data-reveal>
+      <p class="section-number">〇一</p>
+      <div>
+        <p class="section-kicker">About me · 自述</p>
+        <h2>Bayesian methods with structure,<br>clarity, and purpose.</h2>
       </div>
-    </aside>
+    </div>
+
+    <div class="profile-grid">
+      <div class="profile-prose" data-reveal>
+        {% for paragraph in intro_paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+        <p>
+          I am always happy to discuss new ideas and potential collaborations,
+          especially around statistical methodology, Bayesian computation, and
+          related interdisciplinary problems.
+        </p>
+      </div>
+
+      <aside class="verse-card" data-reveal data-reveal-delay="1">
+        <span class="verse-card__seal" aria-hidden="true">志</span>
+
+        <blockquote>
+          <p lang="zh-Hans">{{ poetry.motto.chinese }}</p>
+          <footer>{{ poetry.motto.english }}</footer>
+        </blockquote>
+
+        <div class="availability-dot">
+          <i aria-hidden="true"></i>
+          Open to collaboration
+        </div>
+      </aside>
+    </div>
   </div>
 </section>
 
 <section class="interests-section section-shell">
+  <div class="section-divider" aria-hidden="true"><span></span><i></i><span></span></div>
   <div class="section-heading" data-reveal>
     <p class="section-number">〇二</p>
     <div>
@@ -147,52 +157,55 @@
   </div>
 </section>
 
-<section class="education-section paper-section section-shell">
-  <div class="section-heading" data-reveal>
-    <p class="section-number">〇三</p>
-    <div>
-      <p class="section-kicker">Education · 问学</p>
-      <h2>My academic journey.</h2>
-    </div>
-  </div>
-
-  <div class="education-layout">
-    <div class="education-list">
-      {% for item in education %}
-      <article class="education-item" data-reveal>
-        <time>{{ item.years }}</time>
-        <div>
-          <h3>{{ item.degree }}</h3>
-          <p>{{ item.institution }}</p>
-          <span>{{ item.place }}</span>
-        </div>
-      </article>
-      {% endfor %}
+<section class="education-section paper-section">
+  <div class="section-shell">
+    <div class="section-heading" data-reveal>
+      <p class="section-number">〇三</p>
+      <div>
+        <p class="section-kicker">Education · 问学</p>
+        <h2>My academic journey.</h2>
+      </div>
     </div>
 
-    <aside class="verse-card education-verse" data-reveal data-reveal-delay="1">
-      <span class="verse-card__seal" aria-hidden="true">求</span>
+    <div class="education-layout">
+      <div class="education-list">
+        {% for item in education %}
+        <article class="education-item" data-reveal>
+          <time>{{ item.years }}</time>
+          <div>
+            <h3>{{ item.degree }}</h3>
+            <p>{{ item.institution }}</p>
+            <span>{{ item.place }}</span>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
 
-      <blockquote>
-        <p lang="zh-Hans">
-          {% for line in poetry.long_road.chinese_lines %}
-          {{ line }}{% if not loop.last %}<br>{% endif %}
-          {% endfor %}
-        </p>
+      <aside class="verse-card education-verse" data-reveal data-reveal-delay="1">
+        <span class="verse-card__seal" aria-hidden="true">求</span>
 
-        <footer>
-          {% for line in poetry.long_road.english_lines %}
-          {{ line }}{% if not loop.last %}<br>{% endif %}
-          {% endfor %}
-        </footer>
-      </blockquote>
+        <blockquote>
+          <p lang="zh-Hans">
+            {% for line in poetry.long_road.chinese_lines %}
+            {{ line }}{% if not loop.last %}<br>{% endif %}
+            {% endfor %}
+          </p>
 
-      <small>{{ poetry.long_road.source }}</small>
-    </aside>
+          <footer>
+            {% for line in poetry.long_road.english_lines %}
+            {{ line }}{% if not loop.last %}<br>{% endif %}
+            {% endfor %}
+          </footer>
+        </blockquote>
+
+        <small>{{ poetry.long_road.source }}</small>
+      </aside>
+    </div>
   </div>
 </section>
 
 <section class="experience-section section-shell">
+  <div class="section-divider" aria-hidden="true"><span></span><i></i><span></span></div>
   <div class="section-heading" data-reveal>
     <p class="section-number">〇四</p>
     <div>

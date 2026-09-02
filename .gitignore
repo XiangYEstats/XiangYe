@@ -3,10 +3,12 @@ __pycache__/
 *.py[cod]
 .DS_Store
 .idea/
+node_modules/
+.wrangler/
+.dev.vars
 
 # Legacy RStudio state is no longer part of this project.
 .Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
-

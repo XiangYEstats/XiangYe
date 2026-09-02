@@ -3,8 +3,7 @@
 {% for page in pages %}
   <url>
     <loc>{{ base_url }}/{{ page.output }}</loc>
-    <lastmod>{{ last_modified }}</lastmod>
+    <lastmod>{{ page.last_modified|default(last_modified) }}</lastmod>
   </url>
 {% endfor %}
 </urlset>
-

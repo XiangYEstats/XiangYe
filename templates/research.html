@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Research directions, projects, and articles are maintained in
-     RESEARCH_DIRECTIONS inside site_data.py. Optional href values turn a
-     direction, project, or article into a link when its page is ready. -->
+<!-- Research directions, projects, articles, and tutorials are maintained in
+     RESEARCH_DIRECTIONS inside site_data.py. A direction href adds the compact
+     website button beside its title. -->
 <section class="page-hero page-hero--research section-shell">
   <div data-reveal>
     <p class="eyebrow"><span></span> Research · 研究</p>
@@ -39,20 +39,19 @@
       <header class="research-direction__header">
         <span class="direction-seal" aria-hidden="true">{{ direction.mark }}</span>
 
-        {% if direction.href %}
-        <a class="direction-heading direction-heading--linked" href="{{ direction.href }}">
-          {% else %}
-          <div class="direction-heading">
-            {% endif %}
-            <p>{{ direction.number }} · {{ direction.title_cn }}</p>
+        <div class="direction-heading">
+          <p>{{ direction.number }} · {{ direction.title_cn }}</p>
+          <div class="direction-title-row">
             <h2>{{ direction.title }}</h2>
-            <span>{{ direction.summary }}</span>
             {% if direction.href %}
-            <i aria-hidden="true">↗</i>
-        </a>
-        {% else %}
-  </div>
-  {% endif %}
+            <a class="direction-site-button" href="{{ direction.href }}" target="_blank" rel="noopener"
+              aria-label="Visit the {{ direction.title }} website">
+              Website <i aria-hidden="true">↗</i>
+            </a>
+            {% endif %}
+          </div>
+          <span>{{ direction.summary }}</span>
+        </div>
   </header>
 
   <div class="research-projects" aria-label="Projects in {{ direction.title }}">
@@ -86,11 +85,13 @@
     {% for article in direction.articles %}
     <li>
       {% if article.href %}<a href="{{ article.href }}">{% else %}<div>{% endif %}
-          <span>{{ article.year }}</span>
+        <span>{{ article.year }}</span>
+        <div class="related-articles__copy">
           <strong>{{ article.title }}</strong>
           {% if article.venue %}<small>{{ article.venue }}</small>{% endif %}
-          {% if article.href %}<i aria-hidden="true">↗</i>{% endif %}
-          {% if article.href %}</a>{% else %}</div>{% endif %}
+        </div>
+        {% if article.href %}<i aria-hidden="true">↗</i>{% endif %}
+      {% if article.href %}</a>{% else %}</div>{% endif %}
     </li>
     {% endfor %}
   </ol>
@@ -100,6 +101,30 @@
   </p>
   {% endif %}
 </footer>
+
+{% if direction.tutorials %}
+<div class="related-articles related-tutorials">
+  <div class="related-articles__heading">
+    <p>Tutorials</p>
+    <span>习</span>
+  </div>
+
+  <ol class="related-articles__list">
+    {% for tutorial in direction.tutorials %}
+    <li>
+      {% if tutorial.href %}<a href="{{ tutorial.href }}" target="_blank" rel="noopener">{% else %}<div>{% endif %}
+        <span>{{ "%02d"|format(loop.index) }}</span>
+        <div class="related-articles__copy">
+          <strong>{{ tutorial.title }}</strong>
+          {% if tutorial.description %}<small>{{ tutorial.description }}</small>{% endif %}
+        </div>
+        {% if tutorial.href %}<i aria-hidden="true">↗</i>{% endif %}
+      {% if tutorial.href %}</a>{% else %}</div>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</div>
+{% endif %}
 </article>
 {% endfor %}
 </div>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="note-article section-shell">
+  <a class="note-back" href="notes.html">← All notes</a>
+
+  <header class="note-header" data-reveal>
+    <p class="eyebrow"><span></span> Note · 随笔</p>
+    <time datetime="{{ note.date_iso }}">{{ note.date_label }}</time>
+    <h1>{{ note.title }}</h1>
+    <p>{{ note.summary }}</p>
+    {% if note.tags %}
+    <ul aria-label="Topics">
+      {% for tag in note.tags %}<li>{{ tag }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+
+  <div class="note-body" data-reveal>
+    {{ note.body_html|safe }}
+  </div>
+
+  <footer class="note-footer">
+    <a href="notes.html">← Return to Notes</a>
+  </footer>
+</article>
+{% endblock %}
+

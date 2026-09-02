@@ -5,6 +5,7 @@ from __future__ import annotations
 from datetime import date
 import json
 from pathlib import Path
+import re
 import shutil
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -18,9 +19,11 @@ from site_data import (
     INTRO_PARAGRAPHS,
     NAVIGATION,
     CURRENT_QUESTIONS,
+    PACKAGES,
     POETRY,
     RESEARCH_DIRECTIONS,
     RESEARCH_INTERESTS,
+    RESOURCE_TUTORIALS,
     SITE,
     SOCIAL_LINKS,
     TOOLS,
@@ -33,6 +36,7 @@ STATIC_DIR = ROOT / "static"
 FILES_DIR = ROOT / "files"
 OUTPUT_DIR = ROOT / "docs"
 PUBLICATIONS_FILE = ROOT / "data" / "publications.json"
+NOTES_DIR = ROOT / "content" / "notes"
 BASE_URL = "https://xiangyestats.github.io/XiangYe"
 
 
@@ -61,6 +65,24 @@ PAGES = [
         "description": "Publications by Xiang Ye, synchronized from Google Scholar.",
         "mark": "文",
         "verse": "writing",
+    },
+    {
+        "template": "resources.html",
+        "output": "resources.html",
+        "active": "resources",
+        "title": "Resources",
+        "description": "Software packages and tutorials by Xiang Ye.",
+        "mark": "器",
+        "verse": "tools_for_work",
+    },
+    {
+        "template": "notes.html",
+        "output": "notes.html",
+        "active": "notes",
+        "title": "Notes",
+        "description": "Notes on research, learning, methods, and ideas by Xiang Ye.",
+        "mark": "记",
+        "verse": "notes_and_writing",
     },
     {
         "template": "activity.html",
@@ -97,6 +119,74 @@ PAGES = [
         "description": "The requested page could not be found.",
     },
 ]
+
+
+def load_notes() -> list[dict]:
+    """Load dated Markdown notes, newest first.
+
+    Files whose names begin with an underscore are instructional templates and
+    are deliberately ignored.  The Markdown dependency is loaded only when a
+    published note exists, so an empty Notes section remains a valid build.
+    """
+
+    if not NOTES_DIR.is_dir():
+        return []
+
+    source_files = sorted(
+        path for path in NOTES_DIR.glob("*.md") if not path.name.startswith("_")
+    )
+    if not source_files:
+        return []
+
+    try:
+        import markdown
+    except ImportError as error:
+        raise RuntimeError(
+            "Markdown is required when notes are present. Run "
+            "`python -m pip install -r requirements.txt`."
+        ) from error
+
+    notes = []
+    for path in source_files:
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", path.stem):
+            raise ValueError(
+                f"{path}: note filenames must contain lowercase letters, numbers, and hyphens only"
+            )
+
+        converter = markdown.Markdown(extensions=["extra", "meta", "sane_lists"])
+        body_html = converter.convert(path.read_text(encoding="utf-8"))
+        metadata = {
+            key.lower(): values[0].strip()
+            for key, values in converter.Meta.items()
+            if values
+        }
+
+        missing = [key for key in ("title", "date", "summary") if not metadata.get(key)]
+        if missing:
+            missing_fields = ", ".join(missing)
+            raise ValueError(f"{path}: missing note metadata: {missing_fields}")
+
+        try:
+            published = date.fromisoformat(metadata["date"])
+        except ValueError as error:
+            raise ValueError(f"{path}: date must use YYYY-MM-DD") from error
+
+        tags = [tag.strip() for tag in metadata.get("tags", "").split(",") if tag.strip()]
+        notes.append(
+            {
+                "slug": path.stem,
+                "title": metadata["title"],
+                "summary": metadata["summary"],
+                "published": published,
+                "date_iso": published.isoformat(),
+                "date_label": f"{published.strftime('%B')} {published.day}, {published.year}",
+                "tags": tags,
+                "body_html": body_html,
+                "output": f"note-{path.stem}.html",
+            }
+        )
+
+    return sorted(notes, key=lambda note: note["published"], reverse=True)
 
 
 def load_publication_data() -> dict:
@@ -141,6 +231,8 @@ def build() -> None:
     shutil.copytree(STATIC_DIR, OUTPUT_DIR / "assets")
     shutil.copytree(FILES_DIR, OUTPUT_DIR / "files")
 
+    notes = load_notes()
+
     environment = Environment(
         loader=FileSystemLoader(TEMPLATES_DIR),
         autoescape=select_autoescape(["html", "xml"]),
@@ -158,6 +250,10 @@ def build() -> None:
         "education": EDUCATION,
         "research_interests": RESEARCH_INTERESTS,
         "research_directions": RESEARCH_DIRECTIONS,
+        "packages": PACKAGES,
+        "resource_tutorials": RESOURCE_TUTORIALS,
+        "notes": notes,
+        "latest_notes": notes[:5],
         "publication_data": load_publication_data(),
         "scholar_profile_url": SITE["scholar"],
         "tools": TOOLS,
@@ -174,7 +270,24 @@ def build() -> None:
         rendered = template.render(**shared_context, page=page)
         (OUTPUT_DIR / page["output"]).write_text(rendered, encoding="utf-8")
 
-    public_pages = [page for page in PAGES if page["output"] != "404.html"]
+    note_template = environment.get_template("note.html")
+    note_pages = []
+    for note in notes:
+        page = {
+            "output": note["output"],
+            "active": "notes",
+            "title": note["title"],
+            "description": note["summary"],
+            "og_type": "article",
+            "published_time": note["date_iso"],
+            "is_note": True,
+            "last_modified": note["date_iso"],
+        }
+        rendered = note_template.render(**shared_context, page=page, note=note)
+        (OUTPUT_DIR / note["output"]).write_text(rendered, encoding="utf-8")
+        note_pages.append(page)
+
+    public_pages = [page for page in PAGES if page["output"] != "404.html"] + note_pages
     sitemap = environment.get_template("sitemap.xml").render(
         pages=public_pages,
         base_url=BASE_URL,
@@ -187,7 +300,7 @@ def build() -> None:
     )
     (OUTPUT_DIR / ".nojekyll").touch()
 
-    print(f"Built {len(PAGES)} pages in {OUTPUT_DIR}")
+    print(f"Built {len(PAGES) + len(note_pages)} pages in {OUTPUT_DIR}")
 
 
 if __name__ == "__main__":

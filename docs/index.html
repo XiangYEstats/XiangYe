@@ -7,6 +7,7 @@
   <meta name="description" content="Bayesian computational statistician working on latent variable models, principled priors, directional statistics, and scalable inference with INLA.">
   <meta name="author" content="Xiang Ye">
   <meta name="theme-color" content="#dce4dc">
+  <link rel="canonical" href="https://xiangyestats.github.io/XiangYe/index.html">
   <meta property="og:type" content="website">
   <meta property="og:title"
     content="Xiang Ye — Bayesian Statistics &amp; Research">
@@ -28,7 +29,7 @@
       /* Celadon daylight remains the safe default. */
     }
   </script>
-  <link rel="stylesheet" href="assets/css/site.css?v=20260820">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260902">
 </head>
 
 <body data-page="home">
@@ -60,6 +61,12 @@
         <a class="nav-link" href="publications.html" >
           Publications
         </a>
+        <a class="nav-link" href="resources.html" >
+          Resources
+        </a>
+        <a class="nav-link" href="notes.html" >
+          Notes
+        </a>
         <a class="nav-link" href="activity.html" >
           Activity
         </a>
@@ -75,6 +82,14 @@
         <a class="cv-link" href="files/cv.pdf" target="_blank" rel="noopener">
           Download CV <span aria-hidden="true">↗</span>
         </a>
+        <button class="like-toggle" type="button" aria-label="Like this website" aria-pressed="false"
+          title="Like this website" data-like-toggle data-like-endpoint="">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path>
+          </svg>
+          <span class="like-count" aria-hidden="true" data-like-count>—</span>
+        </button>
+        <span class="visually-hidden" aria-live="polite" data-like-status></span>
         <button class="theme-toggle" type="button" aria-label="Use ink theme" data-theme-toggle>
           <span class="theme-toggle__light" aria-hidden="true">☼</span>
           <span class="theme-toggle__ink" aria-hidden="true">墨</span>
@@ -114,17 +129,16 @@
     </div>
     <span class="portrait-motto portrait-motto--top" lang="zh-Hans">志存高远</span>
     <span class="portrait-motto portrait-motto--bottom" lang="zh-Hans">脚踏实地</span>
-    <figcaption>
-      <span>Bayesian Statistics · Computation · Methodology</span>
-      <small>Aim high, stay grounded.</small>
-    </figcaption>
+    <figcaption>Aim high, stay grounded.</figcaption>
   </figure>
 
   <div class="hero-copy" data-reveal data-reveal-delay="2">
     <p class="eyebrow"><span></span> Bayesian computational statistics</p>
     <div class="hero-name-lockup">
       <h1 class="hero-title">Xiang <em>Ye</em></h1>
-      <p class="hero-name-cn" lang="zh-Hans">叶翔</p>
+      <span class="hero-name-cn" lang="zh-Hans" role="img" aria-label="叶翔">
+        <span class="hero-name-cn__art" aria-hidden="true"></span>
+      </span>
     </div>
     <p class="hero-role">PhD Candidate · KAUST</p>
     <p class="hero-summary">
@@ -156,81 +170,59 @@
     </div>
   </div>
 
-  <aside class="question-index" data-reveal data-reveal-delay="2">
-    <span>Current questions</span>
-<p>How can priors stabilize and improve inference?</p><p>How can Bayesian methods improve reasoning under uncertainty in deep learning?</p><p>How can Bayesian inference be both fast and accurate?</p>  </aside>
 
   <div class="hero-scroll" aria-hidden="true"><span>Scroll to read</span><i></i></div>
 </section>
 
-<!-- Compact editorial index: a practical strength retained from the finished site. -->
-<section class="research-ribbon" aria-label="Research interests">
-  <div class="research-ribbon__title">
-    <span lang="zh-Hans">研究札记</span>
-    <h2>Research notes</h2>
+<!-- The newest five Markdown notes appear here automatically after a rebuild. -->
+<section class="notes-ribbon" aria-label="Latest notes">
+  <div class="notes-ribbon__title">
+    <span lang="zh-Hans">随笔</span>
+    <h2>Latest notes</h2>
   </div>
-  <a href="research.html">
-    <span>01</span>
-    <strong>Scalable probabilistic modeling</strong>
-    <span aria-hidden="true">↗</span>
-  </a>
-  <a href="research.html">
-    <span>02</span>
-    <strong>Bayesian deep learning</strong>
-    <span aria-hidden="true">↗</span>
-  </a>
-  <a href="research.html">
-    <span>03</span>
-    <strong>Principled prior specification</strong>
-    <span aria-hidden="true">↗</span>
-  </a>
-  <a href="research.html">
-    <span>04</span>
-    <strong>Uncertainty quantification</strong>
-    <span aria-hidden="true">↗</span>
-  </a>
-  <a href="research.html">
-    <span>05</span>
-    <strong>Directional statistics</strong>
-    <span aria-hidden="true">↗</span>
-  </a>
+  <div class="notes-ribbon__empty" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i>
+  </div>
 </section>
 
-<section class="profile-section paper-section section-shell" id="profile">
-  <div class="section-heading" data-reveal>
-    <p class="section-number">〇一</p>
-    <div>
-      <p class="section-kicker">About me · 自述</p>
-      <h2>Bayesian methods with structure,<br>clarity, and purpose.</h2>
-    </div>
-  </div>
-
-  <div class="profile-grid">
-    <div class="profile-prose" data-reveal>
-<p>I am a PhD candidate in the Bayesian Computational Statistics and Modeling Research Group at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.</p><p>My PhD research focuses on Bayesian latent variable models and joint modelling, from prior specification and model construction to computation and applications. I develop these ideas for directional and circular statistics and implement the resulting methodology for Integrated Nested Laplace Approximation (INLA).</p><p>Looking ahead, I am interested in the theory, methodology, and applications of fast Bayesian inference, particularly for increasingly complex and high-dimensional models. I am also interested in bringing Bayesian ideas into modern deep learning, especially generative models, to improve uncertainty quantification and computational efficiency, while encouraging more structured, transparent, and reliable reasoning.</p>      <p>
-        I am always happy to discuss new ideas and potential collaborations,
-        especially around statistical methodology, Bayesian computation, and
-        related interdisciplinary problems.
-      </p>
-    </div>
-
-    <aside class="verse-card" data-reveal data-reveal-delay="1">
-      <span class="verse-card__seal" aria-hidden="true">志</span>
-
-      <blockquote>
-        <p lang="zh-Hans">志存高远，脚踏实地</p>
-        <footer>Aim high, stay grounded.</footer>
-      </blockquote>
-
-      <div class="availability-dot">
-        <i aria-hidden="true"></i>
-        Open to collaboration
+<section class="profile-section paper-section" id="profile">
+  <div class="section-shell">
+    <div class="section-heading" data-reveal>
+      <p class="section-number">〇一</p>
+      <div>
+        <p class="section-kicker">About me · 自述</p>
+        <h2>Bayesian methods with structure,<br>clarity, and purpose.</h2>
       </div>
-    </aside>
+    </div>
+
+    <div class="profile-grid">
+      <div class="profile-prose" data-reveal>
+<p>I am a PhD candidate in the Bayesian Computational Statistics and Modeling Research Group at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.</p><p>My PhD research focuses on Bayesian latent variable models and joint modelling, from prior specification and model construction to computation and applications. I develop these ideas for directional and circular statistics and implement the resulting methodology for Integrated Nested Laplace Approximation (INLA).</p><p>Looking ahead, I am interested in the theory, methodology, and applications of fast Bayesian inference, particularly for increasingly complex and high-dimensional models. I am also interested in bringing Bayesian ideas into modern deep learning, especially generative models, to improve uncertainty quantification and computational efficiency, while encouraging more structured, transparent, and reliable reasoning.</p>        <p>
+          I am always happy to discuss new ideas and potential collaborations,
+          especially around statistical methodology, Bayesian computation, and
+          related interdisciplinary problems.
+        </p>
+      </div>
+
+      <aside class="verse-card" data-reveal data-reveal-delay="1">
+        <span class="verse-card__seal" aria-hidden="true">志</span>
+
+        <blockquote>
+          <p lang="zh-Hans">志存高远，脚踏实地</p>
+          <footer>Aim high, stay grounded.</footer>
+        </blockquote>
+
+        <div class="availability-dot">
+          <i aria-hidden="true"></i>
+          Open to collaboration
+        </div>
+      </aside>
+    </div>
   </div>
 </section>
 
 <section class="interests-section section-shell">
+  <div class="section-divider" aria-hidden="true"><span></span><i></i><span></span></div>
   <div class="section-heading" data-reveal>
     <p class="section-number">〇二</p>
     <div>
@@ -273,60 +265,63 @@
   </div>
 </section>
 
-<section class="education-section paper-section section-shell">
-  <div class="section-heading" data-reveal>
-    <p class="section-number">〇三</p>
-    <div>
-      <p class="section-kicker">Education · 问学</p>
-      <h2>My academic journey.</h2>
-    </div>
-  </div>
-
-  <div class="education-layout">
-    <div class="education-list">
-      <article class="education-item" data-reveal>
-        <time>2023—2026</time>
-        <div>
-          <h3>PhD in Statistics</h3>
-          <p>King Abdullah University of Science and Technology</p>
-          <span>Jeddah, Saudi Arabia</span>
-        </div>
-      </article>
-      <article class="education-item" data-reveal>
-        <time>2021—2022</time>
-        <div>
-          <h3>MSc in Statistics</h3>
-          <p>Lancaster University</p>
-          <span>Lancaster, United Kingdom</span>
-        </div>
-      </article>
-      <article class="education-item" data-reveal>
-        <time>2017—2021</time>
-        <div>
-          <h3>BSc in Applied Mathematics</h3>
-          <p>University of Liverpool &amp; Xi’an Jiaotong-Liverpool University</p>
-          <span>Suzhou, China</span>
-        </div>
-      </article>
+<section class="education-section paper-section">
+  <div class="section-shell">
+    <div class="section-heading" data-reveal>
+      <p class="section-number">〇三</p>
+      <div>
+        <p class="section-kicker">Education · 问学</p>
+        <h2>My academic journey.</h2>
+      </div>
     </div>
 
-    <aside class="verse-card education-verse" data-reveal data-reveal-delay="1">
-      <span class="verse-card__seal" aria-hidden="true">求</span>
+    <div class="education-layout">
+      <div class="education-list">
+        <article class="education-item" data-reveal>
+          <time>2023—2026</time>
+          <div>
+            <h3>PhD in Statistics</h3>
+            <p>King Abdullah University of Science and Technology</p>
+            <span>Jeddah, Saudi Arabia</span>
+          </div>
+        </article>
+        <article class="education-item" data-reveal>
+          <time>2021—2022</time>
+          <div>
+            <h3>MSc in Statistics</h3>
+            <p>Lancaster University</p>
+            <span>Lancaster, United Kingdom</span>
+          </div>
+        </article>
+        <article class="education-item" data-reveal>
+          <time>2017—2021</time>
+          <div>
+            <h3>BSc in Applied Mathematics</h3>
+            <p>University of Liverpool &amp; Xi’an Jiaotong-Liverpool University</p>
+            <span>Suzhou, China</span>
+          </div>
+        </article>
+      </div>
 
-      <blockquote>
-        <p lang="zh-Hans">
-          路漫漫其修远兮，<br>          吾将上下而求索。        </p>
+      <aside class="verse-card education-verse" data-reveal data-reveal-delay="1">
+        <span class="verse-card__seal" aria-hidden="true">求</span>
 
-        <footer>
-          The road is long, its reaches far;<br>          still I shall seek where answers are.        </footer>
-      </blockquote>
+        <blockquote>
+          <p lang="zh-Hans">
+            路漫漫其修远兮，<br>            吾将上下而求索。          </p>
 
-      <small>Qu Yuan · 屈原 · 《离骚》</small>
-    </aside>
+          <footer>
+            The road is long, its reaches far;<br>            still I shall seek where answers are.          </footer>
+        </blockquote>
+
+        <small>Qu Yuan · 屈原 · 《离骚》</small>
+      </aside>
+    </div>
   </div>
 </section>
 
 <section class="experience-section section-shell">
+  <div class="section-divider" aria-hidden="true"><span></span><i></i><span></span></div>
   <div class="section-heading" data-reveal>
     <p class="section-number">〇四</p>
     <div>
@@ -391,6 +386,14 @@
       <span>Publications</span>
       <i aria-hidden="true">↗</i>
     </a>
+    <a class="closing-nav__link" href="resources.html">
+      <span>Resources</span>
+      <i aria-hidden="true">↗</i>
+    </a>
+    <a class="closing-nav__link" href="notes.html">
+      <span>Notes</span>
+      <i aria-hidden="true">↗</i>
+    </a>
     <a class="closing-nav__link" href="activity.html">
       <span>Activity</span>
       <i aria-hidden="true">↗</i>
@@ -433,7 +436,7 @@
     <span aria-hidden="true">↑</span>
   </button>
 
-  <script src="assets/js/site.js?v=20260820" defer></script>
+  <script src="assets/js/site.js?v=20260902" defer></script>
 </body>
 
 </html>
