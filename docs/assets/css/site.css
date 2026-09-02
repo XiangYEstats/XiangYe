@@ -124,18 +124,6 @@ address {
   transform: translateY(0);
 }
 
-.visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0 0 0 0) !important;
-  white-space: nowrap !important;
-}
-
 .section-shell {
   position: relative;
   width: min(var(--shell), calc(100% - 72px));
@@ -308,7 +296,6 @@ address {
   color: var(--cinnabar);
 }
 
-.like-toggle,
 .theme-toggle {
   position: relative;
   display: grid;
@@ -320,87 +307,6 @@ address {
   border-radius: 999px;
   background: transparent;
   cursor: pointer;
-}
-
-.like-toggle {
-  display: inline-flex;
-  width: auto;
-  min-width: 58px;
-  padding: 0 10px;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  color: var(--cinnabar);
-  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
-}
-
-.like-toggle:hover {
-  border-color: color-mix(in srgb, var(--cinnabar) 62%, transparent);
-  background: color-mix(in srgb, var(--cinnabar) 8%, transparent);
-}
-
-.like-toggle svg {
-  flex: 0 0 auto;
-  width: 15px;
-  height: 15px;
-  overflow: visible;
-}
-
-.like-count {
-  min-width: 1.8ch;
-  padding-left: 7px;
-  border-left: 1px solid var(--line-soft);
-  color: var(--ink-soft);
-  font-size: 10.5px;
-  font-variant-numeric: tabular-nums;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.like-toggle[data-count-state="unavailable"] .like-count,
-.like-toggle[data-count-state="local"] .like-count {
-  color: var(--ink-faint);
-  font-weight: 500;
-}
-
-.like-toggle:disabled {
-  cursor: wait;
-  opacity: 0.62;
-}
-
-.like-toggle path {
-  fill: transparent;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.65;
-  transition: fill 180ms ease, transform 180ms ease;
-  transform-origin: center;
-}
-
-.like-toggle[aria-pressed="true"] {
-  border-color: color-mix(in srgb, var(--cinnabar) 42%, transparent);
-  background: color-mix(in srgb, var(--cinnabar) 11%, transparent);
-}
-
-.like-toggle[aria-pressed="true"] path {
-  fill: currentColor;
-}
-
-.like-toggle[aria-pressed="true"] .like-count {
-  color: var(--cinnabar);
-}
-
-.like-toggle.just-liked path {
-  animation: heart-thank-you 440ms cubic-bezier(.2, .85, .32, 1.3);
-}
-
-@keyframes heart-thank-you {
-  0%, 100% { transform: scale(1); }
-  45% { transform: scale(1.24); }
 }
 
 .theme-toggle span {

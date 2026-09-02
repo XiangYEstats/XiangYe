@@ -21,9 +21,6 @@ SITE = {
     "github": "https://github.com/XiangYEstats",
     "scholar": "https://scholar.google.com/citations?user=08io_8cAAAAJ&hl=en&oi=sra",
     "linkedin": "https://www.linkedin.com/in/xiang-ye-228648191/",
-    # After deploying the small counter in ``like-counter/``, paste its
-    # public ``/likes`` endpoint here. An empty value keeps the heart local.
-    "like_api_url": "",
 }
 
 NAVIGATION = [

@@ -95,7 +95,7 @@ Most future updates need only one or two files:
 | Research / Resources / Notes / Activity / About / Contact structure | matching file under `templates/` |
 | Celadon, paper, ink, and cinnabar colours | top of `static/css/site.css` → `:root` |
 | Spacing, typography, responsive layout | labelled sections in `static/css/site.css` |
-| Theme toggle, like button, menu, reveal, portrait motion | `static/js/site.js` |
+| Theme toggle, menu, reveal, portrait motion | `static/js/site.js` |
 | Portrait | `static/images/profile.jpg` |
 | Vertical Chinese-name calligraphy | `static/images/identity/xiang-ye-calligraphy.png` |
 | CV | `files/cv.pdf` |
@@ -173,31 +173,6 @@ Notes are ordinary Markdown files, similar to small blog posts:
 The Notes archive and individual note page are generated automatically. Notes
 are sorted by date, and the newest five appear in the homepage Notes ribbon.
 When there are no notes, both layouts remain in place without dummy entries.
-
-The header heart remembers a visitor's choice in that browser. When the shared
-counter below is connected, its number is the total across visitors rather than
-a device-local number.
-
-## Enable the shared website-like count
-
-The static GitHub Pages site cannot write a shared number by itself. The
-`like-counter/` folder contains a small Cloudflare Worker and D1 database for
-the count. It stores a random browser identifier—not a name, email address, or
-IP address—so the same browser contributes at most one active like.
-
-1. Sign in to a Cloudflare account, then from `like-counter/` run
-   `npx wrangler@latest login`.
-2. Run `npx wrangler@latest d1 create xiangye-like-counter` and paste the
-   returned database ID into `like-counter/wrangler.jsonc`.
-3. Run `npx wrangler@latest d1 execute xiangye-like-counter --remote --file=schema.sql`.
-4. Run `npx wrangler@latest deploy` and copy the resulting Worker address.
-5. Add `/likes` to that address and paste it into `SITE["like_api_url"]` in
-   `site_data.py`, then rebuild and validate the website.
-
-The Worker accepts requests only from the published GitHub Pages origin and
-uses a small burst limit. Like any anonymous public counter, it discourages
-ordinary duplicate clicks but cannot prove that every browser belongs to a
-different human.
 
 ## Site pages
 
