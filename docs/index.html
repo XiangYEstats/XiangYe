@@ -1,39 +1,49 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" data-language="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bayesian computational statistician working on latent variable models, principled priors, directional statistics, and scalable inference with INLA.">
+  <meta name="description" content="Bayesian computational statistician working on latent variable models, principled priors, directional statistics, and scalable inference with INLA." data-content-en="Bayesian computational statistician working on latent variable models, principled priors, directional statistics, and scalable inference with INLA."
+    data-content-zh="专注于贝叶斯计算统计，研究方向包括潜变量模型、有理论依据的先验构建、方向统计，以及基于 INLA 的可扩展推断。">
   <meta name="author" content="Xiang Ye">
   <meta name="theme-color" content="#dce4dc">
   <link rel="canonical" href="https://xiangyestats.github.io/XiangYe/index.html">
   <meta property="og:type" content="website">
-  <meta property="og:title"
-    content="Xiang Ye — Bayesian Statistics &amp; Research">
-  <meta property="og:description" content="Bayesian computational statistician working on latent variable models, principled priors, directional statistics, and scalable inference with INLA.">
+  <meta property="og:title" content="Xiang Ye — Bayesian Statistics &amp; Research" data-content-en="Xiang Ye — Bayesian Statistics &amp; Research"
+    data-content-zh="叶翔 — 贝叶斯统计与研究">
+  <meta property="og:description" content="Bayesian computational statistician working on latent variable models, principled priors, directional statistics, and scalable inference with INLA." data-content-en="Bayesian computational statistician working on latent variable models, principled priors, directional statistics, and scalable inference with INLA."
+    data-content-zh="专注于贝叶斯计算统计，研究方向包括潜变量模型、有理论依据的先验构建、方向统计，以及基于 INLA 的可扩展推断。">
+  <meta property="og:locale" content="en_US" data-content-en="en_US" data-content-zh="zh_CN">
+  <meta property="og:locale:alternate" content="zh_CN" data-content-en="zh_CN" data-content-zh="en_US">
   <meta property="og:image" content="https://xiangyestats.github.io/XiangYe/assets/images/profile.jpg">
   <meta property="og:url" content="https://xiangyestats.github.io/XiangYe/index.html">
-  <title>Xiang Ye — Bayesian Statistics &amp; Research</title>
+  <title data-title-en="Xiang Ye — Bayesian Statistics &amp; Research" data-title-zh="叶翔 — 贝叶斯统计与研究">Xiang Ye — Bayesian Statistics &amp; Research</title>
 
   <!-- Apply the saved palette before the page paints, preventing a flash. -->
   <script>
     document.documentElement.classList.add("js");
     try {
+      const root = document.documentElement;
       const savedTheme = localStorage.getItem("xiangye-theme");
       if (savedTheme === "ink" || savedTheme === "light" || savedTheme === "night") {
         /* "night" migrates the preference used by the previous design. */
-        document.documentElement.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+        root.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+      }
+      const savedLanguage = localStorage.getItem("xiangye-language");
+      if (savedLanguage === "zh") {
+        root.dataset.language = "zh";
+        root.lang = "zh-Hans";
       }
     } catch (error) {
       /* Celadon daylight remains the safe default. */
     }
   </script>
-  <link rel="stylesheet" href="assets/css/site.css?v=20260902b">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260903b">
 </head>
 
 <body data-page="home">
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content"><span data-language-content="en" lang="en">Skip to content</span><span data-language-content="zh" lang="zh-Hans">跳至主要内容</span></a>
 
   <!-- Purely decorative Southern Song layers: celadon crackle and qin strings. -->
   <div class="celadon-crackle" aria-hidden="true"></div>
@@ -42,46 +52,53 @@
 
   <header class="site-header" data-header>
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Xiang Ye — home">
+      <a class="brand" href="index.html" aria-label="Xiang Ye — home"
+        data-label-en="Xiang Ye — home" data-label-zh="叶翔 — 首页">
         <!-- Edit the seal character here if the family mark ever changes. -->
         <span class="brand-seal" aria-hidden="true">葉</span>
         <span class="brand-wordmark">
-          <strong>Xiang Ye</strong>
-          <small>Bayesian · KAUST</small>
+          <strong><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span></strong>
+          <small><span data-language-content="en" lang="en">Bayesian · KAUST</span><span data-language-content="zh" lang="zh-Hans">贝叶斯 · KAUST</span></small>
         </span>
       </a>
 
-      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation"
+        data-label-en="Primary navigation" data-label-zh="主导航" data-navigation>
         <a class="nav-link is-active" href="index.html"  aria-current="page" >
-          Home
+          <span data-language-content="en" lang="en">Home</span><span data-language-content="zh" lang="zh-Hans">首页</span>
         </a>
         <a class="nav-link" href="research.html" >
-          Research
+          <span data-language-content="en" lang="en">Research</span><span data-language-content="zh" lang="zh-Hans">研究</span>
         </a>
         <a class="nav-link" href="publications.html" >
-          Publications
+          <span data-language-content="en" lang="en">Publications</span><span data-language-content="zh" lang="zh-Hans">学术论文</span>
         </a>
         <a class="nav-link" href="resources.html" >
-          Resources
+          <span data-language-content="en" lang="en">Resources</span><span data-language-content="zh" lang="zh-Hans">资源</span>
         </a>
         <a class="nav-link" href="notes.html" >
-          Notes
+          <span data-language-content="en" lang="en">Notes</span><span data-language-content="zh" lang="zh-Hans">随笔</span>
         </a>
         <a class="nav-link" href="activity.html" >
-          Activity
+          <span data-language-content="en" lang="en">Activity</span><span data-language-content="zh" lang="zh-Hans">学术活动</span>
         </a>
         <a class="nav-link" href="about_me.html" >
-          About
+          <span data-language-content="en" lang="en">About</span><span data-language-content="zh" lang="zh-Hans">研究之外</span>
         </a>
         <a class="nav-link" href="contact.html" >
-          Contact
+          <span data-language-content="en" lang="en">Contact</span><span data-language-content="zh" lang="zh-Hans">联系</span>
         </a>
       </nav>
 
       <div class="header-actions">
         <a class="cv-link" href="files/cv.pdf" target="_blank" rel="noopener">
-          Download CV <span aria-hidden="true">↗</span>
+          <span data-language-content="en" lang="en">View CV</span><span data-language-content="zh" lang="zh-Hans">查看简历</span> <span aria-hidden="true">↗</span>
         </a>
+        <button class="language-toggle" type="button" aria-label="Switch site language to Chinese"
+          data-language-toggle>
+          <span data-language-content="en" lang="zh-Hans">中文</span>
+          <span data-language-content="zh" lang="en">EN</span>
+        </button>
         <button class="theme-toggle" type="button" aria-label="Use ink theme" data-theme-toggle>
           <span class="theme-toggle__light" aria-hidden="true">☼</span>
           <span class="theme-toggle__ink" aria-hidden="true">墨</span>
@@ -109,7 +126,7 @@
     <p class="inscription-cn" lang="zh-Hans">
       问渠哪得清如许？<br>      为有源头活水来。    </p>
 
-    <p class="inscription-en">
+    <p class="inscription-en" lang="en">
       How does the channel stay so clear?<br>      From its living source, fresh waters appear.    </p>
 
     <small>Zhu Xi · 朱熹 · 《观书有感二首·其一》</small>
@@ -117,63 +134,69 @@
 
   <figure class="moon-portrait" data-reveal data-reveal-delay="1" data-parallax>
     <div class="moon-window">
-      <img src="assets/images/profile.jpg" alt="Portrait of Xiang Ye" width="3840" height="2160">
+      <img src="assets/images/profile.jpg" alt="Portrait of Xiang Ye" data-alt-en="Portrait of Xiang Ye"
+        data-alt-zh="叶翔肖像" width="3840" height="2160">
     </div>
     <span class="portrait-motto portrait-motto--top" lang="zh-Hans">志存高远</span>
     <span class="portrait-motto portrait-motto--bottom" lang="zh-Hans">脚踏实地</span>
-    <figcaption>Aim high, stay grounded.</figcaption>
+    <figcaption><span data-language-content="en" lang="en">Aim high, stay grounded.</span><span data-language-content="zh" lang="zh-Hans">志存高远，脚踏实地</span></figcaption>
   </figure>
 
   <div class="hero-copy" data-reveal data-reveal-delay="2">
-    <p class="eyebrow"><span></span> Bayesian computational statistics</p>
+    <p class="eyebrow"><span></span> <span data-language-content="en" lang="en">Bayesian computational statistics</span><span data-language-content="zh" lang="zh-Hans">贝叶斯计算统计</span></p>
     <div class="hero-name-lockup">
-      <h1 class="hero-title">Xiang <em>Ye</em></h1>
+      <h1 class="hero-title" lang="en">Xiang <em>Ye</em></h1>
       <span class="hero-name-cn" lang="zh-Hans" role="img" aria-label="叶翔">
         <span class="hero-name-cn__art" aria-hidden="true"></span>
       </span>
     </div>
-    <p class="hero-role">PhD Candidate · KAUST</p>
+    <p class="hero-role"><span data-language-content="en" lang="en">PhD Candidate</span><span data-language-content="zh" lang="zh-Hans">统计学博士研究生</span> · KAUST</p>
     <p class="hero-summary">
-      Building modern Bayesian methods—from mathematical foundations to practical solutions.
+      <span data-language-content="en" lang="en">Building modern Bayesian methods—from mathematical foundations to practical solutions.</span><span data-language-content="zh" lang="zh-Hans">致力于发展现代贝叶斯方法——从数学基础到实际问题求解。</span>
     </p>
 
     <div class="hero-actions">
       <a class="button button--primary" href="#profile">
-        About me <span aria-hidden="true">↓</span>
+        <span data-language-content="en" lang="en">About me</span><span data-language-content="zh" lang="zh-Hans">关于我</span> <span aria-hidden="true">↓</span>
       </a>
       <a class="button button--quiet" href="files/cv.pdf" target="_blank" rel="noopener">
-        Curriculum vitae <span aria-hidden="true">↗</span>
+        <span data-language-content="en" lang="en">Curriculum vitae</span><span data-language-content="zh" lang="zh-Hans">个人简历</span> <span aria-hidden="true">↗</span>
       </a>
     </div>
 
-    <div class="social-row" aria-label="Professional links">
+    <div class="social-row" aria-label="Professional links" data-label-en="Professional links"
+      data-label-zh="个人主页与联系方式">
       <a href="mailto:xiang.ye@kaust.edu.sa" >
-        Email <span aria-hidden="true">↗</span>
+        <span data-language-content="en" lang="en">Email</span><span data-language-content="zh" lang="zh-Hans">邮箱</span> <span aria-hidden="true">↗</span>
       </a>
       <a href="https://github.com/XiangYEstats"  target="_blank" rel="noopener" >
-        GitHub <span aria-hidden="true">↗</span>
+<span lang="en">GitHub</span> <span aria-hidden="true">↗</span>
       </a>
       <a href="https://scholar.google.com/citations?user=08io_8cAAAAJ&amp;hl=en&amp;oi=sra"  target="_blank" rel="noopener" >
-        Google Scholar <span aria-hidden="true">↗</span>
+<span lang="en">Google Scholar</span> <span aria-hidden="true">↗</span>
+      </a>
+      <a href="https://www.researchgate.net/profile/Xiang-Ye-16?ev=hdr_xprf"  target="_blank" rel="noopener" >
+<span lang="en">ResearchGate</span> <span aria-hidden="true">↗</span>
       </a>
       <a href="https://www.linkedin.com/in/xiang-ye-228648191/"  target="_blank" rel="noopener" >
-        LinkedIn <span aria-hidden="true">↗</span>
+<span lang="en">LinkedIn</span> <span aria-hidden="true">↗</span>
       </a>
     </div>
   </div>
 
 
-  <div class="hero-scroll" aria-hidden="true"><span>Scroll to read</span><i></i></div>
+  <div class="hero-scroll" aria-hidden="true"><span><span data-language-content="en" lang="en">Scroll to read</span><span data-language-content="zh" lang="zh-Hans">继续阅读</span></span><i></i></div>
 </section>
 
 <!-- The newest five Markdown notes appear here automatically after a rebuild. -->
-<section class="notes-ribbon" aria-label="Latest notes">
+<section class="notes-ribbon" aria-label="Latest notes" data-label-en="Latest notes" data-label-zh="最新随笔">
   <div class="notes-ribbon__title">
     <span lang="zh-Hans">随笔</span>
-    <h2>Latest notes</h2>
+    <h2><span data-language-content="en" lang="en">Latest notes</span><span data-language-content="zh" lang="zh-Hans">最新随笔</span></h2>
   </div>
-  <div class="notes-ribbon__empty" aria-hidden="true">
-    <i></i><i></i><i></i><i></i><i></i>
+  <div class="notes-ribbon__empty">
+    <p><span data-language-content="en" lang="en">Notes are on the way.</span><span data-language-content="zh" lang="zh-Hans">随笔正在整理中。</span></p>
+    <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
   </div>
 </section>
 
@@ -182,17 +205,18 @@
     <div class="section-heading" data-reveal>
       <p class="section-number">〇一</p>
       <div>
-        <p class="section-kicker">About me · 自述</p>
-        <h2>Bayesian methods with structure,<br>clarity, and purpose.</h2>
+        <p class="section-kicker"><span lang="en">About me</span> · <span lang="zh-Hans">自述</span></p>
+        <h2>
+          <span data-language-content="en" lang="en">Bayesian methods with structure,<br>clarity, and purpose.</span>
+          <span data-language-content="zh" lang="zh-Hans">探索结构严谨、思路清晰、目标明确的贝叶斯方法。</span>
+        </h2>
       </div>
     </div>
 
     <div class="profile-grid">
       <div class="profile-prose" data-reveal>
-<p>I am a PhD candidate in the Bayesian Computational Statistics and Modeling Research Group at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.</p><p>My PhD research focuses on Bayesian latent variable models and joint modelling, from prior specification and model construction to computation and applications. I develop these ideas for directional and circular statistics and implement the resulting methodology for Integrated Nested Laplace Approximation (INLA).</p><p>Looking ahead, I am interested in the theory, methodology, and applications of fast Bayesian inference, particularly for increasingly complex and high-dimensional models. I am also interested in bringing Bayesian ideas into modern deep learning, especially generative models, to improve uncertainty quantification and computational efficiency, while encouraging more structured, transparent, and reliable reasoning.</p>        <p>
-          I am always happy to discuss new ideas and potential collaborations,
-          especially around statistical methodology, Bayesian computation, and
-          related interdisciplinary problems.
+<p><span data-language-content="en" lang="en">I am a PhD candidate in the Bayesian Computational Statistics and Modeling Research Group at King Abdullah University of Science and Technology (KAUST), under the supervision of Professor Håvard Rue.</span><span data-language-content="zh" lang="zh-Hans">我目前在阿卜杜拉国王科技大学（KAUST）攻读统计学博士学位，师从 Håvard Rue 教授，并在贝叶斯计算统计与建模研究组开展研究。</span></p><p><span data-language-content="en" lang="en">My PhD research focuses on Bayesian latent variable models and joint modelling, from prior specification and model construction to computation and applications. I develop these ideas for directional and circular statistics and implement the resulting methodology for Integrated Nested Laplace Approximation (INLA).</span><span data-language-content="zh" lang="zh-Hans">我的博士研究围绕贝叶斯潜变量模型与联合建模展开，涵盖先验设定、模型构建、计算方法与实际应用。我将这些思想应用于方向统计与圆周统计，并在集成嵌套拉普拉斯近似（INLA）框架下实现相应方法。</span></p><p><span data-language-content="en" lang="en">Looking ahead, I am interested in the theory, methodology, and applications of fast Bayesian inference, particularly for increasingly complex and high-dimensional models. I am also interested in bringing Bayesian ideas into modern deep learning, especially generative models, to improve uncertainty quantification and computational efficiency, while encouraging more structured, transparent, and reliable reasoning.</span><span data-language-content="zh" lang="zh-Hans">未来，我希望继续探索快速贝叶斯推断的理论、方法与应用，尤其关注日益复杂的高维模型。我也期待将贝叶斯思想融入现代深度学习，特别是生成模型，在提升计算效率的同时，更好地量化不确定性，让推理过程更有条理、更透明、更可靠。</span></p>        <p>
+          <span data-language-content="en" lang="en">I am always happy to discuss new ideas and potential collaborations, especially around statistical methodology, Bayesian computation, and related interdisciplinary problems.</span><span data-language-content="zh" lang="zh-Hans">我一直乐于交流新想法、探索合作机会，尤其关注统计方法、贝叶斯计算及相关跨学科问题。</span>
         </p>
       </div>
 
@@ -201,12 +225,12 @@
 
         <blockquote>
           <p lang="zh-Hans">志存高远，脚踏实地</p>
-          <footer>Aim high, stay grounded.</footer>
+          <footer lang="en">Aim high, stay grounded.</footer>
         </blockquote>
 
         <div class="availability-dot">
           <i aria-hidden="true"></i>
-          Open to collaboration
+          <span data-language-content="en" lang="en">Open to collaboration</span><span data-language-content="zh" lang="zh-Hans">期待合作</span>
         </div>
       </aside>
     </div>
@@ -218,40 +242,40 @@
   <div class="section-heading" data-reveal>
     <p class="section-number">〇二</p>
     <div>
-      <p class="section-kicker">Research interests · 志趣</p>
-      <h2>My research interests.</h2>
+      <p class="section-kicker"><span lang="en">Research interests</span> · <span lang="zh-Hans">志趣</span></p>
+      <h2><span data-language-content="en" lang="en">My research interests.</span><span data-language-content="zh" lang="zh-Hans">我关注的研究方向。</span></h2>
     </div>
   </div>
 
   <div class="interest-grid">
     <article class="interest-card" data-reveal data-reveal-delay="0">
       <span class="interest-number">01</span>
-      <h3>Scalable probabilistic modeling</h3>
-      <p>Structured latent representations and hierarchical Bayesian models for high-dimensional data.</p>
+      <h3><span data-language-content="en" lang="en">Scalable probabilistic modeling</span><span data-language-content="zh" lang="zh-Hans">可扩展概率建模</span></h3>
+      <p><span data-language-content="en" lang="en">Structured latent representations and hierarchical Bayesian models for high-dimensional data.</span><span data-language-content="zh" lang="zh-Hans">面向高维数据，研究结构化潜在表示与层次贝叶斯模型。</span></p>
       <span class="card-line" aria-hidden="true"></span>
     </article>
     <article class="interest-card" data-reveal data-reveal-delay="1">
       <span class="interest-number">02</span>
-      <h3>Bayesian deep learning</h3>
-      <p>Bayesian principles for accurate, efficient, and statistically robust neural learning methods.</p>
+      <h3><span data-language-content="en" lang="en">Bayesian deep learning</span><span data-language-content="zh" lang="zh-Hans">贝叶斯深度学习</span></h3>
+      <p><span data-language-content="en" lang="en">Bayesian principles for accurate, efficient, and statistically robust neural learning methods.</span><span data-language-content="zh" lang="zh-Hans">将贝叶斯原理融入神经网络，探索准确、高效且具统计稳健性的学习方法。</span></p>
       <span class="card-line" aria-hidden="true"></span>
     </article>
     <article class="interest-card" data-reveal data-reveal-delay="2">
       <span class="interest-number">03</span>
-      <h3>Principled prior specification</h3>
-      <p>Prior constructions that improve model stability, interpretability, and inferential accuracy.</p>
+      <h3><span data-language-content="en" lang="en">Principled prior specification</span><span data-language-content="zh" lang="zh-Hans">有理论依据的先验设定</span></h3>
+      <p><span data-language-content="en" lang="en">Prior constructions that improve model stability, interpretability, and inferential accuracy.</span><span data-language-content="zh" lang="zh-Hans">构建有助于提升模型稳定性、可解释性与推断精度的先验分布。</span></p>
       <span class="card-line" aria-hidden="true"></span>
     </article>
     <article class="interest-card" data-reveal data-reveal-delay="0">
       <span class="interest-number">04</span>
-      <h3>Uncertainty quantification</h3>
-      <p>Frameworks for model and predictive uncertainty and better calibration in complex systems.</p>
+      <h3><span data-language-content="en" lang="en">Uncertainty quantification</span><span data-language-content="zh" lang="zh-Hans">不确定性量化</span></h3>
+      <p><span data-language-content="en" lang="en">Frameworks for model and predictive uncertainty and better calibration in complex systems.</span><span data-language-content="zh" lang="zh-Hans">研究模型与预测不确定性的量化方法，并提升复杂系统中的预测校准度。</span></p>
       <span class="card-line" aria-hidden="true"></span>
     </article>
     <article class="interest-card" data-reveal data-reveal-delay="1">
       <span class="interest-number">05</span>
-      <h3>Directional statistics</h3>
-      <p>Statistical methodology for circular, spherical, and other manifold-valued observations.</p>
+      <h3><span data-language-content="en" lang="en">Directional statistics</span><span data-language-content="zh" lang="zh-Hans">方向统计</span></h3>
+      <p><span data-language-content="en" lang="en">Statistical methodology for circular, spherical, and other manifold-valued observations.</span><span data-language-content="zh" lang="zh-Hans">针对圆周、球面及其他流形值观测的统计方法。</span></p>
       <span class="card-line" aria-hidden="true"></span>
     </article>
   </div>
@@ -262,8 +286,8 @@
     <div class="section-heading" data-reveal>
       <p class="section-number">〇三</p>
       <div>
-        <p class="section-kicker">Education · 问学</p>
-        <h2>My academic journey.</h2>
+        <p class="section-kicker"><span lang="en">Education</span> · <span lang="zh-Hans">问学</span></p>
+        <h2><span data-language-content="en" lang="en">My academic journey.</span><span data-language-content="zh" lang="zh-Hans">我的求学之路。</span></h2>
       </div>
     </div>
 
@@ -272,25 +296,25 @@
         <article class="education-item" data-reveal>
           <time>2023—2026</time>
           <div>
-            <h3>PhD in Statistics</h3>
-            <p>King Abdullah University of Science and Technology</p>
-            <span>Jeddah, Saudi Arabia</span>
+            <h3><span data-language-content="en" lang="en">PhD in Statistics</span><span data-language-content="zh" lang="zh-Hans">统计学博士</span></h3>
+            <p><span data-language-content="en" lang="en">King Abdullah University of Science and Technology</span><span data-language-content="zh" lang="zh-Hans">阿卜杜拉国王科技大学</span></p>
+            <span><span data-language-content="en" lang="en">Jeddah, Saudi Arabia</span><span data-language-content="zh" lang="zh-Hans">沙特阿拉伯吉达</span></span>
           </div>
         </article>
         <article class="education-item" data-reveal>
           <time>2021—2022</time>
           <div>
-            <h3>MSc in Statistics</h3>
-            <p>Lancaster University</p>
-            <span>Lancaster, United Kingdom</span>
+            <h3><span data-language-content="en" lang="en">MSc in Statistics</span><span data-language-content="zh" lang="zh-Hans">统计学硕士</span></h3>
+            <p><span data-language-content="en" lang="en">Lancaster University</span><span data-language-content="zh" lang="zh-Hans">兰卡斯特大学</span></p>
+            <span><span data-language-content="en" lang="en">Lancaster, United Kingdom</span><span data-language-content="zh" lang="zh-Hans">英国兰卡斯特</span></span>
           </div>
         </article>
         <article class="education-item" data-reveal>
           <time>2017—2021</time>
           <div>
-            <h3>BSc in Applied Mathematics</h3>
-            <p>University of Liverpool &amp; Xi’an Jiaotong-Liverpool University</p>
-            <span>Suzhou, China</span>
+            <h3><span data-language-content="en" lang="en">BSc in Applied Mathematics</span><span data-language-content="zh" lang="zh-Hans">应用数学学士</span></h3>
+            <p><span data-language-content="en" lang="en">University of Liverpool &amp; Xi’an Jiaotong-Liverpool University</span><span data-language-content="zh" lang="zh-Hans">利物浦大学与西交利物浦大学</span></p>
+            <span><span data-language-content="en" lang="en">Suzhou, China</span><span data-language-content="zh" lang="zh-Hans">中国苏州</span></span>
           </div>
         </article>
       </div>
@@ -302,7 +326,7 @@
           <p lang="zh-Hans">
             路漫漫其修远兮，<br>            吾将上下而求索。          </p>
 
-          <footer>
+          <footer lang="en">
             The road is long, its reaches far;<br>            still I shall seek where answers are.          </footer>
         </blockquote>
 
@@ -317,8 +341,8 @@
   <div class="section-heading" data-reveal>
     <p class="section-number">〇四</p>
     <div>
-      <p class="section-kicker">Professional experience · 践履</p>
-      <h2>My work experience.</h2>
+      <p class="section-kicker"><span lang="en">Professional experience</span> · <span lang="zh-Hans">践履</span></p>
+      <h2><span data-language-content="en" lang="en">My work experience.</span><span data-language-content="zh" lang="zh-Hans">我的工作经历。</span></h2>
     </div>
   </div>
 
@@ -328,18 +352,18 @@
         <time>2023</time>
 
         <div>
-          <h3>Research and Development Intern</h3>
-          <p>Tech View Info Limited Liability Company</p>
-          <span>Guangzhou, China</span>
+          <h3><span data-language-content="en" lang="en">Research and Development Intern</span><span data-language-content="zh" lang="zh-Hans">研发实习生</span></h3>
+          <p><span data-language-content="en" lang="en">Tech View Info Limited Liability Company</span><span data-language-content="zh" lang="zh-Hans">和元达信息科技有限公司</span></p>
+          <span><span data-language-content="en" lang="en">Guangzhou, China</span><span data-language-content="zh" lang="zh-Hans">中国广州</span></span>
         </div>
       </article>
       <article class="experience-item" data-reveal>
         <time>2019</time>
 
         <div>
-          <h3>Project Marketing Intern</h3>
-          <p>Guangdong Zhujiang Investment Co. Ltd.</p>
-          <span>Guangzhou, China</span>
+          <h3><span data-language-content="en" lang="en">Project Marketing Intern</span><span data-language-content="zh" lang="zh-Hans">项目营销实习生</span></h3>
+          <p><span data-language-content="en" lang="en">Guangdong Zhujiang Investment Co. Ltd.</span><span data-language-content="zh" lang="zh-Hans">广东珠江投资股份有限公司</span></p>
+          <span><span data-language-content="en" lang="en">Guangzhou, China</span><span data-language-content="zh" lang="zh-Hans">中国广州</span></span>
         </div>
       </article>
     </div>
@@ -351,7 +375,7 @@
         <p lang="zh-Hans">
           纸上得来终觉浅，<br>          绝知此事要躬行。        </p>
 
-        <footer>
+        <footer lang="en">
           What books alone can teach remains but shallow;<br>          true understanding comes through practice.        </footer>
       </blockquote>
 
@@ -365,37 +389,41 @@
     <span></span><i></i><span></span>
   </div>
 
-  <p class="section-kicker">Explore · 一览</p>
+  <p class="section-kicker"><span lang="en">Explore</span> · <span lang="zh-Hans">一览</span></p>
 
-  <h2>Continue through my research,<br>writing, and journey.</h2>
+  <h2>
+    <span data-language-content="en" lang="en">Continue through my research,<br>writing, and journey.</span>
+    <span data-language-content="zh" lang="zh-Hans">继续了解我的研究、写作与学术经历。</span>
+  </h2>
 
-  <nav class="closing-nav" aria-label="Explore the rest of the site">
+  <nav class="closing-nav" aria-label="Explore the rest of the site"
+    data-label-en="Explore the rest of the site" data-label-zh="浏览网站其他页面">
     <a class="closing-nav__link" href="research.html">
-      <span>Research</span>
+      <span><span data-language-content="en" lang="en">Research</span><span data-language-content="zh" lang="zh-Hans">研究</span></span>
       <i aria-hidden="true">↗</i>
     </a>
     <a class="closing-nav__link" href="publications.html">
-      <span>Publications</span>
+      <span><span data-language-content="en" lang="en">Publications</span><span data-language-content="zh" lang="zh-Hans">学术论文</span></span>
       <i aria-hidden="true">↗</i>
     </a>
     <a class="closing-nav__link" href="resources.html">
-      <span>Resources</span>
+      <span><span data-language-content="en" lang="en">Resources</span><span data-language-content="zh" lang="zh-Hans">资源</span></span>
       <i aria-hidden="true">↗</i>
     </a>
     <a class="closing-nav__link" href="notes.html">
-      <span>Notes</span>
+      <span><span data-language-content="en" lang="en">Notes</span><span data-language-content="zh" lang="zh-Hans">随笔</span></span>
       <i aria-hidden="true">↗</i>
     </a>
     <a class="closing-nav__link" href="activity.html">
-      <span>Activity</span>
+      <span><span data-language-content="en" lang="en">Activity</span><span data-language-content="zh" lang="zh-Hans">学术活动</span></span>
       <i aria-hidden="true">↗</i>
     </a>
     <a class="closing-nav__link" href="about_me.html">
-      <span>About</span>
+      <span><span data-language-content="en" lang="en">About</span><span data-language-content="zh" lang="zh-Hans">研究之外</span></span>
       <i aria-hidden="true">↗</i>
     </a>
     <a class="closing-nav__link" href="contact.html">
-      <span>Contact</span>
+      <span><span data-language-content="en" lang="en">Contact</span><span data-language-content="zh" lang="zh-Hans">联系</span></span>
       <i aria-hidden="true">↗</i>
     </a>
   </nav>
@@ -407,18 +435,18 @@
       <div class="footer-signature">
         <span class="footer-seal" aria-hidden="true">葉</span>
         <div>
-          <strong>Xiang Ye</strong>
-          <span>Thuwal, Saudi Arabia</span>
+          <strong><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span></strong>
+          <span><span data-language-content="en" lang="en">Thuwal, Saudi Arabia</span><span data-language-content="zh" lang="zh-Hans">沙特阿拉伯图瓦勒</span></span>
         </div>
       </div>
 
       <p class="footer-verse">
         <span lang="zh-Hans">志存高远，脚踏实地</span>
-        <small>Aim high, stay grounded.</small>
+        <small lang="en">Aim high, stay grounded.</small>
       </p>
 
       <div class="footer-meta">
-        <a href="mailto:xiang.ye@kaust.edu.sa">xiang.ye@kaust.edu.sa</a>
+        <a href="mailto:xiang.ye@kaust.edu.sa" lang="en">xiang.ye@kaust.edu.sa</a>
         <span>© 2026</span>
       </div>
     </div>
@@ -428,7 +456,7 @@
     <span aria-hidden="true">↑</span>
   </button>
 
-  <script src="assets/js/site.js?v=20260902b" defer></script>
+  <script src="assets/js/site.js?v=20260903b" defer></script>
 </body>
 
 </html>

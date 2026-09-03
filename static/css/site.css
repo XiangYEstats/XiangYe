@@ -188,7 +188,7 @@ address {
 
 .header-inner {
   display: grid;
-  grid-template-columns: 210px minmax(0, 1fr) 255px;
+  grid-template-columns: 190px minmax(0, 1fr) 250px;
   align-items: center;
   width: min(var(--shell), calc(100% - 72px));
   height: 100%;
@@ -280,7 +280,7 @@ address {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 8px;
 }
 
 .cv-link {
@@ -291,15 +291,15 @@ address {
   text-transform: uppercase;
 }
 
-.cv-link span {
+.cv-link>span[aria-hidden="true"] {
   margin-left: 7px;
   color: var(--cinnabar);
 }
 
+.language-toggle,
 .theme-toggle {
   position: relative;
   display: grid;
-  width: 38px;
   height: 32px;
   padding: 0;
   place-items: center;
@@ -307,6 +307,27 @@ address {
   border-radius: 999px;
   background: transparent;
   cursor: pointer;
+}
+
+.language-toggle {
+  min-width: 48px;
+  padding-inline: 10px;
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.language-toggle:hover {
+  border-color: var(--cinnabar);
+  background: color-mix(in srgb, var(--paper) 42%, transparent);
+  color: var(--cinnabar);
+}
+
+.theme-toggle {
+  width: 38px;
 }
 
 .theme-toggle span {
@@ -549,7 +570,7 @@ html[data-theme="ink"] .moon-window img {
   gap: 10px;
 }
 
-.eyebrow>span {
+.eyebrow>span:first-child {
   width: 24px;
   height: 1px;
   background: currentColor;
@@ -664,7 +685,7 @@ html[data-theme="ink"] .moon-window img {
   color: var(--ink-soft);
 }
 
-.button--quiet span {
+.button--quiet>span[aria-hidden="true"] {
   color: var(--cinnabar);
 }
 
@@ -757,7 +778,7 @@ html[data-theme="ink"] .moon-window img {
   color: var(--paper);
 }
 
-.notes-ribbon__title span {
+.notes-ribbon__title>span {
   color: color-mix(in srgb, var(--paper) 70%, var(--celadon));
   font-family: var(--serif);
   font-size: 14px;
@@ -803,9 +824,26 @@ html[data-theme="ink"] .moon-window img {
 }
 
 .notes-ribbon__empty {
+  position: relative;
   display: grid;
   grid-column: 2 / -1;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.notes-ribbon__empty p {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  color: var(--ink-faint);
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-align: center;
 }
 
 .notes-ribbon__empty i {
@@ -1797,7 +1835,7 @@ html[data-theme="ink"] .moon-window img {
   font-size: 16px;
 }
 
-.related-articles__heading span {
+.related-articles__heading>span {
   color: var(--cinnabar);
   font-family: var(--serif);
   font-size: 20px;
@@ -1844,7 +1882,8 @@ html[data-theme="ink"] .moon-window img {
   transition: color 180ms ease;
 }
 
-.related-articles__list span,
+.related-articles__list a>span,
+.related-articles__list li>div>span,
 .related-articles__list small {
   color: var(--ink-faint);
   font-size: 11px;
@@ -2053,7 +2092,8 @@ html[data-theme="ink"] .moon-window img {
   padding: 23px 4px;
 }
 
-.resource-tutorial-list span {
+.resource-tutorial-list>li>a>span,
+.resource-tutorial-list>li>div>span {
   color: var(--cinnabar);
   font-size: 11px;
 }
@@ -2179,17 +2219,34 @@ html[data-theme="ink"] .moon-window img {
 }
 
 .notes-empty {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   min-height: 245px;
   border-block: 1px solid var(--line);
 }
 
-.notes-empty span {
+.notes-empty p {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 24px;
+  color: var(--ink-faint);
+  font-family: var(--serif);
+  font-size: clamp(15px, 1.7vw, 19px);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.notes-empty>span {
   border-right: 1px solid var(--line-soft);
 }
 
-.notes-empty span:last-child {
+.notes-empty>span:last-child {
   border-right: 0;
 }
 
@@ -2383,7 +2440,7 @@ html[data-theme="ink"] .moon-window img {
   text-transform: uppercase;
 }
 
-.timeline-meta span {
+.timeline-meta>span {
   color: var(--cinnabar);
 }
 
@@ -2418,7 +2475,7 @@ html[data-theme="ink"] .moon-window img {
   content: "\00b7";
 }
 
-.timeline-title span {
+.timeline-title>span:first-child {
   color: var(--ink);
   font-family: var(--sans);
   font-size: 11px;
@@ -2730,7 +2787,7 @@ html[data-theme="ink"] .moon-window img {
   font-weight: 400;
 }
 
-.footer-signature div span {
+.footer-signature div>span {
   color: var(--ink-faint);
   font-size: 11px;
   letter-spacing: 0.08em;
@@ -2823,11 +2880,11 @@ html[data-theme="ink"] .moon-window img {
 
 @media (max-width: 1180px) {
   .header-inner {
-    grid-template-columns: 195px 1fr 195px;
+    grid-template-columns: 160px minmax(0, 1fr) 230px;
   }
 
   .primary-nav {
-    gap: 22px;
+    gap: 14px;
   }
 
   .cv-link {
@@ -2909,6 +2966,21 @@ html[data-theme="ink"] .moon-window img {
 
   .header-actions {
     grid-column: 2;
+  }
+
+  .language-toggle,
+  .theme-toggle,
+  .menu-toggle {
+    height: 44px;
+  }
+
+  .theme-toggle,
+  .menu-toggle {
+    width: 44px;
+  }
+
+  .language-toggle {
+    min-width: 52px;
   }
 
   .cv-link {
@@ -3159,6 +3231,11 @@ html[data-theme="ink"] .moon-window img {
 
   .brand-wordmark strong {
     font-size: 15px;
+  }
+
+  .language-toggle {
+    min-width: 52px;
+    padding-inline: 8px;
   }
 
   .hero-inscription {
@@ -3479,11 +3556,11 @@ html[data-theme="ink"] .moon-window img {
     min-height: 180px;
   }
 
-  .notes-empty span {
+  .notes-empty>span {
     display: none;
   }
 
-  .notes-empty span:first-child {
+  .notes-empty>span:first-of-type {
     display: block;
     border-right: 0;
   }
@@ -3608,6 +3685,51 @@ html[data-theme="ink"] .moon-window img {
   .footer-meta {
     align-items: center;
   }
+}
+
+/* ==========================================================================
+   LANGUAGE STATE
+   ========================================================================== */
+
+/* Poetry and bilingual headings use ordinary lang attributes and stay visible.
+   Only nodes produced specifically for interface localization use this marker. */
+[data-language-content="zh"] {
+  display: none !important;
+}
+
+html[data-language="zh"] [data-language-only="en"] {
+  display: none !important;
+}
+
+html[data-language="zh"] [data-language-content="en"] {
+  display: none !important;
+}
+
+html[data-language="zh"] [data-language-content="zh"] {
+  display: revert !important;
+}
+
+html[data-language="en"] .contact-heading-line[data-language-content="en"],
+html[data-language="zh"] .contact-heading-line[data-language-content="zh"] {
+  display: block !important;
+}
+
+html[data-language="en"] .publications-toolbar>p>[data-language-content="en"],
+html[data-language="zh"] .publications-toolbar>p>[data-language-content="zh"] {
+  display: inline-flex !important;
+  align-items: baseline;
+  gap: 10px;
+}
+
+html[data-language="zh"] .nav-link,
+html[data-language="zh"] .button,
+html[data-language="zh"] .section-kicker,
+html[data-language="zh"] .eyebrow {
+  letter-spacing: 0.08em;
+}
+
+html[data-language="zh"] .contact-letter h2 {
+  letter-spacing: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

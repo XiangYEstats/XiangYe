@@ -2,27 +2,28 @@
 
 {% block content %}
 <article class="note-article section-shell">
-  <a class="note-back" href="notes.html">← All notes</a>
+  <a class="note-back" href="notes.html">← {{ t("All notes", "随笔列表") }}</a>
 
   <header class="note-header" data-reveal>
-    <p class="eyebrow"><span></span> Note · 随笔</p>
-    <time datetime="{{ note.date_iso }}">{{ note.date_label }}</time>
-    <h1>{{ note.title }}</h1>
-    <p>{{ note.summary }}</p>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Note</span> ·
+      <span lang="zh-Hans">随笔</span></span></p>
+    <time datetime="{{ note.date_iso }}">{{ t(note.date_label, note.date_label_cn) }}</time>
+    <h1>{{ t(note.title, note.title_cn) }}</h1>
+    <p>{{ t(note.summary, note.summary_cn) }}</p>
     {% if note.tags %}
-    <ul aria-label="Topics">
-      {% for tag in note.tags %}<li>{{ tag }}</li>{% endfor %}
+    <ul aria-label="Topics" data-label-en="Topics" data-label-zh="主题">
+      {% for tag in note.tags %}<li>{{ t(tag, note.tags_cn[loop.index0]) }}</li>{% endfor %}
     </ul>
     {% endif %}
   </header>
 
   <div class="note-body" data-reveal>
-    {{ note.body_html|safe }}
+    <div data-language-content="en" lang="en">{{ note.body_html|safe }}</div>
+    <div data-language-content="zh" lang="zh-Hans">{{ note.body_html_cn|safe }}</div>
   </div>
 
   <footer class="note-footer">
-    <a href="notes.html">← Return to Notes</a>
+    <a href="notes.html">← {{ t("Return to Notes", "随笔列表") }}</a>
   </footer>
 </article>
 {% endblock %}
-

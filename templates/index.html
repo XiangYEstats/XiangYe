@@ -18,7 +18,7 @@
       {% endfor %}
     </p>
 
-    <p class="inscription-en">
+    <p class="inscription-en" lang="en">
       {% for line in poetry.living_source.english_lines %}
       {{ line }}{% if not loop.last %}<br>{% endif %}
       {% endfor %}
@@ -29,39 +29,43 @@
 
   <figure class="moon-portrait" data-reveal data-reveal-delay="1" data-parallax>
     <div class="moon-window">
-      <img src="assets/images/profile.jpg" alt="Portrait of Xiang Ye" width="3840" height="2160">
+      <img src="assets/images/profile.jpg" alt="Portrait of Xiang Ye" data-alt-en="Portrait of Xiang Ye"
+        data-alt-zh="叶翔肖像" width="3840" height="2160">
     </div>
     <span class="portrait-motto portrait-motto--top" lang="zh-Hans">志存高远</span>
     <span class="portrait-motto portrait-motto--bottom" lang="zh-Hans">脚踏实地</span>
-    <figcaption>{{ poetry.motto.english }}</figcaption>
+    <figcaption>{{ t(poetry.motto.english, poetry.motto.chinese) }}</figcaption>
   </figure>
 
   <div class="hero-copy" data-reveal data-reveal-delay="2">
-    <p class="eyebrow"><span></span> Bayesian computational statistics</p>
+    <p class="eyebrow"><span></span> {{ t("Bayesian computational statistics", "贝叶斯计算统计") }}</p>
     <div class="hero-name-lockup">
-      <h1 class="hero-title">Xiang <em>Ye</em></h1>
+      <h1 class="hero-title" lang="en">Xiang <em>Ye</em></h1>
       <span class="hero-name-cn" lang="zh-Hans" role="img" aria-label="{{ site.name_cn }}">
         <span class="hero-name-cn__art" aria-hidden="true"></span>
       </span>
     </div>
-    <p class="hero-role">{{ site.role }} · KAUST</p>
+    <p class="hero-role">{{ t(site.role, site.role_cn) }} · KAUST</p>
     <p class="hero-summary">
-      Building modern Bayesian methods—from mathematical foundations to practical solutions.
+      {{ t("Building modern Bayesian methods—from mathematical foundations to practical solutions.",
+      "致力于发展现代贝叶斯方法——从数学基础到实际问题求解。") }}
     </p>
 
     <div class="hero-actions">
       <a class="button button--primary" href="#profile">
-        About me <span aria-hidden="true">↓</span>
+        {{ t("About me", "关于我") }} <span aria-hidden="true">↓</span>
       </a>
       <a class="button button--quiet" href="files/cv.pdf" target="_blank" rel="noopener">
-        Curriculum vitae <span aria-hidden="true">↗</span>
+        {{ t("Curriculum vitae", "个人简历") }} <span aria-hidden="true">↗</span>
       </a>
     </div>
 
-    <div class="social-row" aria-label="Professional links">
+    <div class="social-row" aria-label="Professional links" data-label-en="Professional links"
+      data-label-zh="个人主页与联系方式">
       {% for link in social_links %}
       <a href="{{ link.href }}" {% if link.external %} target="_blank" rel="noopener" {% endif %}>
-        {{ link.label }} <span aria-hidden="true">↗</span>
+        {% if link.label == link.label_cn %}<span lang="en">{{ link.label }}</span>{% else %}
+        {{ t(link.label, link.label_cn) }}{% endif %} <span aria-hidden="true">↗</span>
       </a>
       {% endfor %}
     </div>
@@ -69,31 +73,32 @@
 
   {% if current_questions %}
   <aside class="question-index question-index--{{ current_questions|length }}" data-reveal data-reveal-delay="2">
-    <span>Current questions</span>
-    {% for question in current_questions %}<p>{{ question }}</p>{% endfor %}
+    <span>{{ t("Current questions", "近期关注的问题") }}</span>
+    {% for question in current_questions %}<p>{{ t(question.text, question.text_cn) }}</p>{% endfor %}
   </aside>
   {% endif %}
 
-  <div class="hero-scroll" aria-hidden="true"><span>Scroll to read</span><i></i></div>
+  <div class="hero-scroll" aria-hidden="true"><span>{{ t("Scroll to read", "继续阅读") }}</span><i></i></div>
 </section>
 
 <!-- The newest five Markdown notes appear here automatically after a rebuild. -->
-<section class="notes-ribbon" aria-label="Latest notes">
+<section class="notes-ribbon" aria-label="Latest notes" data-label-en="Latest notes" data-label-zh="最新随笔">
   <div class="notes-ribbon__title">
     <span lang="zh-Hans">随笔</span>
-    <h2>Latest notes</h2>
+    <h2>{{ t("Latest notes", "最新随笔") }}</h2>
   </div>
   {% if latest_notes %}
   {% for note in latest_notes %}
   <a href="{{ note.output }}">
-    <time datetime="{{ note.date_iso }}">{{ note.date_label }}</time>
-    <strong>{{ note.title }}</strong>
+    <time datetime="{{ note.date_iso }}">{{ t(note.date_label, note.date_label_cn) }}</time>
+    <strong>{{ t(note.title, note.title_cn) }}</strong>
     <span aria-hidden="true">↗</span>
   </a>
   {% endfor %}
   {% else %}
-  <div class="notes-ribbon__empty" aria-hidden="true">
-    <i></i><i></i><i></i><i></i><i></i>
+  <div class="notes-ribbon__empty">
+    <p>{{ t("Notes are on the way.", "随笔正在整理中。") }}</p>
+    <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
   </div>
   {% endif %}
 </section>
@@ -103,18 +108,20 @@
     <div class="section-heading" data-reveal>
       <p class="section-number">〇一</p>
       <div>
-        <p class="section-kicker">About me · 自述</p>
-        <h2>Bayesian methods with structure,<br>clarity, and purpose.</h2>
+        <p class="section-kicker"><span lang="en">About me</span> · <span lang="zh-Hans">自述</span></p>
+        <h2>
+          <span data-language-content="en" lang="en">Bayesian methods with structure,<br>clarity, and purpose.</span>
+          <span data-language-content="zh" lang="zh-Hans">探索结构严谨、思路清晰、目标明确的贝叶斯方法。</span>
+        </h2>
       </div>
     </div>
 
     <div class="profile-grid">
       <div class="profile-prose" data-reveal>
-        {% for paragraph in intro_paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+        {% for paragraph in intro_paragraphs %}<p>{{ t(paragraph.text, paragraph.text_cn) }}</p>{% endfor %}
         <p>
-          I am always happy to discuss new ideas and potential collaborations,
-          especially around statistical methodology, Bayesian computation, and
-          related interdisciplinary problems.
+          {{ t("I am always happy to discuss new ideas and potential collaborations, especially around statistical methodology, Bayesian computation, and related interdisciplinary problems.",
+          "我一直乐于交流新想法、探索合作机会，尤其关注统计方法、贝叶斯计算及相关跨学科问题。") }}
         </p>
       </div>
 
@@ -123,12 +130,12 @@
 
         <blockquote>
           <p lang="zh-Hans">{{ poetry.motto.chinese }}</p>
-          <footer>{{ poetry.motto.english }}</footer>
+          <footer lang="en">{{ poetry.motto.english }}</footer>
         </blockquote>
 
         <div class="availability-dot">
           <i aria-hidden="true"></i>
-          Open to collaboration
+          {{ t("Open to collaboration", "期待合作") }}
         </div>
       </aside>
     </div>
@@ -140,8 +147,8 @@
   <div class="section-heading" data-reveal>
     <p class="section-number">〇二</p>
     <div>
-      <p class="section-kicker">Research interests · 志趣</p>
-      <h2>My research interests.</h2>
+      <p class="section-kicker"><span lang="en">Research interests</span> · <span lang="zh-Hans">志趣</span></p>
+      <h2>{{ t("My research interests.", "我关注的研究方向。") }}</h2>
     </div>
   </div>
 
@@ -149,8 +156,8 @@
     {% for interest in research_interests %}
     <article class="interest-card" data-reveal data-reveal-delay="{{ loop.index0 % 3 }}">
       <span class="interest-number">{{ interest.number }}</span>
-      <h3>{{ interest.title }}</h3>
-      <p>{{ interest.text }}</p>
+      <h3>{{ t(interest.title, interest.title_cn) }}</h3>
+      <p>{{ t(interest.text, interest.text_cn) }}</p>
       <span class="card-line" aria-hidden="true"></span>
     </article>
     {% endfor %}
@@ -162,8 +169,8 @@
     <div class="section-heading" data-reveal>
       <p class="section-number">〇三</p>
       <div>
-        <p class="section-kicker">Education · 问学</p>
-        <h2>My academic journey.</h2>
+        <p class="section-kicker"><span lang="en">Education</span> · <span lang="zh-Hans">问学</span></p>
+        <h2>{{ t("My academic journey.", "我的求学之路。") }}</h2>
       </div>
     </div>
 
@@ -173,9 +180,9 @@
         <article class="education-item" data-reveal>
           <time>{{ item.years }}</time>
           <div>
-            <h3>{{ item.degree }}</h3>
-            <p>{{ item.institution }}</p>
-            <span>{{ item.place }}</span>
+            <h3>{{ t(item.degree, item.degree_cn) }}</h3>
+            <p>{{ t(item.institution, item.institution_cn) }}</p>
+            <span>{{ t(item.place, item.place_cn) }}</span>
           </div>
         </article>
         {% endfor %}
@@ -191,7 +198,7 @@
             {% endfor %}
           </p>
 
-          <footer>
+          <footer lang="en">
             {% for line in poetry.long_road.english_lines %}
             {{ line }}{% if not loop.last %}<br>{% endif %}
             {% endfor %}
@@ -209,8 +216,8 @@
   <div class="section-heading" data-reveal>
     <p class="section-number">〇四</p>
     <div>
-      <p class="section-kicker">Professional experience · 践履</p>
-      <h2>My work experience.</h2>
+      <p class="section-kicker"><span lang="en">Professional experience</span> · <span lang="zh-Hans">践履</span></p>
+      <h2>{{ t("My work experience.", "我的工作经历。") }}</h2>
     </div>
   </div>
 
@@ -221,9 +228,9 @@
         <time>{{ item.year }}</time>
 
         <div>
-          <h3>{{ item.role }}</h3>
-          <p>{{ item.organisation }}</p>
-          <span>{{ item.place }}</span>
+          <h3>{{ t(item.role, item.role_cn) }}</h3>
+          <p>{{ t(item.organisation, item.organisation_cn) }}</p>
+          <span>{{ t(item.place, item.place_cn) }}</span>
         </div>
       </article>
       {% endfor %}
@@ -239,7 +246,7 @@
           {% endfor %}
         </p>
 
-        <footer>
+        <footer lang="en">
           {% for line in poetry.practice.english_lines %}
           {{ line }}{% if not loop.last %}<br>{% endif %}
           {% endfor %}
@@ -256,15 +263,19 @@
     <span></span><i></i><span></span>
   </div>
 
-  <p class="section-kicker">Explore · 一览</p>
+  <p class="section-kicker"><span lang="en">Explore</span> · <span lang="zh-Hans">一览</span></p>
 
-  <h2>Continue through my research,<br>writing, and journey.</h2>
+  <h2>
+    <span data-language-content="en" lang="en">Continue through my research,<br>writing, and journey.</span>
+    <span data-language-content="zh" lang="zh-Hans">继续了解我的研究、写作与学术经历。</span>
+  </h2>
 
-  <nav class="closing-nav" aria-label="Explore the rest of the site">
+  <nav class="closing-nav" aria-label="Explore the rest of the site"
+    data-label-en="Explore the rest of the site" data-label-zh="浏览网站其他页面">
     {% for item in navigation %}
     {% if item.key != "home" %}
     <a class="closing-nav__link" href="{{ item.href }}">
-      <span>{{ item.label }}</span>
+      <span>{{ t(item.label, item.label_cn) }}</span>
       <i aria-hidden="true">↗</i>
     </a>
     {% endif %}

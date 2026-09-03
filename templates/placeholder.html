@@ -5,10 +5,11 @@
      their records are supplied.  Change the note/mark/verse in build.py. -->
 <section class="placeholder section-shell">
   <div class="placeholder-inner" data-reveal>
-    <p class="eyebrow"><span></span> Space reserved · 留白</p>
-    <h1>{{ page.title }}</h1>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Space reserved</span> ·
+      <span lang="zh-Hans">留白</span></span></p>
+    <h1>{{ t(page.title, page.title_cn) }}</h1>
     <div class="placeholder-rule" aria-hidden="true"></div>
-    <p>{{ page.note }}</p>
+    <p>{{ t(page.note, page.note_cn) }}</p>
   </div>
 
   {% set verse = poetry[page.verse] %}
@@ -18,7 +19,7 @@
         {% for line in verse.chinese_lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}
       {% else %}{{ verse.chinese }}{% endif %}
     </p>
-    <p class="page-verse__en">
+    <p class="page-verse__en" lang="en">
       {% if verse.english_lines is defined %}
         {% for line in verse.english_lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}
       {% else %}{{ verse.english }}{% endif %}

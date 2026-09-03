@@ -1,43 +1,59 @@
+{% if page.active == "home" %}
+  {% set document_title_en = site.name ~ " — Bayesian Statistics & Research" %}
+  {% set document_title_cn = site.name_cn ~ " — 贝叶斯统计与研究" %}
+{% else %}
+  {% set document_title_en = site.name ~ " — " ~ page.title %}
+  {% set document_title_cn = site.name_cn ~ " — " ~ page.title_cn %}
+{% endif %}
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" data-language="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ page.description }}">
+  <meta name="description" content="{{ page.description }}" data-content-en="{{ page.description }}"
+    data-content-zh="{{ page.description_cn }}">
   <meta name="author" content="{{ site.name }}">
   <meta name="theme-color" content="#dce4dc">
   <link rel="canonical" href="{{ base_url }}/{{ page.output }}">
   <meta property="og:type" content="{{ page.og_type|default('website') }}">
-  <meta property="og:title"
-    content="{{ site.name }}{% if page.active == 'home' %} — Bayesian Statistics &amp; Research{% else %} — {{ page.title }}{% endif %}">
-  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:title" content="{{ document_title_en }}" data-content-en="{{ document_title_en }}"
+    data-content-zh="{{ document_title_cn }}">
+  <meta property="og:description" content="{{ page.description }}" data-content-en="{{ page.description }}"
+    data-content-zh="{{ page.description_cn }}">
+  <meta property="og:locale" content="en_US" data-content-en="en_US" data-content-zh="zh_CN">
+  <meta property="og:locale:alternate" content="zh_CN" data-content-en="zh_CN" data-content-zh="en_US">
   {% if not page.is_note|default(false) %}
   <meta property="og:image" content="{{ base_url }}/assets/images/profile.jpg">
   {% endif %}
   <meta property="og:url" content="{{ base_url }}/{{ page.output }}">
   {% if page.published_time|default(false) %}<meta property="article:published_time" content="{{ page.published_time }}">{% endif %}
-  <title>{{ site.name }}{% if page.active == "home" %} — Bayesian Statistics &amp; Research{% else %} — {{ page.title
-    }}{% endif %}</title>
+  <title data-title-en="{{ document_title_en }}" data-title-zh="{{ document_title_cn }}">{{ document_title_en }}</title>
 
   <!-- Apply the saved palette before the page paints, preventing a flash. -->
   <script>
     document.documentElement.classList.add("js");
     try {
+      const root = document.documentElement;
       const savedTheme = localStorage.getItem("xiangye-theme");
       if (savedTheme === "ink" || savedTheme === "light" || savedTheme === "night") {
         /* "night" migrates the preference used by the previous design. */
-        document.documentElement.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+        root.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+      }
+      const savedLanguage = localStorage.getItem("xiangye-language");
+      if (savedLanguage === "zh") {
+        root.dataset.language = "zh";
+        root.lang = "zh-Hans";
       }
     } catch (error) {
       /* Celadon daylight remains the safe default. */
     }
   </script>
-  <link rel="stylesheet" href="assets/css/site.css?v=20260902b">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260903b">
 </head>
 
 <body data-page="{{ page.active }}">
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content">{{ t("Skip to content", "跳至主要内容") }}</a>
 
   <!-- Purely decorative Southern Song layers: celadon crackle and qin strings. -->
   <div class="celadon-crackle" aria-hidden="true"></div>
@@ -46,28 +62,35 @@
 
   <header class="site-header" data-header>
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="{{ site.name }} — home">
+      <a class="brand" href="index.html" aria-label="{{ site.name }} — home"
+        data-label-en="{{ site.name }} — home" data-label-zh="{{ site.name_cn }} — 首页">
         <!-- Edit the seal character here if the family mark ever changes. -->
         <span class="brand-seal" aria-hidden="true">葉</span>
         <span class="brand-wordmark">
-          <strong>{{ site.name }}</strong>
-          <small>Bayesian · KAUST</small>
+          <strong>{{ t(site.name, site.name_cn) }}</strong>
+          <small>{{ t("Bayesian · KAUST", "贝叶斯 · KAUST") }}</small>
         </span>
       </a>
 
-      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation"
+        data-label-en="Primary navigation" data-label-zh="主导航" data-navigation>
         {% for item in navigation %}
         <a class="nav-link{% if page.active == item.key %} is-active{% endif %}" href="{{ item.href }}" {% if
           page.active==item.key %} aria-current="page" {% endif %}>
-          {{ item.label }}
+          {{ t(item.label, item.label_cn) }}
         </a>
         {% endfor %}
       </nav>
 
       <div class="header-actions">
         <a class="cv-link" href="files/cv.pdf" target="_blank" rel="noopener">
-          Download CV <span aria-hidden="true">↗</span>
+          {{ t("View CV", "查看简历") }} <span aria-hidden="true">↗</span>
         </a>
+        <button class="language-toggle" type="button" aria-label="Switch site language to Chinese"
+          data-language-toggle>
+          <span data-language-content="en" lang="zh-Hans">中文</span>
+          <span data-language-content="zh" lang="en">EN</span>
+        </button>
         <button class="theme-toggle" type="button" aria-label="Use ink theme" data-theme-toggle>
           <span class="theme-toggle__light" aria-hidden="true">☼</span>
           <span class="theme-toggle__ink" aria-hidden="true">墨</span>
@@ -89,18 +112,18 @@
       <div class="footer-signature">
         <span class="footer-seal" aria-hidden="true">葉</span>
         <div>
-          <strong>{{ site.name }}</strong>
-          <span>{{ site.location }}</span>
+          <strong>{{ t(site.name, site.name_cn) }}</strong>
+          <span>{{ t(site.location, site.location_cn) }}</span>
         </div>
       </div>
 
       <p class="footer-verse">
         <span lang="zh-Hans">{{ poetry.motto.chinese }}</span>
-        <small>{{ poetry.motto.english }}</small>
+        <small lang="en">{{ poetry.motto.english }}</small>
       </p>
 
       <div class="footer-meta">
-        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <a href="mailto:{{ site.email }}" lang="en">{{ site.email }}</a>
         <span>© {{ current_year }}</span>
       </div>
     </div>
@@ -110,7 +133,7 @@
     <span aria-hidden="true">↑</span>
   </button>
 
-  <script src="assets/js/site.js?v=20260902b" defer></script>
+  <script src="assets/js/site.js?v=20260903b" defer></script>
 </body>
 
 </html>

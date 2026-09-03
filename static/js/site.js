@@ -3,6 +3,7 @@
 
   const root = document.documentElement;
   const header = document.querySelector("[data-header]");
+  const languageToggle = document.querySelector("[data-language-toggle]");
   const themeToggle = document.querySelector("[data-theme-toggle]");
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const navigation = document.querySelector("[data-navigation]");
@@ -10,16 +11,91 @@
   const themeMeta = document.querySelector('meta[name="theme-color"]');
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+  const messages = {
+    en: {
+      switchLanguage: "Switch site language to Chinese",
+      useInkTheme: "Use ink theme",
+      useLightTheme: "Use celadon light theme",
+      openNavigation: "Open navigation",
+      closeNavigation: "Close navigation",
+      backToTop: "Back to top",
+    },
+    zh: {
+      switchLanguage: "切换至英文",
+      useInkTheme: "切换至墨色主题",
+      useLightTheme: "切换至青瓷浅色主题",
+      openNavigation: "展开导航菜单",
+      closeNavigation: "收起导航菜单",
+      backToTop: "返回页首",
+    },
+  };
+
+  function currentLanguage() {
+    return root.dataset.language === "zh" ? "zh" : "en";
+  }
+
+  function updateThemeLabel() {
+    if (!themeToggle) return;
+    const copy = messages[currentLanguage()];
+    themeToggle.setAttribute(
+      "aria-label",
+      root.dataset.theme === "ink" ? copy.useLightTheme : copy.useInkTheme
+    );
+  }
+
+  function updateMenuLabel() {
+    if (!menuToggle) return;
+    const copy = messages[currentLanguage()];
+    const isOpen = Boolean(header?.classList.contains("is-menu-open"));
+    menuToggle.setAttribute("aria-label", isOpen ? copy.closeNavigation : copy.openNavigation);
+  }
+
+  function updateLocalizedAttributes(language) {
+    const attributeSuffix = language === "zh" ? "zh" : "en";
+
+    document.querySelectorAll("[data-label-en][data-label-zh]").forEach((element) => {
+      element.setAttribute("aria-label", element.getAttribute(`data-label-${attributeSuffix}`));
+    });
+
+    document.querySelectorAll("[data-alt-en][data-alt-zh]").forEach((element) => {
+      element.setAttribute("alt", element.getAttribute(`data-alt-${attributeSuffix}`));
+    });
+
+    document.querySelectorAll("[data-content-en][data-content-zh]").forEach((element) => {
+      element.setAttribute("content", element.getAttribute(`data-content-${attributeSuffix}`));
+    });
+
+    const title = document.querySelector("title[data-title-en][data-title-zh]");
+    if (title) title.textContent = title.getAttribute(`data-title-${attributeSuffix}`);
+
+    languageToggle?.setAttribute("aria-label", messages[language].switchLanguage);
+    backToTop?.setAttribute("aria-label", messages[language].backToTop);
+    updateThemeLabel();
+    updateMenuLabel();
+  }
+
+  function setLanguage(language, persist = true) {
+    const nextLanguage = language === "zh" ? "zh" : "en";
+    root.dataset.language = nextLanguage;
+    root.lang = nextLanguage === "zh" ? "zh-Hans" : "en";
+    updateLocalizedAttributes(nextLanguage);
+
+    if (persist) {
+      try {
+        localStorage.setItem("xiangye-language", nextLanguage);
+      } catch (error) {
+        /* Language switching still works when browser storage is disabled. */
+      }
+    }
+  }
+
   function setTheme(theme, persist = true) {
     // The dark palette is called "ink" to match the Southern Song art system.
     const nextTheme = theme === "ink" ? "ink" : "light";
     root.dataset.theme = nextTheme;
 
-    if (themeToggle) {
-      const isInk = nextTheme === "ink";
-      themeToggle.setAttribute("aria-label", isInk ? "Use celadon light theme" : "Use ink theme");
-      themeToggle.setAttribute("aria-pressed", String(isInk));
-    }
+    if (themeToggle) themeToggle.setAttribute("aria-pressed", String(nextTheme === "ink"));
+    updateThemeLabel();
 
     if (themeMeta) {
       themeMeta.setAttribute("content", nextTheme === "ink" ? "#18241f" : "#dce4dc");
@@ -34,7 +110,12 @@
     }
   }
 
+  setLanguage(root.dataset.language, false);
   setTheme(root.dataset.theme, false);
+
+  languageToggle?.addEventListener("click", () => {
+    setLanguage(currentLanguage() === "en" ? "zh" : "en");
+  });
 
   themeToggle?.addEventListener("click", () => {
     setTheme(root.dataset.theme === "ink" ? "light" : "ink");
@@ -44,7 +125,7 @@
     if (!header || !menuToggle) return;
     header.classList.remove("is-menu-open");
     menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation");
+    updateMenuLabel();
     document.body.style.removeProperty("overflow");
   }
 
@@ -53,7 +134,7 @@
     const willOpen = !header.classList.contains("is-menu-open");
     header.classList.toggle("is-menu-open", willOpen);
     menuToggle.setAttribute("aria-expanded", String(willOpen));
-    menuToggle.setAttribute("aria-label", willOpen ? "Close navigation" : "Open navigation");
+    updateMenuLabel();
     document.body.style.overflow = willOpen ? "hidden" : "";
   }
 

@@ -1,39 +1,49 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" data-language="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The requested page could not be found.">
+  <meta name="description" content="The requested page could not be found." data-content-en="The requested page could not be found."
+    data-content-zh="未找到您访问的页面。">
   <meta name="author" content="Xiang Ye">
   <meta name="theme-color" content="#dce4dc">
   <link rel="canonical" href="https://xiangyestats.github.io/XiangYe/404.html">
   <meta property="og:type" content="website">
-  <meta property="og:title"
-    content="Xiang Ye — Page not found">
-  <meta property="og:description" content="The requested page could not be found.">
+  <meta property="og:title" content="Xiang Ye — Page not found" data-content-en="Xiang Ye — Page not found"
+    data-content-zh="叶翔 — 页面未找到">
+  <meta property="og:description" content="The requested page could not be found." data-content-en="The requested page could not be found."
+    data-content-zh="未找到您访问的页面。">
+  <meta property="og:locale" content="en_US" data-content-en="en_US" data-content-zh="zh_CN">
+  <meta property="og:locale:alternate" content="zh_CN" data-content-en="zh_CN" data-content-zh="en_US">
   <meta property="og:image" content="https://xiangyestats.github.io/XiangYe/assets/images/profile.jpg">
   <meta property="og:url" content="https://xiangyestats.github.io/XiangYe/404.html">
-  <title>Xiang Ye — Page not found</title>
+  <title data-title-en="Xiang Ye — Page not found" data-title-zh="叶翔 — 页面未找到">Xiang Ye — Page not found</title>
 
   <!-- Apply the saved palette before the page paints, preventing a flash. -->
   <script>
     document.documentElement.classList.add("js");
     try {
+      const root = document.documentElement;
       const savedTheme = localStorage.getItem("xiangye-theme");
       if (savedTheme === "ink" || savedTheme === "light" || savedTheme === "night") {
         /* "night" migrates the preference used by the previous design. */
-        document.documentElement.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+        root.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+      }
+      const savedLanguage = localStorage.getItem("xiangye-language");
+      if (savedLanguage === "zh") {
+        root.dataset.language = "zh";
+        root.lang = "zh-Hans";
       }
     } catch (error) {
       /* Celadon daylight remains the safe default. */
     }
   </script>
-  <link rel="stylesheet" href="assets/css/site.css?v=20260902b">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260903b">
 </head>
 
 <body data-page="">
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content"><span data-language-content="en" lang="en">Skip to content</span><span data-language-content="zh" lang="zh-Hans">跳至主要内容</span></a>
 
   <!-- Purely decorative Southern Song layers: celadon crackle and qin strings. -->
   <div class="celadon-crackle" aria-hidden="true"></div>
@@ -42,46 +52,53 @@
 
   <header class="site-header" data-header>
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Xiang Ye — home">
+      <a class="brand" href="index.html" aria-label="Xiang Ye — home"
+        data-label-en="Xiang Ye — home" data-label-zh="叶翔 — 首页">
         <!-- Edit the seal character here if the family mark ever changes. -->
         <span class="brand-seal" aria-hidden="true">葉</span>
         <span class="brand-wordmark">
-          <strong>Xiang Ye</strong>
-          <small>Bayesian · KAUST</small>
+          <strong><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span></strong>
+          <small><span data-language-content="en" lang="en">Bayesian · KAUST</span><span data-language-content="zh" lang="zh-Hans">贝叶斯 · KAUST</span></small>
         </span>
       </a>
 
-      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation"
+        data-label-en="Primary navigation" data-label-zh="主导航" data-navigation>
         <a class="nav-link" href="index.html" >
-          Home
+          <span data-language-content="en" lang="en">Home</span><span data-language-content="zh" lang="zh-Hans">首页</span>
         </a>
         <a class="nav-link" href="research.html" >
-          Research
+          <span data-language-content="en" lang="en">Research</span><span data-language-content="zh" lang="zh-Hans">研究</span>
         </a>
         <a class="nav-link" href="publications.html" >
-          Publications
+          <span data-language-content="en" lang="en">Publications</span><span data-language-content="zh" lang="zh-Hans">学术论文</span>
         </a>
         <a class="nav-link" href="resources.html" >
-          Resources
+          <span data-language-content="en" lang="en">Resources</span><span data-language-content="zh" lang="zh-Hans">资源</span>
         </a>
         <a class="nav-link" href="notes.html" >
-          Notes
+          <span data-language-content="en" lang="en">Notes</span><span data-language-content="zh" lang="zh-Hans">随笔</span>
         </a>
         <a class="nav-link" href="activity.html" >
-          Activity
+          <span data-language-content="en" lang="en">Activity</span><span data-language-content="zh" lang="zh-Hans">学术活动</span>
         </a>
         <a class="nav-link" href="about_me.html" >
-          About
+          <span data-language-content="en" lang="en">About</span><span data-language-content="zh" lang="zh-Hans">研究之外</span>
         </a>
         <a class="nav-link" href="contact.html" >
-          Contact
+          <span data-language-content="en" lang="en">Contact</span><span data-language-content="zh" lang="zh-Hans">联系</span>
         </a>
       </nav>
 
       <div class="header-actions">
         <a class="cv-link" href="files/cv.pdf" target="_blank" rel="noopener">
-          Download CV <span aria-hidden="true">↗</span>
+          <span data-language-content="en" lang="en">View CV</span><span data-language-content="zh" lang="zh-Hans">查看简历</span> <span aria-hidden="true">↗</span>
         </a>
+        <button class="language-toggle" type="button" aria-label="Switch site language to Chinese"
+          data-language-toggle>
+          <span data-language-content="en" lang="zh-Hans">中文</span>
+          <span data-language-content="zh" lang="en">EN</span>
+        </button>
         <button class="theme-toggle" type="button" aria-label="Use ink theme" data-theme-toggle>
           <span class="theme-toggle__light" aria-hidden="true">☼</span>
           <span class="theme-toggle__ink" aria-hidden="true">墨</span>
@@ -98,10 +115,12 @@
 <section class="not-found section-shell">
   <div data-reveal>
     <span class="not-found-code" aria-hidden="true">404</span>
-    <p class="eyebrow"><span></span> Page not found · 迷径</p>
-    <h1>The path fades into mist.</h1>
-    <p>The page you followed is not part of this site.</p>
-    <a class="button button--primary" href="index.html">Return home <span aria-hidden="true">→</span></a>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Page not found</span> ·
+      <span lang="zh-Hans">迷径</span></span></p>
+    <h1><span data-language-content="en" lang="en">The path fades into mist.</span><span data-language-content="zh" lang="zh-Hans">此径渐隐于烟霭。</span></h1>
+    <p><span data-language-content="en" lang="en">The page you followed is not part of this site.</span><span data-language-content="zh" lang="zh-Hans">您访问的页面不存在，或已移至别处。</span></p>
+    <a class="button button--primary" href="index.html"><span data-language-content="en" lang="en">Return home</span><span data-language-content="zh" lang="zh-Hans">返回首页</span>
+      <span aria-hidden="true">→</span></a>
   </div>
 </section>
   </main>
@@ -111,18 +130,18 @@
       <div class="footer-signature">
         <span class="footer-seal" aria-hidden="true">葉</span>
         <div>
-          <strong>Xiang Ye</strong>
-          <span>Thuwal, Saudi Arabia</span>
+          <strong><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span></strong>
+          <span><span data-language-content="en" lang="en">Thuwal, Saudi Arabia</span><span data-language-content="zh" lang="zh-Hans">沙特阿拉伯图瓦勒</span></span>
         </div>
       </div>
 
       <p class="footer-verse">
         <span lang="zh-Hans">志存高远，脚踏实地</span>
-        <small>Aim high, stay grounded.</small>
+        <small lang="en">Aim high, stay grounded.</small>
       </p>
 
       <div class="footer-meta">
-        <a href="mailto:xiang.ye@kaust.edu.sa">xiang.ye@kaust.edu.sa</a>
+        <a href="mailto:xiang.ye@kaust.edu.sa" lang="en">xiang.ye@kaust.edu.sa</a>
         <span>© 2026</span>
       </div>
     </div>
@@ -132,7 +151,7 @@
     <span aria-hidden="true">↑</span>
   </button>
 
-  <script src="assets/js/site.js?v=20260902b" defer></script>
+  <script src="assets/js/site.js?v=20260903b" defer></script>
 </body>
 
 </html>

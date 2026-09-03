@@ -11,6 +11,12 @@ rules, one-corner composition, generous negative space, and small bilingual
 poetic marginalia. The poetry supports the scholarly identity without becoming
 the primary content.
 
+English is the first-visit default. A persistent `中文` / `EN` control in the
+header switches all English-only site content, metadata, and accessibility
+labels while preserving headings and poems that are intentionally bilingual.
+The build stops before replacing `docs/` if a populated content record is
+missing its required Chinese counterpart.
+
 The published address remains:
 
 <https://xiangyestats.github.io/XiangYe/>
@@ -79,7 +85,7 @@ Most future updates need only one or two files:
 
 | What you want to change | File or section |
 | --- | --- |
-| Name, role, email, links, biography | `site_data.py` → `SITE`, `INTRO_PARAGRAPHS` |
+| Name, role, email, links, biography, Chinese copy | `site_data.py` → `SITE`, `INTRO_PARAGRAPHS` |
 | Poems and English translations | `site_data.py` → `POETRY` |
 | Homepage research questions | `site_data.py` → `CURRENT_QUESTIONS` |
 | Education and research interests | `site_data.py` → `EDUCATION`, `RESEARCH_INTERESTS` |
@@ -95,7 +101,7 @@ Most future updates need only one or two files:
 | Research / Resources / Notes / Activity / About / Contact structure | matching file under `templates/` |
 | Celadon, paper, ink, and cinnabar colours | top of `static/css/site.css` → `:root` |
 | Spacing, typography, responsive layout | labelled sections in `static/css/site.css` |
-| Theme toggle, menu, reveal, portrait motion | `static/js/site.js` |
+| Language/theme toggles, menu, reveal, portrait motion | `static/js/site.js` |
 | Portrait | `static/images/profile.jpg` |
 | Vertical Chinese-name calligraphy | `static/images/identity/xiang-ye-calligraphy.png` |
 | CV | `files/cv.pdf` |
@@ -116,9 +122,11 @@ PACKAGES = [
     {
         "name": "INLAcircular",
         "description": "A concise description of the package.",
+        "description_cn": "软件包的简洁中文说明。",
         "href": "https://example.com/package",
         "language": "R",       # optional
         "status": "Active",    # optional
+        "status_cn": "维护中", # optional
     },
 ]
 ```
@@ -129,7 +137,9 @@ Add a general tutorial to `RESOURCE_TUTORIALS`:
 RESOURCE_TUTORIALS = [
     {
         "title": "Tutorial title",
+        "title_cn": "教程标题",
         "description": "A short explanation.",  # optional
+        "description_cn": "简短的中文说明。",    # optional
         "href": "https://example.com/tutorial",
     },
 ]
@@ -143,7 +153,9 @@ list contains at least one item:
 "tutorials": [
     {
         "title": "Circular regression with INLA",
+        "title_cn": "使用 INLA 进行圆周回归",
         "description": "A practical walkthrough.",  # optional
+        "description_cn": "一份实用的中文指南。",    # optional
         "href": "https://example.com/tutorial",     # optional
     },
 ],
@@ -154,8 +166,17 @@ will then appear beside the direction title; leaving `href` as `None` keeps the
 button hidden.
 
 `CURRENT_QUESTIONS` works the same way. It is currently empty, so the entire
-homepage panel is hidden. Add one or more strings and the heading and questions
-will return automatically in the same position.
+homepage panel is hidden. Add paired records and the heading and questions will
+return automatically in the same position:
+
+```python
+CURRENT_QUESTIONS = [
+    {
+        "text": "How should this question read in English?",
+        "text_cn": "这个问题的中文版本是什么？",
+    },
+]
+```
 
 ## Add a new note
 
@@ -163,9 +184,11 @@ Notes are ordinary Markdown files, similar to small blog posts:
 
 1. Copy `content/notes/_template.md` to a lowercase, hyphenated filename such
    as `content/notes/a-note-on-priors.md`. Files beginning with `_` are ignored.
-2. Edit the `Title`, `Date`, `Summary`, and optional comma-separated `Tags` at
-   the top. Keep the date in `YYYY-MM-DD` format.
-3. Write the note below the blank line using Markdown. To add an image, place it
+2. Edit the paired `Title` / `Title-ZH`, `Summary` / `Summary-ZH`, optional
+   comma-separated `Tags` / `Tags-ZH`, and `Date` fields at the top. Keep the
+   date in `YYYY-MM-DD` format.
+3. Write the English note below the metadata and the Chinese note below the
+   `<!-- zh-Hans -->` marker. Both bodies use Markdown. To add an image, place it
    under `static/images/notes/` and reference it as
    `![Useful alternative text](assets/images/notes/image-name.png)`.
 4. Run `python build.py` and `python validate.py`.

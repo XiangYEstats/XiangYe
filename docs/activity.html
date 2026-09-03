@@ -1,39 +1,49 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" data-language="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research activities and distinctions of Xiang Ye.">
+  <meta name="description" content="Research activities and distinctions of Xiang Ye." data-content-en="Research activities and distinctions of Xiang Ye."
+    data-content-zh="记录叶翔的学术活动与所获荣誉。">
   <meta name="author" content="Xiang Ye">
   <meta name="theme-color" content="#dce4dc">
   <link rel="canonical" href="https://xiangyestats.github.io/XiangYe/activity.html">
   <meta property="og:type" content="website">
-  <meta property="og:title"
-    content="Xiang Ye — Activity">
-  <meta property="og:description" content="Research activities and distinctions of Xiang Ye.">
+  <meta property="og:title" content="Xiang Ye — Activity" data-content-en="Xiang Ye — Activity"
+    data-content-zh="叶翔 — 学术活动">
+  <meta property="og:description" content="Research activities and distinctions of Xiang Ye." data-content-en="Research activities and distinctions of Xiang Ye."
+    data-content-zh="记录叶翔的学术活动与所获荣誉。">
+  <meta property="og:locale" content="en_US" data-content-en="en_US" data-content-zh="zh_CN">
+  <meta property="og:locale:alternate" content="zh_CN" data-content-en="zh_CN" data-content-zh="en_US">
   <meta property="og:image" content="https://xiangyestats.github.io/XiangYe/assets/images/profile.jpg">
   <meta property="og:url" content="https://xiangyestats.github.io/XiangYe/activity.html">
-  <title>Xiang Ye — Activity</title>
+  <title data-title-en="Xiang Ye — Activity" data-title-zh="叶翔 — 学术活动">Xiang Ye — Activity</title>
 
   <!-- Apply the saved palette before the page paints, preventing a flash. -->
   <script>
     document.documentElement.classList.add("js");
     try {
+      const root = document.documentElement;
       const savedTheme = localStorage.getItem("xiangye-theme");
       if (savedTheme === "ink" || savedTheme === "light" || savedTheme === "night") {
         /* "night" migrates the preference used by the previous design. */
-        document.documentElement.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+        root.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+      }
+      const savedLanguage = localStorage.getItem("xiangye-language");
+      if (savedLanguage === "zh") {
+        root.dataset.language = "zh";
+        root.lang = "zh-Hans";
       }
     } catch (error) {
       /* Celadon daylight remains the safe default. */
     }
   </script>
-  <link rel="stylesheet" href="assets/css/site.css?v=20260902b">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260903b">
 </head>
 
 <body data-page="activity">
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content"><span data-language-content="en" lang="en">Skip to content</span><span data-language-content="zh" lang="zh-Hans">跳至主要内容</span></a>
 
   <!-- Purely decorative Southern Song layers: celadon crackle and qin strings. -->
   <div class="celadon-crackle" aria-hidden="true"></div>
@@ -42,46 +52,53 @@
 
   <header class="site-header" data-header>
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Xiang Ye — home">
+      <a class="brand" href="index.html" aria-label="Xiang Ye — home"
+        data-label-en="Xiang Ye — home" data-label-zh="叶翔 — 首页">
         <!-- Edit the seal character here if the family mark ever changes. -->
         <span class="brand-seal" aria-hidden="true">葉</span>
         <span class="brand-wordmark">
-          <strong>Xiang Ye</strong>
-          <small>Bayesian · KAUST</small>
+          <strong><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span></strong>
+          <small><span data-language-content="en" lang="en">Bayesian · KAUST</span><span data-language-content="zh" lang="zh-Hans">贝叶斯 · KAUST</span></small>
         </span>
       </a>
 
-      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation"
+        data-label-en="Primary navigation" data-label-zh="主导航" data-navigation>
         <a class="nav-link" href="index.html" >
-          Home
+          <span data-language-content="en" lang="en">Home</span><span data-language-content="zh" lang="zh-Hans">首页</span>
         </a>
         <a class="nav-link" href="research.html" >
-          Research
+          <span data-language-content="en" lang="en">Research</span><span data-language-content="zh" lang="zh-Hans">研究</span>
         </a>
         <a class="nav-link" href="publications.html" >
-          Publications
+          <span data-language-content="en" lang="en">Publications</span><span data-language-content="zh" lang="zh-Hans">学术论文</span>
         </a>
         <a class="nav-link" href="resources.html" >
-          Resources
+          <span data-language-content="en" lang="en">Resources</span><span data-language-content="zh" lang="zh-Hans">资源</span>
         </a>
         <a class="nav-link" href="notes.html" >
-          Notes
+          <span data-language-content="en" lang="en">Notes</span><span data-language-content="zh" lang="zh-Hans">随笔</span>
         </a>
         <a class="nav-link is-active" href="activity.html"  aria-current="page" >
-          Activity
+          <span data-language-content="en" lang="en">Activity</span><span data-language-content="zh" lang="zh-Hans">学术活动</span>
         </a>
         <a class="nav-link" href="about_me.html" >
-          About
+          <span data-language-content="en" lang="en">About</span><span data-language-content="zh" lang="zh-Hans">研究之外</span>
         </a>
         <a class="nav-link" href="contact.html" >
-          Contact
+          <span data-language-content="en" lang="en">Contact</span><span data-language-content="zh" lang="zh-Hans">联系</span>
         </a>
       </nav>
 
       <div class="header-actions">
         <a class="cv-link" href="files/cv.pdf" target="_blank" rel="noopener">
-          Download CV <span aria-hidden="true">↗</span>
+          <span data-language-content="en" lang="en">View CV</span><span data-language-content="zh" lang="zh-Hans">查看简历</span> <span aria-hidden="true">↗</span>
         </a>
+        <button class="language-toggle" type="button" aria-label="Switch site language to Chinese"
+          data-language-toggle>
+          <span data-language-content="en" lang="zh-Hans">中文</span>
+          <span data-language-content="zh" lang="en">EN</span>
+        </button>
         <button class="theme-toggle" type="button" aria-label="Use ink theme" data-theme-toggle>
           <span class="theme-toggle__light" aria-hidden="true">☼</span>
           <span class="theme-toggle__ink" aria-hidden="true">墨</span>
@@ -101,16 +118,17 @@
 
 <section class="page-hero section-shell">
   <div data-reveal>
-    <p class="eyebrow"><span></span> Research journey · 行迹</p>
-    <h1>Activity</h1>
-    <p>Workshops, conferences, summer schools, and the milestones around them.</p>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Research journey</span> ·
+      <span lang="zh-Hans">行迹</span></span></p>
+    <h1><span data-language-content="en" lang="en">Activity</span><span data-language-content="zh" lang="zh-Hans">学术活动</span></h1>
+    <p data-language-only="en" lang="en">Workshops, conferences, summer schools, and the milestones around them.</p>
   </div>
 
   <aside class="page-verse" data-reveal data-reveal-delay="1">
     <p class="page-verse__cn" lang="zh-Hans">
       读万卷书，<br>      行万里路。    </p>
 
-    <p class="page-verse__en">
+    <p class="page-verse__en" lang="en">
       Read ten thousand volumes; journey ten thousand miles;<br>      knowledge grows on pages, and along the roads beneath wide skies.    </p>
 
     <small>Dong Qichang · 董其昌 · 《画禅室随笔·卷二》</small>
@@ -131,37 +149,40 @@
         <div class="timeline-dot" aria-hidden="true"></div>
 
         <div class="timeline-meta">
-          <span>Conference poster presentation</span>
-          <time>28 June-3 July</time>
+          <span><span data-language-content="en" lang="en">Conference poster presentation</span><span data-language-content="zh" lang="zh-Hans">会议海报展示</span></span>
+          <time><span data-language-content="en" lang="en">28 June-3 July</span><span data-language-content="zh" lang="zh-Hans">6月28日至7月3日</span></time>
         </div>
 
-        <h2>ISBA Conference 2026</h2>
+        <h2 lang="en">ISBA Conference 2026</h2>
         <p class="timeline-details">
-<span class="timeline-place">Nagoya, Japan</span><span class="timeline-title"><span>Research topic</span> A Bayesian Regression Framework for Circular Models</span>        </p>
+<span class="timeline-place"><span data-language-content="en" lang="en">Nagoya, Japan</span><span data-language-content="zh" lang="zh-Hans">日本名古屋</span></span><span class="timeline-title"><span><span data-language-content="en" lang="en">Research topic</span><span data-language-content="zh" lang="zh-Hans">主题</span></span>
+            <span class="timeline-topic-name" lang="en">A Bayesian Regression Framework for Circular Models</span></span>        </p>
       </article>
       <article class="timeline-item">
         <div class="timeline-dot" aria-hidden="true"></div>
 
         <div class="timeline-meta">
-          <span>Conference poster presentation</span>
-          <time>1—4 June</time>
+          <span><span data-language-content="en" lang="en">Conference poster presentation</span><span data-language-content="zh" lang="zh-Hans">会议海报展示</span></span>
+          <time><span data-language-content="en" lang="en">1—4 June</span><span data-language-content="zh" lang="zh-Hans">6月1日至4日</span></time>
         </div>
 
-        <h2>NORDSTAT Conference 2026</h2>
+        <h2 lang="en">NORDSTAT Conference 2026</h2>
         <p class="timeline-details">
-<span class="timeline-place">Helsinki, Finland</span><span class="timeline-title"><span>Research topic</span> A Bayesian Regression Framework for Circular Models</span>        </p>
+<span class="timeline-place"><span data-language-content="en" lang="en">Helsinki, Finland</span><span data-language-content="zh" lang="zh-Hans">芬兰赫尔辛基</span></span><span class="timeline-title"><span><span data-language-content="en" lang="en">Research topic</span><span data-language-content="zh" lang="zh-Hans">主题</span></span>
+            <span class="timeline-topic-name" lang="en">A Bayesian Regression Framework for Circular Models</span></span>        </p>
       </article>
       <article class="timeline-item">
         <div class="timeline-dot" aria-hidden="true"></div>
 
         <div class="timeline-meta">
-          <span>Research visit</span>
-          <time>2 May—6 June</time>
+          <span><span data-language-content="en" lang="en">Research visit</span><span data-language-content="zh" lang="zh-Hans">学术访问</span></span>
+          <time><span data-language-content="en" lang="en">2 May—6 June</span><span data-language-content="zh" lang="zh-Hans">5月2日至6月6日</span></time>
         </div>
 
-        <h2>Aalto University research visit</h2>
+        <h2 lang="en">Aalto University research visit</h2>
         <p class="timeline-details">
-<span class="timeline-place">Espoo, Finland</span><span class="timeline-title"><span>Research topic</span> Bayesian inference and computation for circular models</span>        </p>
+<span class="timeline-place"><span data-language-content="en" lang="en">Espoo, Finland</span><span data-language-content="zh" lang="zh-Hans">芬兰埃斯波</span></span><span class="timeline-title"><span><span data-language-content="en" lang="en">Research topic</span><span data-language-content="zh" lang="zh-Hans">主题</span></span>
+            <span class="timeline-topic-name" lang="en">Bayesian inference and computation for circular models</span></span>        </p>
       </article>
     </div>
   </div>
@@ -175,37 +196,40 @@
         <div class="timeline-dot" aria-hidden="true"></div>
 
         <div class="timeline-meta">
-          <span>Workshop poster presentation</span>
-          <time>2—6 November</time>
+          <span><span data-language-content="en" lang="en">Workshop poster presentation</span><span data-language-content="zh" lang="zh-Hans">研讨会海报展示</span></span>
+          <time><span data-language-content="en" lang="en">2—6 November</span><span data-language-content="zh" lang="zh-Hans">11月2日至6日</span></time>
         </div>
 
-        <h2>KAUST Statistics Workshop — Statistics for Learning from Complex Data: Foundations and Applications</h2>
+        <h2 lang="en">KAUST Statistics Workshop — Statistics for Learning from Complex Data: Foundations and Applications</h2>
         <p class="timeline-details">
-<span class="timeline-place">Thuwal, Saudi Arabia</span><span class="timeline-title"><span>Research topic</span> Bayesian Regression Framework for Models with Circular Components</span>        </p>
+<span class="timeline-place"><span data-language-content="en" lang="en">Thuwal, Saudi Arabia</span><span data-language-content="zh" lang="zh-Hans">沙特阿拉伯图瓦勒</span></span><span class="timeline-title"><span><span data-language-content="en" lang="en">Research topic</span><span data-language-content="zh" lang="zh-Hans">主题</span></span>
+            <span class="timeline-topic-name" lang="en">Bayesian Regression Framework for Models with Circular Components</span></span>        </p>
       </article>
       <article class="timeline-item">
         <div class="timeline-dot" aria-hidden="true"></div>
 
         <div class="timeline-meta">
-          <span>Conference poster presentation</span>
-          <time>6—12 June</time>
+          <span><span data-language-content="en" lang="en">Conference poster presentation</span><span data-language-content="zh" lang="zh-Hans">会议海报展示</span></span>
+          <time><span data-language-content="en" lang="en">6—12 June</span><span data-language-content="zh" lang="zh-Hans">6月6日至12日</span></time>
         </div>
 
-        <h2>Objective Bayes Methodology Conference</h2>
+        <h2 lang="en">Objective Bayes Methodology Conference</h2>
         <p class="timeline-details">
-<span class="timeline-place">Athens, Greece</span><span class="timeline-title"><span>Research topic</span> Principled priors for Bayesian inference of circular models</span>        </p>
+<span class="timeline-place"><span data-language-content="en" lang="en">Athens, Greece</span><span data-language-content="zh" lang="zh-Hans">希腊雅典</span></span><span class="timeline-title"><span><span data-language-content="en" lang="en">Research topic</span><span data-language-content="zh" lang="zh-Hans">主题</span></span>
+            <span class="timeline-topic-name" lang="en">Principled priors for Bayesian inference of circular models</span></span>        </p>
       </article>
       <article class="timeline-item">
         <div class="timeline-dot" aria-hidden="true"></div>
 
         <div class="timeline-meta">
-          <span>Workshop poster presentation</span>
-          <time>21—23 May</time>
+          <span><span data-language-content="en" lang="en">Workshop poster presentation</span><span data-language-content="zh" lang="zh-Hans">研讨会海报展示</span></span>
+          <time><span data-language-content="en" lang="en">21—23 May</span><span data-language-content="zh" lang="zh-Hans">5月21日至23日</span></time>
         </div>
 
-        <h2>INLA: past, present, and future</h2>
+        <h2 lang="en">INLA: past, present, and future</h2>
         <p class="timeline-details">
-<span class="timeline-place">Glasgow, United Kingdom</span><span class="timeline-title"><span>Research topic</span> Principled priors for Bayesian inference of circular models</span>        </p>
+<span class="timeline-place"><span data-language-content="en" lang="en">Glasgow, United Kingdom</span><span data-language-content="zh" lang="zh-Hans">英国格拉斯哥</span></span><span class="timeline-title"><span><span data-language-content="en" lang="en">Research topic</span><span data-language-content="zh" lang="zh-Hans">主题</span></span>
+            <span class="timeline-topic-name" lang="en">Principled priors for Bayesian inference of circular models</span></span>        </p>
       </article>
     </div>
   </div>
@@ -219,25 +243,26 @@
         <div class="timeline-dot" aria-hidden="true"></div>
 
         <div class="timeline-meta">
-          <span>Workshop poster presentation</span>
-          <time>17—21 November</time>
+          <span><span data-language-content="en" lang="en">Workshop poster presentation</span><span data-language-content="zh" lang="zh-Hans">研讨会海报展示</span></span>
+          <time><span data-language-content="en" lang="en">17—21 November</span><span data-language-content="zh" lang="zh-Hans">11月17日至21日</span></time>
         </div>
 
-        <h2>KAUST Statistics Workshop — Statistics for Learning from Complex Data: Foundations and Applications</h2>
+        <h2 lang="en">KAUST Statistics Workshop — Statistics for Learning from Complex Data: Foundations and Applications</h2>
         <p class="timeline-details">
-<span class="timeline-place">Thuwal, Saudi Arabia</span><span class="timeline-title"><span>Research topic</span> Principled priors for Bayesian inference of circular models</span>        </p>
+<span class="timeline-place"><span data-language-content="en" lang="en">Thuwal, Saudi Arabia</span><span data-language-content="zh" lang="zh-Hans">沙特阿拉伯图瓦勒</span></span><span class="timeline-title"><span><span data-language-content="en" lang="en">Research topic</span><span data-language-content="zh" lang="zh-Hans">主题</span></span>
+            <span class="timeline-topic-name" lang="en">Principled priors for Bayesian inference of circular models</span></span>        </p>
       </article>
       <article class="timeline-item">
         <div class="timeline-dot" aria-hidden="true"></div>
 
         <div class="timeline-meta">
-          <span>Summer school</span>
-          <time>8—12 July</time>
+          <span><span data-language-content="en" lang="en">Summer school</span><span data-language-content="zh" lang="zh-Hans">暑期学校</span></span>
+          <time><span data-language-content="en" lang="en">8—12 July</span><span data-language-content="zh" lang="zh-Hans">7月8日至12日</span></time>
         </div>
 
-        <h2>VIBASS7 — València International Bayesian Summer School</h2>
+        <h2 lang="en">VIBASS7 — València International Bayesian Summer School</h2>
         <p class="timeline-details">
-<span class="timeline-place">València, Spain</span>        </p>
+<span class="timeline-place"><span data-language-content="en" lang="en">València, Spain</span><span data-language-content="zh" lang="zh-Hans">西班牙瓦伦西亚</span></span>        </p>
       </article>
     </div>
   </div>
@@ -251,13 +276,13 @@
         <div class="timeline-dot" aria-hidden="true"></div>
 
         <div class="timeline-meta">
-          <span>Workshop</span>
-          <time>17—21 November</time>
+          <span><span data-language-content="en" lang="en">Workshop</span><span data-language-content="zh" lang="zh-Hans">研讨会</span></span>
+          <time><span data-language-content="en" lang="en">17—21 November</span><span data-language-content="zh" lang="zh-Hans">11月17日至21日</span></time>
         </div>
 
-        <h2>KAUST Statistics Workshop — Frontier Statistics &amp; Data Science for a Sustainable World</h2>
+        <h2 lang="en">KAUST Statistics Workshop — Frontier Statistics &amp; Data Science for a Sustainable World</h2>
         <p class="timeline-details">
-<span class="timeline-place">Thuwal, Saudi Arabia</span>        </p>
+<span class="timeline-place"><span data-language-content="en" lang="en">Thuwal, Saudi Arabia</span><span data-language-content="zh" lang="zh-Hans">沙特阿拉伯图瓦勒</span></span>        </p>
       </article>
     </div>
   </div>
@@ -270,8 +295,8 @@
       <p class="section-number">荣</p>
 
       <div>
-        <p class="section-kicker">Selected distinctions</p>
-        <h2>Recognition along the way.</h2>
+        <p class="section-kicker"><span data-language-content="en" lang="en">Selected distinctions</span><span data-language-content="zh" lang="zh-Hans">部分荣誉</span></p>
+        <h2><span data-language-content="en" lang="en">Recognition along the way.</span><span data-language-content="zh" lang="zh-Hans">求学与研究路上的一些收获。</span></h2>
       </div>
     </div>
 
@@ -280,24 +305,24 @@
         <time>2022</time>
 
         <div>
-          <h3>Master Dissertation Award</h3>
-          <p>Department Prize for Best Computational Dissertation for “Spatial Statistical Modeling with INLA”.</p>
+          <h3><span data-language-content="en" lang="en">Master Dissertation Award</span><span data-language-content="zh" lang="zh-Hans">硕士学位论文奖</span></h3>
+          <p><span data-language-content="en" lang="en">Department Prize for Best Computational Dissertation for “Spatial Statistical Modeling with INLA”.</span><span data-language-content="zh" lang="zh-Hans">凭借学位论文《Spatial Statistical Modeling with INLA》获系内最佳计算类论文奖。</span></p>
         </div>
       </article>
       <article>
         <time>2020</time>
 
         <div>
-          <h3>Meritorious Winner &amp; Student Advisor</h3>
-          <p>Mathematical Contest in Modeling (MCM).</p>
+          <h3><span data-language-content="en" lang="en">Meritorious Winner &amp; Student Advisor</span><span data-language-content="zh" lang="zh-Hans">优异奖得主兼学生顾问</span></h3>
+          <p><span data-language-content="en" lang="en">Mathematical Contest in Modeling (MCM).</span><span data-language-content="zh" lang="zh-Hans">美国大学生数学建模竞赛（MCM）。</span></p>
         </div>
       </article>
       <article>
         <time>2017—2019</time>
 
         <div>
-          <h3>Excellent Team Member</h3>
-          <p>ENACTUS.</p>
+          <h3><span data-language-content="en" lang="en">Excellent Team Member</span><span data-language-content="zh" lang="zh-Hans">优秀团队成员</span></h3>
+          <p><span data-language-content="en" lang="en">ENACTUS.</span><span data-language-content="zh" lang="zh-Hans">ENACTUS。</span></p>
         </div>
       </article>
     </div>
@@ -311,18 +336,18 @@
       <div class="footer-signature">
         <span class="footer-seal" aria-hidden="true">葉</span>
         <div>
-          <strong>Xiang Ye</strong>
-          <span>Thuwal, Saudi Arabia</span>
+          <strong><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span></strong>
+          <span><span data-language-content="en" lang="en">Thuwal, Saudi Arabia</span><span data-language-content="zh" lang="zh-Hans">沙特阿拉伯图瓦勒</span></span>
         </div>
       </div>
 
       <p class="footer-verse">
         <span lang="zh-Hans">志存高远，脚踏实地</span>
-        <small>Aim high, stay grounded.</small>
+        <small lang="en">Aim high, stay grounded.</small>
       </p>
 
       <div class="footer-meta">
-        <a href="mailto:xiang.ye@kaust.edu.sa">xiang.ye@kaust.edu.sa</a>
+        <a href="mailto:xiang.ye@kaust.edu.sa" lang="en">xiang.ye@kaust.edu.sa</a>
         <span>© 2026</span>
       </div>
     </div>
@@ -332,7 +357,7 @@
     <span aria-hidden="true">↑</span>
   </button>
 
-  <script src="assets/js/site.js?v=20260902b" defer></script>
+  <script src="assets/js/site.js?v=20260903b" defer></script>
 </body>
 
 </html>

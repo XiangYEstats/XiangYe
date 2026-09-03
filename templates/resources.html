@@ -5,12 +5,11 @@
      tied to a research direction live with that direction on Research. -->
 <section class="page-hero page-hero--resources section-shell">
   <div data-reveal>
-    <p class="eyebrow"><span></span> Packages &amp; tutorials · 器用</p>
-    <h1>Resources</h1>
-    <p>
-      Software and practical material that make statistical ideas easier to use,
-      reproduce, and extend.
-    </p>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Packages &amp; tutorials</span> ·
+      <span lang="zh-Hans">器用</span></span></p>
+    <h1>{{ t("Resources", "资源") }}</h1>
+    <p data-language-only="en" lang="en">Software and practical material that make statistical ideas easier to use,
+      reproduce, and extend.</p>
   </div>
 
   {% set verse = poetry[page.verse] %}
@@ -20,7 +19,7 @@
       {{ line }}{% if not loop.last %}<br>{% endif %}
       {% endfor %}
     </p>
-    <p class="page-verse__en">
+    <p class="page-verse__en" lang="en">
       {% for line in verse.english_lines %}
       {{ line }}{% if not loop.last %}<br>{% endif %}
       {% endfor %}
@@ -34,10 +33,10 @@
 <section class="resources-section section-shell">
   <div class="resource-section-heading" data-reveal>
     <div>
-      <p class="section-kicker">Software · 程序</p>
-      <h2>Packages</h2>
+      <p class="section-kicker"><span lang="en">Software</span> · <span lang="zh-Hans">程序</span></p>
+      <h2>{{ t("Packages", "软件包") }}</h2>
     </div>
-    <p>Reusable implementations, documentation, and source code.</p>
+    <p>{{ t("Reusable implementations, documentation, and source code.", "可复用的软件实现、使用文档与源代码。") }}</p>
   </div>
 
   {% if packages %}
@@ -51,12 +50,12 @@
     {% endif %}
       <div class="package-card__meta">
         <span>{{ "%02d"|format(loop.index) }}</span>
-        {% if package.language %}<small>{{ package.language }}</small>{% endif %}
-        {% if package.status %}<small>{{ package.status }}</small>{% endif %}
+        {% if package.language %}<small lang="en">{{ package.language }}</small>{% endif %}
+        {% if package.status %}<small>{{ t(package.status, package.status_cn) }}</small>{% endif %}
       </div>
-      <h3>{{ package.name }}</h3>
-      <p>{{ package.description }}</p>
-      {% if package.href %}<i aria-hidden="true">Visit package ↗</i>{% endif %}
+      <h3 lang="en">{{ package.name }}</h3>
+      <p>{{ t(package.description, package.description_cn) }}</p>
+      {% if package.href %}<i aria-hidden="true">{{ t("Visit package", "查看软件包主页") }} ↗</i>{% endif %}
     {% if package.href %}
     </a>
     {% else %}
@@ -65,16 +64,18 @@
     {% endfor %}
   </div>
   {% else %}
-  <div class="resource-empty" aria-label="No packages have been listed yet">
-    <span>Packages will be listed here as they are released.</span>
+  <div class="resource-empty" aria-label="No packages have been listed yet"
+    data-label-en="No packages have been listed yet" data-label-zh="目前尚未列出软件包">
+    <span>{{ t("Packages will be listed here as they are released.", "相关软件包发布后，将在这里更新。") }}</span>
   </div>
   {% endif %}
 
   <div class="resource-tutorials" data-reveal>
     <header>
-      <p class="section-kicker">Guides · 习作</p>
-      <h2>Tutorials</h2>
-      <p>General guides appear here; topic-specific tutorials sit beside their direction on the Research page.</p>
+      <p class="section-kicker"><span lang="en">Guides</span> · <span lang="zh-Hans">习作</span></p>
+      <h2>{{ t("Tutorials", "教程") }}</h2>
+      <p>{{ t("General guides appear here; topic-specific tutorials sit beside their direction on the Research page.",
+        "本页收录通用指南；专题教程请见“研究”页面中的相应研究方向。") }}</p>
     </header>
 
     {% if resource_tutorials %}
@@ -84,8 +85,9 @@
         {% if tutorial.href %}<a href="{{ tutorial.href }}" target="_blank" rel="noopener">{% else %}<div>{% endif %}
           <span>{{ "%02d"|format(loop.index) }}</span>
           <div>
-            <strong>{{ tutorial.title }}</strong>
-            {% if tutorial.description %}<small>{{ tutorial.description }}</small>{% endif %}
+            <strong>{{ t(tutorial.title, tutorial.title_cn) }}</strong>
+            {% if tutorial.description %}<small>{{ t(tutorial.description,
+              tutorial.description_cn) }}</small>{% endif %}
           </div>
           {% if tutorial.href %}<i aria-hidden="true">↗</i>{% endif %}
         {% if tutorial.href %}</a>{% else %}</div>{% endif %}
@@ -93,9 +95,9 @@
       {% endfor %}
     </ol>
     {% else %}
-    <p class="resource-tutorials__empty">General tutorials will be added here.</p>
+    <p class="resource-tutorials__empty">{{ t("General tutorials will be added here.",
+      "通用教程将陆续整理发布。") }}</p>
     {% endif %}
   </div>
 </section>
 {% endblock %}
-

@@ -1,39 +1,49 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" data-language="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research directions, projects, and related articles by Xiang Ye.">
+  <meta name="description" content="Research directions, projects, and related articles by Xiang Ye." data-content-en="Research directions, projects, and related articles by Xiang Ye."
+    data-content-zh="介绍叶翔的研究方向、项目及相关论文。">
   <meta name="author" content="Xiang Ye">
   <meta name="theme-color" content="#dce4dc">
   <link rel="canonical" href="https://xiangyestats.github.io/XiangYe/research.html">
   <meta property="og:type" content="website">
-  <meta property="og:title"
-    content="Xiang Ye — Research">
-  <meta property="og:description" content="Research directions, projects, and related articles by Xiang Ye.">
+  <meta property="og:title" content="Xiang Ye — Research" data-content-en="Xiang Ye — Research"
+    data-content-zh="叶翔 — 研究">
+  <meta property="og:description" content="Research directions, projects, and related articles by Xiang Ye." data-content-en="Research directions, projects, and related articles by Xiang Ye."
+    data-content-zh="介绍叶翔的研究方向、项目及相关论文。">
+  <meta property="og:locale" content="en_US" data-content-en="en_US" data-content-zh="zh_CN">
+  <meta property="og:locale:alternate" content="zh_CN" data-content-en="zh_CN" data-content-zh="en_US">
   <meta property="og:image" content="https://xiangyestats.github.io/XiangYe/assets/images/profile.jpg">
   <meta property="og:url" content="https://xiangyestats.github.io/XiangYe/research.html">
-  <title>Xiang Ye — Research</title>
+  <title data-title-en="Xiang Ye — Research" data-title-zh="叶翔 — 研究">Xiang Ye — Research</title>
 
   <!-- Apply the saved palette before the page paints, preventing a flash. -->
   <script>
     document.documentElement.classList.add("js");
     try {
+      const root = document.documentElement;
       const savedTheme = localStorage.getItem("xiangye-theme");
       if (savedTheme === "ink" || savedTheme === "light" || savedTheme === "night") {
         /* "night" migrates the preference used by the previous design. */
-        document.documentElement.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+        root.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+      }
+      const savedLanguage = localStorage.getItem("xiangye-language");
+      if (savedLanguage === "zh") {
+        root.dataset.language = "zh";
+        root.lang = "zh-Hans";
       }
     } catch (error) {
       /* Celadon daylight remains the safe default. */
     }
   </script>
-  <link rel="stylesheet" href="assets/css/site.css?v=20260902b">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260903b">
 </head>
 
 <body data-page="research">
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content"><span data-language-content="en" lang="en">Skip to content</span><span data-language-content="zh" lang="zh-Hans">跳至主要内容</span></a>
 
   <!-- Purely decorative Southern Song layers: celadon crackle and qin strings. -->
   <div class="celadon-crackle" aria-hidden="true"></div>
@@ -42,46 +52,53 @@
 
   <header class="site-header" data-header>
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Xiang Ye — home">
+      <a class="brand" href="index.html" aria-label="Xiang Ye — home"
+        data-label-en="Xiang Ye — home" data-label-zh="叶翔 — 首页">
         <!-- Edit the seal character here if the family mark ever changes. -->
         <span class="brand-seal" aria-hidden="true">葉</span>
         <span class="brand-wordmark">
-          <strong>Xiang Ye</strong>
-          <small>Bayesian · KAUST</small>
+          <strong><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span></strong>
+          <small><span data-language-content="en" lang="en">Bayesian · KAUST</span><span data-language-content="zh" lang="zh-Hans">贝叶斯 · KAUST</span></small>
         </span>
       </a>
 
-      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation"
+        data-label-en="Primary navigation" data-label-zh="主导航" data-navigation>
         <a class="nav-link" href="index.html" >
-          Home
+          <span data-language-content="en" lang="en">Home</span><span data-language-content="zh" lang="zh-Hans">首页</span>
         </a>
         <a class="nav-link is-active" href="research.html"  aria-current="page" >
-          Research
+          <span data-language-content="en" lang="en">Research</span><span data-language-content="zh" lang="zh-Hans">研究</span>
         </a>
         <a class="nav-link" href="publications.html" >
-          Publications
+          <span data-language-content="en" lang="en">Publications</span><span data-language-content="zh" lang="zh-Hans">学术论文</span>
         </a>
         <a class="nav-link" href="resources.html" >
-          Resources
+          <span data-language-content="en" lang="en">Resources</span><span data-language-content="zh" lang="zh-Hans">资源</span>
         </a>
         <a class="nav-link" href="notes.html" >
-          Notes
+          <span data-language-content="en" lang="en">Notes</span><span data-language-content="zh" lang="zh-Hans">随笔</span>
         </a>
         <a class="nav-link" href="activity.html" >
-          Activity
+          <span data-language-content="en" lang="en">Activity</span><span data-language-content="zh" lang="zh-Hans">学术活动</span>
         </a>
         <a class="nav-link" href="about_me.html" >
-          About
+          <span data-language-content="en" lang="en">About</span><span data-language-content="zh" lang="zh-Hans">研究之外</span>
         </a>
         <a class="nav-link" href="contact.html" >
-          Contact
+          <span data-language-content="en" lang="en">Contact</span><span data-language-content="zh" lang="zh-Hans">联系</span>
         </a>
       </nav>
 
       <div class="header-actions">
         <a class="cv-link" href="files/cv.pdf" target="_blank" rel="noopener">
-          Download CV <span aria-hidden="true">↗</span>
+          <span data-language-content="en" lang="en">View CV</span><span data-language-content="zh" lang="zh-Hans">查看简历</span> <span aria-hidden="true">↗</span>
         </a>
+        <button class="language-toggle" type="button" aria-label="Switch site language to Chinese"
+          data-language-toggle>
+          <span data-language-content="en" lang="zh-Hans">中文</span>
+          <span data-language-content="zh" lang="en">EN</span>
+        </button>
         <button class="theme-toggle" type="button" aria-label="Use ink theme" data-theme-toggle>
           <span class="theme-toggle__light" aria-hidden="true">☼</span>
           <span class="theme-toggle__ink" aria-hidden="true">墨</span>
@@ -100,18 +117,18 @@
      website button beside its title. -->
 <section class="page-hero page-hero--research section-shell">
   <div data-reveal>
-    <p class="eyebrow"><span></span> Research · 研究</p>
-    <h1>Research</h1>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Research</span> ·
+      <span lang="zh-Hans">研究</span></span></p>
+    <h1><span data-language-content="en" lang="en">Research</span><span data-language-content="zh" lang="zh-Hans">研究</span></h1>
     <p>
-      On this page, you can find my current research directions and the projects within them,
-      spanning Bayesian methodology, computation, and statistical practice.
+      <span data-language-content="en" lang="en">On this page, you can find my current research directions and the projects within them.</span><span data-language-content="zh" lang="zh-Hans">本页介绍我当前的研究方向与相关项目。</span>
     </p>
   </div>
 
   <aside class="page-verse" data-reveal data-reveal-delay="1">
     <p class="page-verse__cn" lang="zh-Hans">
       致广大而尽精微。    </p>
-    <p class="page-verse__en">
+    <p class="page-verse__en" lang="en">
       Embrace the vast; pursue the finest detail.    </p>
     <small>The Doctrine of the Mean · 《礼记·中庸》</small>
   </aside>
@@ -126,49 +143,50 @@
         <span class="direction-seal" aria-hidden="true">向</span>
 
         <div class="direction-heading">
-          <p>01 · 方向统计</p>
+          <p lang="zh-Hans">01 · 方向统计</p>
           <div class="direction-title-row">
-            <h2>Directional Statistics</h2>
+            <h2 lang="en">Directional Statistics</h2>
           </div>
-          <span>Bayesian methodology for circular observations and models with directional components, from principled prior specification, model construction to fast computation and reusable software.</span>
+          <span><span data-language-content="en" lang="en">Bayesian methodology for circular observations and models with directional components, from principled prior specification, model construction to fast computation and reusable software.</span><span data-language-content="zh" lang="zh-Hans">围绕圆周数据及含方向分量的模型，研究贝叶斯方法，涵盖有理论依据的先验设定、模型构建、高效计算与可复用的软件工具。</span></span>
         </div>
   </header>
 
-  <div class="research-projects" aria-label="Projects in Directional Statistics">
+  <div class="research-projects" aria-label="Projects in Directional Statistics"
+    data-label-en="Projects in Directional Statistics" data-label-zh="与“方向统计”相关的研究项目">
       <section class="research-project">
-        <p class="research-project__number">Project 01</p>
-        <h4>Circular PC priors</h4>
-        <p class="research-project__summary">Principled, interpretable prior distributions for the parameters of circular models.</p>
+        <p class="research-project__number"><span data-language-content="en" lang="en">Project</span><span data-language-content="zh" lang="zh-Hans">项目</span> 01</p>
+        <h4><span data-language-content="en" lang="en">Circular PC priors</span><span data-language-content="zh" lang="zh-Hans">圆周模型的 PC 先验</span></h4>
+        <p class="research-project__summary"><span data-language-content="en" lang="en">Principled, interpretable prior distributions for the parameters of circular models.</span><span data-language-content="zh" lang="zh-Hans">为圆周模型参数构建兼具理论依据与可解释性的先验分布。</span></p>
         <span class="research-project__rule" aria-hidden="true"></span>
 </section>
       <section class="research-project">
-        <p class="research-project__number">Project 02</p>
-        <h4>Joint circular regressions</h4>
-        <p class="research-project__summary">Latent-variable regression frameworks that connect circular and linear variables while carrying uncertainty through the joint model.</p>
+        <p class="research-project__number"><span data-language-content="en" lang="en">Project</span><span data-language-content="zh" lang="zh-Hans">项目</span> 02</p>
+        <h4><span data-language-content="en" lang="en">Joint circular regressions</span><span data-language-content="zh" lang="zh-Hans">联合圆周回归</span></h4>
+        <p class="research-project__summary"><span data-language-content="en" lang="en">Latent-variable regression frameworks that connect circular and linear variables while carrying uncertainty through the joint model.</span><span data-language-content="zh" lang="zh-Hans">通过潜变量回归框架联合建模圆周变量与线性变量，并在联合模型中完整传播不确定性。</span></p>
         <span class="research-project__rule" aria-hidden="true"></span>
 </section>
       <section class="research-project">
-        <p class="research-project__number">Project 03</p>
-        <h4>R package INLAcircular</h4>
-        <p class="research-project__summary">Accessible implementations of circular regression and joint models using Integrated Nested Laplace Approximation.</p>
+        <p class="research-project__number"><span data-language-content="en" lang="en">Project</span><span data-language-content="zh" lang="zh-Hans">项目</span> 03</p>
+        <h4><span data-language-content="en" lang="en">R package INLAcircular</span><span data-language-content="zh" lang="zh-Hans">R 软件包 INLAcircular</span></h4>
+        <p class="research-project__summary"><span data-language-content="en" lang="en">Accessible implementations of circular regression and joint models using Integrated Nested Laplace Approximation.</span><span data-language-content="zh" lang="zh-Hans">基于 INLA，为圆周回归与联合模型提供易于使用的软件实现。</span></p>
         <span class="research-project__rule" aria-hidden="true"></span>
 </section>
 </div>
 
 <footer class="related-articles">
   <div class="related-articles__heading">
-    <p>Related articles</p>
+    <p><span data-language-content="en" lang="en">Related articles</span><span data-language-content="zh" lang="zh-Hans">相关论文</span></p>
     <span>文</span>
   </div>
 
   <p class="related-articles__empty">
-    Article records will be added here as this direction develops.
+    <span data-language-content="en" lang="en">Article records will be added here as this direction develops.</span><span data-language-content="zh" lang="zh-Hans">随着研究不断推进，相关论文将在此陆续更新。</span>
   </p>
 </footer>
 
 <div class="related-articles related-tutorials">
   <div class="related-articles__heading">
-    <p>Tutorials</p>
+    <p><span data-language-content="en" lang="en">Tutorials</span><span data-language-content="zh" lang="zh-Hans">教程</span></p>
     <span>习</span>
   </div>
 
@@ -176,8 +194,8 @@
     <li>
 <div>        <span>01</span>
         <div class="related-articles__copy">
-          <strong>A first look at circular data</strong>
-<small>Temporary preview entry; the complete tutorial and its materials will be linked here later.</small>        </div>
+          <strong><span data-language-content="en" lang="en">A first look at circular data</span><span data-language-content="zh" lang="zh-Hans">初识圆周数据</span></strong>
+<small><span data-language-content="en" lang="en">Temporary preview entry; the complete tutorial and its materials will be linked here later.</span><span data-language-content="zh" lang="zh-Hans">目前仅为预览；完整教程与配套材料将在此更新。</span></small>        </div>
 </div>    </li>
   </ol>
 </div>
@@ -191,18 +209,18 @@
       <div class="footer-signature">
         <span class="footer-seal" aria-hidden="true">葉</span>
         <div>
-          <strong>Xiang Ye</strong>
-          <span>Thuwal, Saudi Arabia</span>
+          <strong><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span></strong>
+          <span><span data-language-content="en" lang="en">Thuwal, Saudi Arabia</span><span data-language-content="zh" lang="zh-Hans">沙特阿拉伯图瓦勒</span></span>
         </div>
       </div>
 
       <p class="footer-verse">
         <span lang="zh-Hans">志存高远，脚踏实地</span>
-        <small>Aim high, stay grounded.</small>
+        <small lang="en">Aim high, stay grounded.</small>
       </p>
 
       <div class="footer-meta">
-        <a href="mailto:xiang.ye@kaust.edu.sa">xiang.ye@kaust.edu.sa</a>
+        <a href="mailto:xiang.ye@kaust.edu.sa" lang="en">xiang.ye@kaust.edu.sa</a>
         <span>© 2026</span>
       </div>
     </div>
@@ -212,7 +230,7 @@
     <span aria-hidden="true">↑</span>
   </button>
 
-  <script src="assets/js/site.js?v=20260902b" defer></script>
+  <script src="assets/js/site.js?v=20260903b" defer></script>
 </body>
 
 </html>

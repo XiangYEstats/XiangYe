@@ -3,16 +3,17 @@
 {% block content %}
 <section class="page-hero section-shell">
   <div data-reveal>
-    <p class="eyebrow"><span></span> Open correspondence · 通信</p>
-    <h1>Contact</h1>
-    <p>Open to new connections, shared ideas, and research collaborations.</p>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Open correspondence</span> ·
+      <span lang="zh-Hans">通信</span></span></p>
+    <h1>{{ t("Contact", "联系我") }}</h1>
+    <p data-language-only="en" lang="en">Open to new connections, shared ideas, and research collaborations.</p>
   </div>
   {% set verse = poetry[page.verse] %}
   <aside class="page-verse" data-reveal data-reveal-delay="1">
     <p class="page-verse__cn" lang="zh-Hans">
       {% for line in verse.chinese_lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}
     </p>
-    <p class="page-verse__en">
+    <p class="page-verse__en" lang="en">
       {% for line in verse.english_lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}
     </p>
     <small>{{ verse.source }}</small>
@@ -23,41 +24,49 @@
 <section class="contact-layout section-shell">
   <div class="contact-letter" data-reveal>
     <div class="letter-rule" aria-hidden="true"></div>
-    <p class="section-kicker">A note from me · 手书</p>
-    <h2><span>I am always glad to</span><span>connect and collaborate.</span></h2>
+    <p class="section-kicker"><span lang="en">A note from me</span> · <span lang="zh-Hans">手书</span></p>
+    <h2>
+      <span class="contact-heading-line" data-language-content="en" lang="en">I am always glad to</span>
+      <span class="contact-heading-line" data-language-content="en" lang="en">connect and collaborate.</span>
+      <span class="contact-heading-line" data-language-content="zh" lang="zh-Hans">我始终乐于</span>
+      <span class="contact-heading-line" data-language-content="zh" lang="zh-Hans">交流与合作。</span>
+    </h2>
     <p>
-      I remain open to future opportunities and collaborations in Bayesian
-      computational statistics, Bayesian deep learning, probabilistic learning,
-      latent variable modelling, causal modelling, and their applications.
+      {{ t("I remain open to future opportunities and collaborations in Bayesian computational statistics, Bayesian deep learning, probabilistic learning, latent variable modelling, causal modelling, and their applications.",
+      "我愿意在贝叶斯计算统计、贝叶斯深度学习、概率学习、潜变量建模、因果建模及相关应用领域探索新的研究机会与合作可能。") }}
     </p>
     <p>
-      I especially welcome conversations with people who enjoy exchanging ideas,
-      developing new statistical methodology, and exploring problems together.
+      {{ t("I especially welcome conversations with people who enjoy exchanging ideas, developing new statistical methodology, and exploring problems together.",
+      "如果你也乐于交流想法、发展新的统计方法，或一起探索有意思的问题，欢迎与我联系。") }}
     </p>
     <a class="button button--primary" href="mailto:{{ site.email }}">
-      Write an email <span aria-hidden="true">→</span>
+      {{ t("Write an email", "给我写信") }} <span aria-hidden="true">→</span>
     </a>
   </div>
 
   <aside class="contact-details" data-reveal data-reveal-delay="1">
     <article>
-      <span class="contact-index">01</span><p>Email</p>
-      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <span class="contact-index">01</span><p>{{ t("Email", "邮箱") }}</p>
+      <a href="mailto:{{ site.email }}" lang="en">{{ site.email }}</a>
     </article>
     <article>
-      <span class="contact-index">02</span><p>LinkedIn</p>
-      <a href="{{ site.linkedin }}" target="_blank" rel="noopener">Xiang Ye <span aria-hidden="true">↗</span></a>
+      <span class="contact-index">02</span><p lang="en">LinkedIn</p>
+      <a href="{{ site.linkedin }}" target="_blank" rel="noopener">{{ t(site.name, site.name_cn) }} <span aria-hidden="true">↗</span></a>
     </article>
     <article>
-      <span class="contact-index">03</span><p>GitHub</p>
-      <a href="{{ site.github }}" target="_blank" rel="noopener">XiangYEstats <span aria-hidden="true">↗</span></a>
+      <span class="contact-index">03</span><p lang="en">GitHub</p>
+      <a href="{{ site.github }}" target="_blank" rel="noopener" lang="en">XiangYEstats <span aria-hidden="true">↗</span></a>
     </article>
     <article>
-      <span class="contact-index">04</span><p>Google Scholar</p>
-      <a href="{{ site.scholar }}" target="_blank" rel="noopener">View profile <span aria-hidden="true">↗</span></a>
+      <span class="contact-index">04</span><p lang="en">Google Scholar</p>
+      <a href="{{ site.scholar }}" target="_blank" rel="noopener">{{ t("View profile", "查看学术主页") }} <span aria-hidden="true">↗</span></a>
     </article>
     <article>
-      <span class="contact-index">05</span><p>Office</p><address>{{ site.office }}</address>
+      <span class="contact-index">05</span><p lang="en">ResearchGate</p>
+      <a href="{{ site.researchgate }}" target="_blank" rel="noopener">{{ t("View profile", "查看学术主页") }} <span aria-hidden="true">↗</span></a>
+    </article>
+    <article>
+      <span class="contact-index">06</span><p>{{ t("Office", "办公室") }}</p><address>{{ t(site.office, site.office_cn) }}</address>
     </article>
   </aside>
 </section>

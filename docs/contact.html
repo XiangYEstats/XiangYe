@@ -1,39 +1,49 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" data-language="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contact Xiang Ye about research and collaboration.">
+  <meta name="description" content="Contact Xiang Ye about research and collaboration." data-content-en="Contact Xiang Ye about research and collaboration."
+    data-content-zh="欢迎联系叶翔，交流研究想法与合作机会。">
   <meta name="author" content="Xiang Ye">
   <meta name="theme-color" content="#dce4dc">
   <link rel="canonical" href="https://xiangyestats.github.io/XiangYe/contact.html">
   <meta property="og:type" content="website">
-  <meta property="og:title"
-    content="Xiang Ye — Contact">
-  <meta property="og:description" content="Contact Xiang Ye about research and collaboration.">
+  <meta property="og:title" content="Xiang Ye — Contact" data-content-en="Xiang Ye — Contact"
+    data-content-zh="叶翔 — 联系我">
+  <meta property="og:description" content="Contact Xiang Ye about research and collaboration." data-content-en="Contact Xiang Ye about research and collaboration."
+    data-content-zh="欢迎联系叶翔，交流研究想法与合作机会。">
+  <meta property="og:locale" content="en_US" data-content-en="en_US" data-content-zh="zh_CN">
+  <meta property="og:locale:alternate" content="zh_CN" data-content-en="zh_CN" data-content-zh="en_US">
   <meta property="og:image" content="https://xiangyestats.github.io/XiangYe/assets/images/profile.jpg">
   <meta property="og:url" content="https://xiangyestats.github.io/XiangYe/contact.html">
-  <title>Xiang Ye — Contact</title>
+  <title data-title-en="Xiang Ye — Contact" data-title-zh="叶翔 — 联系我">Xiang Ye — Contact</title>
 
   <!-- Apply the saved palette before the page paints, preventing a flash. -->
   <script>
     document.documentElement.classList.add("js");
     try {
+      const root = document.documentElement;
       const savedTheme = localStorage.getItem("xiangye-theme");
       if (savedTheme === "ink" || savedTheme === "light" || savedTheme === "night") {
         /* "night" migrates the preference used by the previous design. */
-        document.documentElement.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+        root.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
+      }
+      const savedLanguage = localStorage.getItem("xiangye-language");
+      if (savedLanguage === "zh") {
+        root.dataset.language = "zh";
+        root.lang = "zh-Hans";
       }
     } catch (error) {
       /* Celadon daylight remains the safe default. */
     }
   </script>
-  <link rel="stylesheet" href="assets/css/site.css?v=20260902b">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260903b">
 </head>
 
 <body data-page="contact">
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content"><span data-language-content="en" lang="en">Skip to content</span><span data-language-content="zh" lang="zh-Hans">跳至主要内容</span></a>
 
   <!-- Purely decorative Southern Song layers: celadon crackle and qin strings. -->
   <div class="celadon-crackle" aria-hidden="true"></div>
@@ -42,46 +52,53 @@
 
   <header class="site-header" data-header>
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Xiang Ye — home">
+      <a class="brand" href="index.html" aria-label="Xiang Ye — home"
+        data-label-en="Xiang Ye — home" data-label-zh="叶翔 — 首页">
         <!-- Edit the seal character here if the family mark ever changes. -->
         <span class="brand-seal" aria-hidden="true">葉</span>
         <span class="brand-wordmark">
-          <strong>Xiang Ye</strong>
-          <small>Bayesian · KAUST</small>
+          <strong><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span></strong>
+          <small><span data-language-content="en" lang="en">Bayesian · KAUST</span><span data-language-content="zh" lang="zh-Hans">贝叶斯 · KAUST</span></small>
         </span>
       </a>
 
-      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation"
+        data-label-en="Primary navigation" data-label-zh="主导航" data-navigation>
         <a class="nav-link" href="index.html" >
-          Home
+          <span data-language-content="en" lang="en">Home</span><span data-language-content="zh" lang="zh-Hans">首页</span>
         </a>
         <a class="nav-link" href="research.html" >
-          Research
+          <span data-language-content="en" lang="en">Research</span><span data-language-content="zh" lang="zh-Hans">研究</span>
         </a>
         <a class="nav-link" href="publications.html" >
-          Publications
+          <span data-language-content="en" lang="en">Publications</span><span data-language-content="zh" lang="zh-Hans">学术论文</span>
         </a>
         <a class="nav-link" href="resources.html" >
-          Resources
+          <span data-language-content="en" lang="en">Resources</span><span data-language-content="zh" lang="zh-Hans">资源</span>
         </a>
         <a class="nav-link" href="notes.html" >
-          Notes
+          <span data-language-content="en" lang="en">Notes</span><span data-language-content="zh" lang="zh-Hans">随笔</span>
         </a>
         <a class="nav-link" href="activity.html" >
-          Activity
+          <span data-language-content="en" lang="en">Activity</span><span data-language-content="zh" lang="zh-Hans">学术活动</span>
         </a>
         <a class="nav-link" href="about_me.html" >
-          About
+          <span data-language-content="en" lang="en">About</span><span data-language-content="zh" lang="zh-Hans">研究之外</span>
         </a>
         <a class="nav-link is-active" href="contact.html"  aria-current="page" >
-          Contact
+          <span data-language-content="en" lang="en">Contact</span><span data-language-content="zh" lang="zh-Hans">联系</span>
         </a>
       </nav>
 
       <div class="header-actions">
         <a class="cv-link" href="files/cv.pdf" target="_blank" rel="noopener">
-          Download CV <span aria-hidden="true">↗</span>
+          <span data-language-content="en" lang="en">View CV</span><span data-language-content="zh" lang="zh-Hans">查看简历</span> <span aria-hidden="true">↗</span>
         </a>
+        <button class="language-toggle" type="button" aria-label="Switch site language to Chinese"
+          data-language-toggle>
+          <span data-language-content="en" lang="zh-Hans">中文</span>
+          <span data-language-content="zh" lang="en">EN</span>
+        </button>
         <button class="theme-toggle" type="button" aria-label="Use ink theme" data-theme-toggle>
           <span class="theme-toggle__light" aria-hidden="true">☼</span>
           <span class="theme-toggle__ink" aria-hidden="true">墨</span>
@@ -97,14 +114,15 @@
   <main id="main-content" tabindex="-1">
 <section class="page-hero section-shell">
   <div data-reveal>
-    <p class="eyebrow"><span></span> Open correspondence · 通信</p>
-    <h1>Contact</h1>
-    <p>Open to new connections, shared ideas, and research collaborations.</p>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Open correspondence</span> ·
+      <span lang="zh-Hans">通信</span></span></p>
+    <h1><span data-language-content="en" lang="en">Contact</span><span data-language-content="zh" lang="zh-Hans">联系我</span></h1>
+    <p data-language-only="en" lang="en">Open to new connections, shared ideas, and research collaborations.</p>
   </div>
   <aside class="page-verse" data-reveal data-reveal-delay="1">
     <p class="page-verse__cn" lang="zh-Hans">
 海内存知己，<br>天涯若比邻。    </p>
-    <p class="page-verse__en">
+    <p class="page-verse__en" lang="en">
 A kindred mind within the seas<br>makes farthest shores feel near with ease.    </p>
     <small>Wang Bo · 王勃 · 《送杜少府之任蜀州》</small>
   </aside>
@@ -114,41 +132,47 @@ A kindred mind within the seas<br>makes farthest shores feel near with ease.    
 <section class="contact-layout section-shell">
   <div class="contact-letter" data-reveal>
     <div class="letter-rule" aria-hidden="true"></div>
-    <p class="section-kicker">A note from me · 手书</p>
-    <h2><span>I am always glad to</span><span>connect and collaborate.</span></h2>
+    <p class="section-kicker"><span lang="en">A note from me</span> · <span lang="zh-Hans">手书</span></p>
+    <h2>
+      <span class="contact-heading-line" data-language-content="en" lang="en">I am always glad to</span>
+      <span class="contact-heading-line" data-language-content="en" lang="en">connect and collaborate.</span>
+      <span class="contact-heading-line" data-language-content="zh" lang="zh-Hans">我始终乐于</span>
+      <span class="contact-heading-line" data-language-content="zh" lang="zh-Hans">交流与合作。</span>
+    </h2>
     <p>
-      I remain open to future opportunities and collaborations in Bayesian
-      computational statistics, Bayesian deep learning, probabilistic learning,
-      latent variable modelling, causal modelling, and their applications.
+      <span data-language-content="en" lang="en">I remain open to future opportunities and collaborations in Bayesian computational statistics, Bayesian deep learning, probabilistic learning, latent variable modelling, causal modelling, and their applications.</span><span data-language-content="zh" lang="zh-Hans">我愿意在贝叶斯计算统计、贝叶斯深度学习、概率学习、潜变量建模、因果建模及相关应用领域探索新的研究机会与合作可能。</span>
     </p>
     <p>
-      I especially welcome conversations with people who enjoy exchanging ideas,
-      developing new statistical methodology, and exploring problems together.
+      <span data-language-content="en" lang="en">I especially welcome conversations with people who enjoy exchanging ideas, developing new statistical methodology, and exploring problems together.</span><span data-language-content="zh" lang="zh-Hans">如果你也乐于交流想法、发展新的统计方法，或一起探索有意思的问题，欢迎与我联系。</span>
     </p>
     <a class="button button--primary" href="mailto:xiang.ye@kaust.edu.sa">
-      Write an email <span aria-hidden="true">→</span>
+      <span data-language-content="en" lang="en">Write an email</span><span data-language-content="zh" lang="zh-Hans">给我写信</span> <span aria-hidden="true">→</span>
     </a>
   </div>
 
   <aside class="contact-details" data-reveal data-reveal-delay="1">
     <article>
-      <span class="contact-index">01</span><p>Email</p>
-      <a href="mailto:xiang.ye@kaust.edu.sa">xiang.ye@kaust.edu.sa</a>
+      <span class="contact-index">01</span><p><span data-language-content="en" lang="en">Email</span><span data-language-content="zh" lang="zh-Hans">邮箱</span></p>
+      <a href="mailto:xiang.ye@kaust.edu.sa" lang="en">xiang.ye@kaust.edu.sa</a>
     </article>
     <article>
-      <span class="contact-index">02</span><p>LinkedIn</p>
-      <a href="https://www.linkedin.com/in/xiang-ye-228648191/" target="_blank" rel="noopener">Xiang Ye <span aria-hidden="true">↗</span></a>
+      <span class="contact-index">02</span><p lang="en">LinkedIn</p>
+      <a href="https://www.linkedin.com/in/xiang-ye-228648191/" target="_blank" rel="noopener"><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span> <span aria-hidden="true">↗</span></a>
     </article>
     <article>
-      <span class="contact-index">03</span><p>GitHub</p>
-      <a href="https://github.com/XiangYEstats" target="_blank" rel="noopener">XiangYEstats <span aria-hidden="true">↗</span></a>
+      <span class="contact-index">03</span><p lang="en">GitHub</p>
+      <a href="https://github.com/XiangYEstats" target="_blank" rel="noopener" lang="en">XiangYEstats <span aria-hidden="true">↗</span></a>
     </article>
     <article>
-      <span class="contact-index">04</span><p>Google Scholar</p>
-      <a href="https://scholar.google.com/citations?user=08io_8cAAAAJ&amp;hl=en&amp;oi=sra" target="_blank" rel="noopener">View profile <span aria-hidden="true">↗</span></a>
+      <span class="contact-index">04</span><p lang="en">Google Scholar</p>
+      <a href="https://scholar.google.com/citations?user=08io_8cAAAAJ&amp;hl=en&amp;oi=sra" target="_blank" rel="noopener"><span data-language-content="en" lang="en">View profile</span><span data-language-content="zh" lang="zh-Hans">查看学术主页</span> <span aria-hidden="true">↗</span></a>
     </article>
     <article>
-      <span class="contact-index">05</span><p>Office</p><address>Building 1, King Abdullah University of Science and Technology (KAUST)</address>
+      <span class="contact-index">05</span><p lang="en">ResearchGate</p>
+      <a href="https://www.researchgate.net/profile/Xiang-Ye-16?ev=hdr_xprf" target="_blank" rel="noopener"><span data-language-content="en" lang="en">View profile</span><span data-language-content="zh" lang="zh-Hans">查看学术主页</span> <span aria-hidden="true">↗</span></a>
+    </article>
+    <article>
+      <span class="contact-index">06</span><p><span data-language-content="en" lang="en">Office</span><span data-language-content="zh" lang="zh-Hans">办公室</span></p><address><span data-language-content="en" lang="en">Building 1, King Abdullah University of Science and Technology (KAUST)</span><span data-language-content="zh" lang="zh-Hans">阿卜杜拉国王科技大学（KAUST）1号楼</span></address>
     </article>
   </aside>
 </section>
@@ -159,18 +183,18 @@ A kindred mind within the seas<br>makes farthest shores feel near with ease.    
       <div class="footer-signature">
         <span class="footer-seal" aria-hidden="true">葉</span>
         <div>
-          <strong>Xiang Ye</strong>
-          <span>Thuwal, Saudi Arabia</span>
+          <strong><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span></strong>
+          <span><span data-language-content="en" lang="en">Thuwal, Saudi Arabia</span><span data-language-content="zh" lang="zh-Hans">沙特阿拉伯图瓦勒</span></span>
         </div>
       </div>
 
       <p class="footer-verse">
         <span lang="zh-Hans">志存高远，脚踏实地</span>
-        <small>Aim high, stay grounded.</small>
+        <small lang="en">Aim high, stay grounded.</small>
       </p>
 
       <div class="footer-meta">
-        <a href="mailto:xiang.ye@kaust.edu.sa">xiang.ye@kaust.edu.sa</a>
+        <a href="mailto:xiang.ye@kaust.edu.sa" lang="en">xiang.ye@kaust.edu.sa</a>
         <span>© 2026</span>
       </div>
     </div>
@@ -180,7 +204,7 @@ A kindred mind within the seas<br>makes farthest shores feel near with ease.    
     <span aria-hidden="true">↑</span>
   </button>
 
-  <script src="assets/js/site.js?v=20260902b" defer></script>
+  <script src="assets/js/site.js?v=20260903b" defer></script>
 </body>
 
 </html>

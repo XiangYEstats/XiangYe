@@ -6,11 +6,12 @@
      website button beside its title. -->
 <section class="page-hero page-hero--research section-shell">
   <div data-reveal>
-    <p class="eyebrow"><span></span> Research · 研究</p>
-    <h1>Research</h1>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Research</span> ·
+      <span lang="zh-Hans">研究</span></span></p>
+    <h1>{{ t("Research", "研究") }}</h1>
     <p>
-      On this page, you can find my current research directions and the projects within them,
-      spanning Bayesian methodology, computation, and statistical practice.
+      {{ t("On this page, you can find my current research directions and the projects within them.",
+      "本页介绍我当前的研究方向与相关项目。") }}
     </p>
   </div>
 
@@ -21,7 +22,7 @@
       {{ line }}{% if not loop.last %}<br>{% endif %}
       {% endfor %}
     </p>
-    <p class="page-verse__en">
+    <p class="page-verse__en" lang="en">
       {% for line in verse.english_lines %}
       {{ line }}{% if not loop.last %}<br>{% endif %}
       {% endfor %}
@@ -40,30 +41,33 @@
         <span class="direction-seal" aria-hidden="true">{{ direction.mark }}</span>
 
         <div class="direction-heading">
-          <p>{{ direction.number }} · {{ direction.title_cn }}</p>
+          <p lang="zh-Hans">{{ direction.number }} · {{ direction.title_cn }}</p>
           <div class="direction-title-row">
-            <h2>{{ direction.title }}</h2>
+            <h2 lang="en">{{ direction.title }}</h2>
             {% if direction.href %}
             <a class="direction-site-button" href="{{ direction.href }}" target="_blank" rel="noopener"
-              aria-label="Visit the {{ direction.title }} website">
-              Website <i aria-hidden="true">↗</i>
+              aria-label="Visit the {{ direction.title }} website"
+              data-label-en="Visit the {{ direction.title }} website"
+              data-label-zh="访问“{{ direction.title_cn }}”项目主页">
+              <span class="visually-localized-label">{{ t("Website", "项目主页") }}</span> <i aria-hidden="true">↗</i>
             </a>
             {% endif %}
           </div>
-          <span>{{ direction.summary }}</span>
+          <span>{{ t(direction.summary, direction.summary_cn) }}</span>
         </div>
   </header>
 
-  <div class="research-projects" aria-label="Projects in {{ direction.title }}">
+  <div class="research-projects" aria-label="Projects in {{ direction.title }}"
+    data-label-en="Projects in {{ direction.title }}" data-label-zh="与“{{ direction.title_cn }}”相关的研究项目">
     {% for project in direction.projects %}
     {% if project.href %}
     <a class="research-project research-project--linked" href="{{ project.href }}">
       {% else %}
       <section class="research-project">
         {% endif %}
-        <p class="research-project__number">Project {{ project.number }}</p>
-        <h4>{{ project.title }}</h4>
-        <p class="research-project__summary">{{ project.text }}</p>
+        <p class="research-project__number">{{ t("Project", "项目") }} {{ project.number }}</p>
+        <h4>{{ t(project.title, project.title_cn) }}</h4>
+        <p class="research-project__summary">{{ t(project.text, project.text_cn) }}</p>
         <span class="research-project__rule" aria-hidden="true"></span>
         {% if project.href %}<i aria-hidden="true">↗</i>{% endif %}
         {% if project.href %}
@@ -76,7 +80,7 @@
 
 <footer class="related-articles">
   <div class="related-articles__heading">
-    <p>Related articles</p>
+    <p>{{ t("Related articles", "相关论文") }}</p>
     <span>文</span>
   </div>
 
@@ -87,8 +91,8 @@
       {% if article.href %}<a href="{{ article.href }}">{% else %}<div>{% endif %}
         <span>{{ article.year }}</span>
         <div class="related-articles__copy">
-          <strong>{{ article.title }}</strong>
-          {% if article.venue %}<small>{{ article.venue }}</small>{% endif %}
+          <strong lang="en">{{ article.title }}</strong>
+          {% if article.venue %}<small lang="en">{{ article.venue }}</small>{% endif %}
         </div>
         {% if article.href %}<i aria-hidden="true">↗</i>{% endif %}
       {% if article.href %}</a>{% else %}</div>{% endif %}
@@ -97,7 +101,8 @@
   </ol>
   {% else %}
   <p class="related-articles__empty">
-    Article records will be added here as this direction develops.
+    {{ t("Article records will be added here as this direction develops.",
+      "随着研究不断推进，相关论文将在此陆续更新。") }}
   </p>
   {% endif %}
 </footer>
@@ -105,7 +110,7 @@
 {% if direction.tutorials %}
 <div class="related-articles related-tutorials">
   <div class="related-articles__heading">
-    <p>Tutorials</p>
+    <p>{{ t("Tutorials", "教程") }}</p>
     <span>习</span>
   </div>
 
@@ -115,8 +120,9 @@
       {% if tutorial.href %}<a href="{{ tutorial.href }}" target="_blank" rel="noopener">{% else %}<div>{% endif %}
         <span>{{ "%02d"|format(loop.index) }}</span>
         <div class="related-articles__copy">
-          <strong>{{ tutorial.title }}</strong>
-          {% if tutorial.description %}<small>{{ tutorial.description }}</small>{% endif %}
+          <strong>{{ t(tutorial.title, tutorial.title_cn) }}</strong>
+          {% if tutorial.description %}<small>{{ t(tutorial.description,
+            tutorial.description_cn) }}</small>{% endif %}
         </div>
         {% if tutorial.href %}<i aria-hidden="true">↗</i>{% endif %}
       {% if tutorial.href %}</a>{% else %}</div>{% endif %}

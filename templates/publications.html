@@ -5,11 +5,12 @@
      scripts/sync_scholar.py and cached in data/publications.json. -->
 <section class="page-hero page-hero--publications section-shell">
   <div data-reveal>
-    <p class="eyebrow"><span></span> Published work · 著述</p>
-    <h1>Publications</h1>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Published work</span> ·
+      <span lang="zh-Hans">著述</span></span></p>
+    <h1>{{ t("Publications", "学术论文") }}</h1>
     <p>
-      This list follows my Google Scholar profile automatically. Select any title
-      to open its corresponding record in Google Scholar.
+      {{ t("This list follows my Google Scholar profile automatically. Select any title to open its corresponding record in Google Scholar.",
+      "本页论文列表会自动与我的 Google Scholar 主页同步。点击标题即可查看对应记录。") }}
     </p>
   </div>
 
@@ -20,7 +21,7 @@
       {{ line }}{% if not loop.last %}<br>{% endif %}
       {% endfor %}
     </p>
-    <p class="page-verse__en">
+    <p class="page-verse__en" lang="en">
       {% for line in verse.english_lines %}
       {{ line }}{% if not loop.last %}<br>{% endif %}
       {% endfor %}
@@ -34,11 +35,13 @@
 <section class="publications-section section-shell">
   <header class="publications-toolbar" data-reveal>
     <p>
-      <strong>{{ publication_data.publications|length }}</strong>
-      publication{% if publication_data.publications|length != 1 %}s{% endif %}
+      <span data-language-content="en" lang="en"><strong>{{ publication_data.publications|length }}</strong>
+        publication{% if publication_data.publications|length != 1 %}s{% endif %}</span>
+      <span data-language-content="zh" lang="zh-Hans">共 <strong>{{ publication_data.publications|length }}</strong>
+        篇论文</span>
     </p>
     <a class="button button--quiet" href="{{ scholar_profile_url }}" target="_blank" rel="noopener">
-      View Google Scholar profile <span aria-hidden="true">↗</span>
+      {{ t("View Google Scholar profile", "查看 Google Scholar 主页") }} <span aria-hidden="true">↗</span>
     </a>
   </header>
 
@@ -51,14 +54,14 @@
       <article>
         <h2>
           <a href="{{ publication.scholar_url }}" target="_blank" rel="noopener">
-            <span>{{ publication.title }}</span>
+            <span lang="en">{{ publication.title }}</span>
             <i aria-hidden="true">↗</i>
           </a>
         </h2>
         {% if publication.authors or publication.venue %}
         <p class="publication-meta">
-          {% if publication.authors %}<span class="publication-authors">{{ publication.authors }}</span>{% endif %}
-          {% if publication.venue %}<span class="publication-venue">{{ publication.venue }}</span>{% endif %}
+          {% if publication.authors %}<span class="publication-authors" lang="en">{{ publication.authors }}</span>{% endif %}
+          {% if publication.venue %}<span class="publication-venue" lang="en">{{ publication.venue }}</span>{% endif %}
         </p>
         {% endif %}
       </article>
@@ -67,15 +70,16 @@
   </ol>
   {% else %}
   <div class="publications-empty" data-reveal>
-    <p>The synchronized publication list is temporarily unavailable.</p>
+    <p>{{ t("The synchronized publication list is temporarily unavailable.", "论文列表暂时无法加载。") }}</p>
     <a href="{{ scholar_profile_url }}" target="_blank" rel="noopener">
-      View the Google Scholar profile <span aria-hidden="true">↗</span>
+      {{ t("View the Google Scholar profile", "查看 Google Scholar 主页") }} <span aria-hidden="true">↗</span>
     </a>
   </div>
   {% endif %}
 
   <p class="publications-sync-note">
-    Synchronized daily from Google Scholar. The last successful copy remains visible if Scholar is temporarily unavailable.
+    {{ t("Synchronized daily from Google Scholar. The last successful copy remains visible if Scholar is temporarily unavailable.",
+      "论文列表每日与 Google Scholar 同步；若同步暂时失败，网站仍会保留最近一次成功同步的内容。") }}
   </p>
 </section>
 {% endblock %}

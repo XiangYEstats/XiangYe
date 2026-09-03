@@ -4,10 +4,12 @@
 <section class="not-found section-shell">
   <div data-reveal>
     <span class="not-found-code" aria-hidden="true">404</span>
-    <p class="eyebrow"><span></span> Page not found · 迷径</p>
-    <h1>The path fades into mist.</h1>
-    <p>The page you followed is not part of this site.</p>
-    <a class="button button--primary" href="index.html">Return home <span aria-hidden="true">→</span></a>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Page not found</span> ·
+      <span lang="zh-Hans">迷径</span></span></p>
+    <h1>{{ t("The path fades into mist.", "此径渐隐于烟霭。") }}</h1>
+    <p>{{ t("The page you followed is not part of this site.", "您访问的页面不存在，或已移至别处。") }}</p>
+    <a class="button button--primary" href="index.html">{{ t("Return home", "返回首页") }}
+      <span aria-hidden="true">→</span></a>
   </div>
 </section>
 {% endblock %}

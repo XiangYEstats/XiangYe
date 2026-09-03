@@ -7,9 +7,10 @@
 
 <section class="page-hero section-shell">
   <div data-reveal>
-    <p class="eyebrow"><span></span> Research journey · 行迹</p>
-    <h1>Activity</h1>
-    <p>Workshops, conferences, summer schools, and the milestones around them.</p>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Research journey</span> ·
+      <span lang="zh-Hans">行迹</span></span></p>
+    <h1>{{ t("Activity", "学术活动") }}</h1>
+    <p data-language-only="en" lang="en">Workshops, conferences, summer schools, and the milestones around them.</p>
   </div>
 
   {% set verse = poetry[page.verse] %}
@@ -20,7 +21,7 @@
       {% endfor %}
     </p>
 
-    <p class="page-verse__en">
+    <p class="page-verse__en" lang="en">
       {% for line in verse.english_lines %}
       {{ line }}{% if not loop.last %}<br>{% endif %}
       {% endfor %}
@@ -46,15 +47,16 @@
         <div class="timeline-dot" aria-hidden="true"></div>
 
         <div class="timeline-meta">
-          <span>{{ item.type }}</span>
-          <time>{{ item.date }}</time>
+          <span>{{ t(item.type, item.type_cn) }}</span>
+          <time>{{ t(item.date, item.date_cn) }}</time>
         </div>
 
-        <h2>{{ item.event }}</h2>
+        <h2 lang="en">{{ item.event }}</h2>
         {% if item.place or item.title %}
         <p class="timeline-details">
-          {% if item.place %}<span class="timeline-place">{{ item.place }}</span>{% endif %}
-          {% if item.title %}<span class="timeline-title"><span>Research topic</span> {{ item.title }}</span>{% endif %}
+          {% if item.place %}<span class="timeline-place">{{ t(item.place, item.place_cn) }}</span>{% endif %}
+          {% if item.title %}<span class="timeline-title"><span>{{ t("Research topic", "主题") }}</span>
+            <span class="timeline-topic-name" lang="en">{{ item.title }}</span></span>{% endif %}
         </p>
         {% endif %}
       </article>
@@ -71,8 +73,8 @@
       <p class="section-number">荣</p>
 
       <div>
-        <p class="section-kicker">Selected distinctions</p>
-        <h2>Recognition along the way.</h2>
+        <p class="section-kicker">{{ t("Selected distinctions", "部分荣誉") }}</p>
+        <h2>{{ t("Recognition along the way.", "求学与研究路上的一些收获。") }}</h2>
       </div>
     </div>
 
@@ -82,8 +84,8 @@
         <time>{{ item.year }}</time>
 
         <div>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
+          <h3>{{ t(item.title, item.title_cn) }}</h3>
+          <p>{{ t(item.text, item.text_cn) }}</p>
         </div>
       </article>
       {% endfor %}

@@ -3,12 +3,11 @@
 {% block content %}
 <section class="page-hero page-hero--notes section-shell">
   <div data-reveal>
-    <p class="eyebrow"><span></span> Ideas in progress · 随笔</p>
-    <h1>Notes</h1>
-    <p>
-      An open-ended collection of research thoughts, explanations, reading notes,
-      and ideas worth returning to.
-    </p>
+    <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Ideas in progress</span> ·
+      <span lang="zh-Hans">随笔</span></span></p>
+    <h1>{{ t("Notes", "随笔") }}</h1>
+    <p data-language-only="en" lang="en">An open-ended collection of research thoughts, explanations, reading notes,
+      and ideas worth returning to.</p>
   </div>
 
   {% set verse = poetry[page.verse] %}
@@ -18,7 +17,7 @@
       {{ line }}{% if not loop.last %}<br>{% endif %}
       {% endfor %}
     </p>
-    <p class="page-verse__en">
+    <p class="page-verse__en" lang="en">
       {% for line in verse.english_lines %}
       {{ line }}{% if not loop.last %}<br>{% endif %}
       {% endfor %}
@@ -29,19 +28,20 @@
   <span class="page-mark" aria-hidden="true">{{ page.mark }}</span>
 </section>
 
-<section class="notes-index section-shell" aria-label="Notes archive">
+<section class="notes-index section-shell" aria-label="Notes archive" data-label-en="Notes archive"
+  data-label-zh="随笔归档">
   {% if notes %}
   <ol class="notes-list">
     {% for note in notes %}
     <li data-reveal>
       <a href="{{ note.output }}">
-        <time datetime="{{ note.date_iso }}">{{ note.date_label }}</time>
+        <time datetime="{{ note.date_iso }}">{{ t(note.date_label, note.date_label_cn) }}</time>
         <article>
-          <h2>{{ note.title }}</h2>
-          <p>{{ note.summary }}</p>
+          <h2>{{ t(note.title, note.title_cn) }}</h2>
+          <p>{{ t(note.summary, note.summary_cn) }}</p>
           {% if note.tags %}
-          <ul aria-label="Topics">
-            {% for tag in note.tags %}<li>{{ tag }}</li>{% endfor %}
+          <ul aria-label="Topics" data-label-en="Topics" data-label-zh="主题">
+            {% for tag in note.tags %}<li>{{ t(tag, note.tags_cn[loop.index0]) }}</li>{% endfor %}
           </ul>
           {% endif %}
         </article>
@@ -51,10 +51,11 @@
     {% endfor %}
   </ol>
   {% else %}
-  <div class="notes-empty" aria-label="No notes published yet">
+  <div class="notes-empty" aria-label="No notes published yet" data-label-en="No notes published yet"
+    data-label-zh="尚无已发布随笔">
+    <p>{{ t("No notes have been published yet.", "随笔正在整理，敬请期待。") }}</p>
     <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
   </div>
   {% endif %}
 </section>
 {% endblock %}
-
