@@ -201,6 +201,8 @@ def validate_translation_data() -> None:
             project_label = f"{direction_label}.projects[{project_index}]"
             for field in ("title_cn", "text_cn"):
                 require_translation(project, field, project_label)
+            if project.get("link_label"):
+                require_translation(project, "link_label_cn", project_label)
         for tutorial_index, tutorial in enumerate(direction.get("tutorials", []), 1):
             tutorial_label = f"{direction_label}.tutorials[{tutorial_index}]"
             require_translation(tutorial, "title_cn", tutorial_label)

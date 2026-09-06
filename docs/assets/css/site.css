@@ -1788,6 +1788,11 @@ html[data-theme="ink"] .moon-window img {
   line-height: 1.72;
 }
 
+.research-project__link {
+  align-self: flex-start;
+  margin: 20px 0 24px;
+}
+
 .research-project__rule {
   position: relative;
   height: 1px;

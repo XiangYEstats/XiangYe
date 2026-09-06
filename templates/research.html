@@ -60,7 +60,7 @@
   <div class="research-projects" aria-label="Projects in {{ direction.title }}"
     data-label-en="Projects in {{ direction.title }}" data-label-zh="与“{{ direction.title_cn }}”相关的研究项目">
     {% for project in direction.projects %}
-    {% if project.href %}
+    {% if project.href and not project.link_label %}
     <a class="research-project research-project--linked" href="{{ project.href }}">
       {% else %}
       <section class="research-project">
@@ -68,9 +68,17 @@
         <p class="research-project__number">{{ t("Project", "项目") }} {{ project.number }}</p>
         <h4>{{ t(project.title, project.title_cn) }}</h4>
         <p class="research-project__summary">{{ t(project.text, project.text_cn) }}</p>
+        {% if project.href and project.link_label %}
+        <a class="direction-site-button research-project__link" href="{{ project.href }}" target="_blank" rel="noopener"
+          aria-label="{{ project.link_label }}: {{ project.title }}"
+          data-label-en="{{ project.link_label }}: {{ project.title }}"
+          data-label-zh="{{ project.link_label_cn }}：{{ project.title_cn }}">
+          {{ t(project.link_label, project.link_label_cn) }} <i aria-hidden="true">↗</i>
+        </a>
+        {% endif %}
         <span class="research-project__rule" aria-hidden="true"></span>
-        {% if project.href %}<i aria-hidden="true">↗</i>{% endif %}
-        {% if project.href %}
+        {% if project.href and not project.link_label %}<i aria-hidden="true">↗</i>{% endif %}
+        {% if project.href and not project.link_label %}
     </a>
     {% else %}
 </section>
@@ -88,10 +96,11 @@
   <ol class="related-articles__list">
     {% for article in direction.articles %}
     <li>
-      {% if article.href %}<a href="{{ article.href }}">{% else %}<div>{% endif %}
+      {% if article.href %}<a href="{{ article.href }}" target="_blank" rel="noopener">{% else %}<div>{% endif %}
         <span>{{ article.year }}</span>
         <div class="related-articles__copy">
           <strong lang="en">{{ article.title }}</strong>
+          {% if article.authors %}<small lang="en">{{ article.authors }}</small>{% endif %}
           {% if article.venue %}<small lang="en">{{ article.venue }}</small>{% endif %}
         </div>
         {% if article.href %}<i aria-hidden="true">↗</i>{% endif %}

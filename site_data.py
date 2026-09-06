@@ -364,7 +364,7 @@ RESEARCH_DIRECTIONS = [
             "围绕圆周数据及含方向分量的模型，研究贝叶斯方法，涵盖有理论依据的先验设定、"
             "模型构建、高效计算与可复用的软件工具。"
         ),
-        "href": None,
+        "href": "https://xiangyestats.github.io/directional-statistics/",
         "projects": [
             {
                 "number": "01",
@@ -402,20 +402,34 @@ RESEARCH_DIRECTIONS = [
                 "text_cn": (
                     "基于 INLA，为圆周回归与联合模型提供易于使用的软件实现。"
                 ),
-                "href": None,
+                "href": "https://github.com/XiangYEstats/INLAcircular",
+                "link_label": "GitHub",
+                "link_label_cn": "GitHub 仓库",
             },
         ],
-        "articles": [],
+        "articles": [
+            {
+                "year": "2026",
+                "title": "Penalizing complexity priors for Bayesian inference of circular models",
+                "authors": "Ye, X., Van Niekerk, J., & Rue, H.",
+                "venue": "Statistical Modelling, 1471082X261453677.",
+                "href": "https://journals.sagepub.com/doi/full/10.1177/1471082X261453677",
+            },
+            {
+                "year": "2026",
+                "title": "A Bayesian regression framework for circular models with INLA",
+                "authors": "Ye, X., Van Niekerk, J., & Rue, H.",
+                "venue": "arXiv preprint arXiv:2602.08413.",
+                "href": "https://arxiv.org/abs/2602.08413",
+            },
+        ],
         "tutorials": [
             {
-                "title": "A first look at circular data",
-                "title_cn": "初识圆周数据",
-                "description": (
-                    "Temporary preview entry; the complete tutorial and its "
-                    "materials will be linked here later."
-                ),
-                "description_cn": "目前仅为预览；完整教程与配套材料将在此更新。",
-                "href": None,
+                "title": "Circular models in Stan",
+                "title_cn": "圆周模型的 Stan 实现",
+                "description": "Tutorials on implementing Bayesian circular models with Stan.",
+                "description_cn": "使用 Stan 实现贝叶斯圆周模型的教程。",
+                "href": "https://xiangyestats.github.io/directional-statistics/tutorials/",
             },
         ],
     },
