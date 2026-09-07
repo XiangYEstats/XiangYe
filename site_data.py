@@ -442,12 +442,36 @@ RESEARCH_DIRECTIONS = [
 # package; ``href`` should point to its documentation, repository, or website.
 # Add ``description_cn`` and, when applicable, ``status_cn`` for the Chinese
 # view. ``language`` and package names remain in their official form.
-PACKAGES = []
+PACKAGES = [
+    {
+        "name": "INLAcircular",
+        "description": "Fast approximate Bayesian inference for circular models using INLA.",
+        "description_cn": "基于 INLA，为圆周模型提供快速近似贝叶斯推断。",
+        "href": "https://github.com/XiangYEstats/INLAcircular",
+        "language": "R",
+    },
+]
 
-# These are general tutorials that do not belong to one research direction.
-# Add ``title_cn`` and ``description_cn`` to each record. Direction-specific
-# tutorials should instead be added to the matching research direction above.
-RESOURCE_TUTORIALS = []
+# Tutorials listed on the Resources page, including research-specific guides.
+# Add ``title_cn`` to each record and ``description_cn`` when a description is
+# provided. Research directions can also feature tutorials in their own lists.
+RESOURCE_TUTORIALS = [
+    {
+        "title": "Stan tutorial: PC priors for circular distributions",
+        "title_cn": "Stan 教程：圆周分布的 PC 先验",
+        "href": "https://xiangyestats.github.io/directional-statistics/tutorials/pc-prior/",
+    },
+    {
+        "title": "Stan tutorial: regression with circular responses",
+        "title_cn": "Stan 教程：含圆周响应变量的回归",
+        "href": "https://xiangyestats.github.io/directional-statistics/tutorials/lavm/",
+    },
+    {
+        "title": "Stan tutorial: regression with circular covariates",
+        "title_cn": "Stan 教程：含圆周协变量的回归",
+        "href": "https://xiangyestats.github.io/directional-statistics/tutorials/circular-joint-regression/",
+    },
+]
 
 TOOLS = ["R", "INLA", "Stan", "Python", "C++", "MATLAB"]
 

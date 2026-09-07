@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Packages and general tutorials are maintained in site_data.py. Tutorials
-     tied to a research direction live with that direction on Research. -->
+<!-- Packages and the tutorial index are maintained in site_data.py. Research
+     directions can also feature relevant tutorials on the Research page. -->
 <section class="page-hero page-hero--resources section-shell">
   <div data-reveal>
     <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Packages &amp; tutorials</span> ·
@@ -74,8 +74,8 @@
     <header>
       <p class="section-kicker"><span lang="en">Guides</span> · <span lang="zh-Hans">习作</span></p>
       <h2>{{ t("Tutorials", "教程") }}</h2>
-      <p>{{ t("General guides appear here; topic-specific tutorials sit beside their direction on the Research page.",
-        "本页收录通用指南；专题教程请见“研究”页面中的相应研究方向。") }}</p>
+      <p>{{ t("Practical guides to statistical modelling and computation.",
+        "统计建模与计算方法的实用教程。") }}</p>
     </header>
 
     {% if resource_tutorials %}
@@ -95,8 +95,8 @@
       {% endfor %}
     </ol>
     {% else %}
-    <p class="resource-tutorials__empty">{{ t("General tutorials will be added here.",
-      "通用教程将陆续整理发布。") }}</p>
+    <p class="resource-tutorials__empty">{{ t("Tutorials will be added here.",
+      "教程将陆续整理发布。") }}</p>
     {% endif %}
   </div>
 </section>

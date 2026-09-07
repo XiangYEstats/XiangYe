@@ -2092,9 +2092,11 @@ html[data-theme="ink"] .moon-window img {
 .resource-tutorial-list>li>a,
 .resource-tutorial-list>li>div {
   display: grid;
-  grid-template-columns: 42px minmax(0, 1fr) auto;
-  gap: 18px;
-  padding: 23px 4px;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 12px;
+  min-height: 44px;
+  padding: 12px 4px;
 }
 
 .resource-tutorial-list>li>a>span,
@@ -2106,8 +2108,9 @@ html[data-theme="ink"] .moon-window img {
 .resource-tutorial-list strong {
   display: block;
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 400;
+  line-height: 1.55;
 }
 
 .resource-tutorial-list small {
@@ -3188,8 +3191,8 @@ html[data-theme="ink"] .moon-window img {
   }
 
   .resource-tutorials {
-    grid-template-columns: 240px minmax(0, 1fr);
-    gap: 42px;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .timeline-year {

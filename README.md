@@ -90,7 +90,7 @@ Most future updates need only one or two files:
 | Homepage research questions | `site_data.py` → `CURRENT_QUESTIONS` |
 | Education and research interests | `site_data.py` → `EDUCATION`, `RESEARCH_INTERESTS` |
 | Research directions, projects, articles, tutorials, and direction websites | `site_data.py` → `RESEARCH_DIRECTIONS` |
-| Packages and general tutorials | `site_data.py` → `PACKAGES`, `RESOURCE_TUTORIALS` |
+| Packages and the Resources tutorial index | `site_data.py` → `PACKAGES`, `RESOURCE_TUTORIALS` |
 | Notes | create Markdown files in `content/notes/` |
 | Google Scholar profile used for Publications | `site_data.py` → `SITE["scholar"]` |
 | Activities, prizes, and experience | `site_data.py` → `ACTIVITIES`, `DISTINCTIONS`, `EXPERIENCE` |
@@ -131,7 +131,7 @@ PACKAGES = [
 ]
 ```
 
-Add a general tutorial to `RESOURCE_TUTORIALS`:
+Add a tutorial to the Resources page through `RESOURCE_TUTORIALS`:
 
 ```python
 RESOURCE_TUTORIALS = [
@@ -145,9 +145,9 @@ RESOURCE_TUTORIALS = [
 ]
 ```
 
-For a direction-specific tutorial, find that item in `RESEARCH_DIRECTIONS` and
-add records to its `tutorials` list. The Tutorials row appears only when that
-list contains at least one item:
+To also feature a tutorial beside a research direction, find that item in
+`RESEARCH_DIRECTIONS` and add records to its `tutorials` list. The Tutorials row
+appears only when that list contains at least one item:
 
 ```python
 "tutorials": [

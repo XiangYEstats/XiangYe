@@ -112,8 +112,8 @@
   </header>
 
   <main id="main-content" tabindex="-1">
-<!-- Packages and general tutorials are maintained in site_data.py. Tutorials
-     tied to a research direction live with that direction on Research. -->
+<!-- Packages and the tutorial index are maintained in site_data.py. Research
+     directions can also feature relevant tutorials on the Research page. -->
 <section class="page-hero page-hero--resources section-shell">
   <div data-reveal>
     <p class="eyebrow"><span></span><span class="bilingual-label"><span lang="en">Packages &amp; tutorials</span> ·
@@ -143,19 +143,44 @@
     <p><span data-language-content="en" lang="en">Reusable implementations, documentation, and source code.</span><span data-language-content="zh" lang="zh-Hans">可复用的软件实现、使用文档与源代码。</span></p>
   </div>
 
-  <div class="resource-empty" aria-label="No packages have been listed yet"
-    data-label-en="No packages have been listed yet" data-label-zh="目前尚未列出软件包">
-    <span><span data-language-content="en" lang="en">Packages will be listed here as they are released.</span><span data-language-content="zh" lang="zh-Hans">相关软件包发布后，将在这里更新。</span></span>
+  <div class="package-grid">
+    <a class="package-card package-card--linked" href="https://github.com/XiangYEstats/INLAcircular" target="_blank" rel="noopener"
+      data-reveal data-reveal-delay="0">
+      <div class="package-card__meta">
+        <span>01</span>
+<small lang="en">R</small>      </div>
+      <h3 lang="en">INLAcircular</h3>
+      <p><span data-language-content="en" lang="en">Fast approximate Bayesian inference for circular models using INLA.</span><span data-language-content="zh" lang="zh-Hans">基于 INLA，为圆周模型提供快速近似贝叶斯推断。</span></p>
+<i aria-hidden="true"><span data-language-content="en" lang="en">Visit package</span><span data-language-content="zh" lang="zh-Hans">查看软件包主页</span> ↗</i>    </a>
   </div>
 
   <div class="resource-tutorials" data-reveal>
     <header>
       <p class="section-kicker"><span lang="en">Guides</span> · <span lang="zh-Hans">习作</span></p>
       <h2><span data-language-content="en" lang="en">Tutorials</span><span data-language-content="zh" lang="zh-Hans">教程</span></h2>
-      <p><span data-language-content="en" lang="en">General guides appear here; topic-specific tutorials sit beside their direction on the Research page.</span><span data-language-content="zh" lang="zh-Hans">本页收录通用指南；专题教程请见“研究”页面中的相应研究方向。</span></p>
+      <p><span data-language-content="en" lang="en">Practical guides to statistical modelling and computation.</span><span data-language-content="zh" lang="zh-Hans">统计建模与计算方法的实用教程。</span></p>
     </header>
 
-    <p class="resource-tutorials__empty"><span data-language-content="en" lang="en">General tutorials will be added here.</span><span data-language-content="zh" lang="zh-Hans">通用教程将陆续整理发布。</span></p>
+    <ol class="resource-tutorial-list">
+      <li>
+<a href="https://xiangyestats.github.io/directional-statistics/tutorials/pc-prior/" target="_blank" rel="noopener">          <span>01</span>
+          <div>
+            <strong><span data-language-content="en" lang="en">Stan tutorial: PC priors for circular distributions</span><span data-language-content="zh" lang="zh-Hans">Stan 教程：圆周分布的 PC 先验</span></strong>
+          </div>
+<i aria-hidden="true">↗</i></a>      </li>
+      <li>
+<a href="https://xiangyestats.github.io/directional-statistics/tutorials/lavm/" target="_blank" rel="noopener">          <span>02</span>
+          <div>
+            <strong><span data-language-content="en" lang="en">Stan tutorial: regression with circular responses</span><span data-language-content="zh" lang="zh-Hans">Stan 教程：含圆周响应变量的回归</span></strong>
+          </div>
+<i aria-hidden="true">↗</i></a>      </li>
+      <li>
+<a href="https://xiangyestats.github.io/directional-statistics/tutorials/circular-joint-regression/" target="_blank" rel="noopener">          <span>03</span>
+          <div>
+            <strong><span data-language-content="en" lang="en">Stan tutorial: regression with circular covariates</span><span data-language-content="zh" lang="zh-Hans">Stan 教程：含圆周协变量的回归</span></strong>
+          </div>
+<i aria-hidden="true">↗</i></a>      </li>
+    </ol>
   </div>
 </section>
   </main>
