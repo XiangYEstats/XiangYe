@@ -17,7 +17,7 @@ SITE = {
     "supervisor_cn": "Håvard Rue 教授",
     "email": "xiang.ye@kaust.edu.sa",
     "location": "Thuwal, Saudi Arabia",
-    "location_cn": "沙特阿拉伯图瓦勒",
+    "location_cn": "沙特阿拉伯图瓦",
     "office": "Building 1, King Abdullah University of Science and Technology (KAUST)",
     "office_cn": "阿卜杜拉国王科技大学（KAUST）1号楼",
     "description": (
@@ -523,7 +523,7 @@ ACTIVITIES = [
                     "Data: Foundations and Applications"
                 ),
                 "place": "Thuwal, Saudi Arabia",
-                "place_cn": "沙特阿拉伯图瓦勒",
+                "place_cn": "沙特阿拉伯图瓦",
                 "date": "2—6 November",
                 "date_cn": "11月2日至6日",
             },
@@ -561,7 +561,7 @@ ACTIVITIES = [
                     "Data: Foundations and Applications"
                 ),
                 "place": "Thuwal, Saudi Arabia",
-                "place_cn": "沙特阿拉伯图瓦勒",
+                "place_cn": "沙特阿拉伯图瓦",
                 "date": "17—21 November",
                 "date_cn": "11月17日至21日",
             },
@@ -589,7 +589,7 @@ ACTIVITIES = [
                     "for a Sustainable World"
                 ),
                 "place": "Thuwal, Saudi Arabia",
-                "place_cn": "沙特阿拉伯图瓦勒",
+                "place_cn": "沙特阿拉伯图瓦",
                 "date": "17—21 November",
                 "date_cn": "11月17日至21日",
             }

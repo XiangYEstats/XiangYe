@@ -103,12 +103,37 @@ Most future updates need only one or two files:
 | Spacing, typography, responsive layout | labelled sections in `static/css/site.css` |
 | Language/theme toggles, menu, reveal, portrait motion | `static/js/site.js` |
 | Portrait | `static/images/profile.jpg` |
+| Faint homepage ink landscape | `static/images/decoration/song-shoreline.webp` |
+| Glazed portrait rim and staggered guqin dots | `.moon-window` and `.qin-lines` in `static/css/site.css` |
 | Vertical Chinese-name calligraphy | `static/images/identity/xiang-ye-calligraphy.png` |
 | CV | `files/cv.pdf` |
 
 The templates and stylesheet contain comments marking the main design regions.
 After any edit, rerun `python build.py`; do not edit `docs/` by hand because it
 is regenerated.
+
+### Landscape artwork provenance
+
+The homepage uses `static/images/decoration/song-shoreline.webp`, generated
+with the built-in imagegen tool and converted from PNG to WebP (quality 88).
+The original portrait and name calligraphy are unchanged. The artwork blends
+at 38% opacity on desktop and 24% on small screens; the ink theme uses a faint
+inverted blend. Its generation prompt was:
+
+<details>
+<summary>Exact landscape prompt</summary>
+
+```text
+Use case: historical-scene
+Asset type: original decorative raster landscape accent for a Southern Song scholar portfolio; intended for multiply blending very faintly onto pale celadon.
+Primary request: a wide 3:2 Southern Song ink-wash album fragment, an exquisitely restrained real ink painting, with a tiny reed bank and a few fine grasses concentrated in the lower-left corner, and one very faint distant low mountain shoreline at mid-left dissolving into mist.
+Style/medium: authentic delicate loose Chinese ink-wash brushwork, subtle granulation within brush marks only, quiet pale values, finely observed reeds, high-quality painterly handling, never vector clipart.
+Composition: the painted landscape footprint is small and confined to the bottom-left and mid-left; nearly 75% of the canvas is untouched pure white negative space. All top and right edges fade completely to pure white, with no visible landscape there. Wide horizontal 3:2 canvas.
+Color palette: extremely pale desaturated grey-green ink on perfectly pure white background, half the visual strength of a normal painted landscape; the darkest reed marks should still be pale soft grey-green. No yellow paper tint, no overall paper texture or vignette.
+Constraints: no frame, no portrait, no text, no seals, no architecture, no figures, no vessels, no mountains dominating the frame, no website UI. Produce one image.
+```
+
+</details>
 
 ## Add packages, tutorials, questions, and direction websites
 
