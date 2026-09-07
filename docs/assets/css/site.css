@@ -1,14 +1,4 @@
-/* ==========================================================================
-   XIANG YE · SOUTHERN SONG SCHOLAR PORTFOLIO
-
-   Editing guide
-   -------------
-   1. Change the core palette in :root below.
-   2. Change page text in site_data.py or templates/ (not in this file).
-   3. Each large section is labelled so future layout edits are easy to find.
-   4. No web fonts or remote assets are required; the site remains fast in
-      regions where external font services are unreliable.
-   ========================================================================== */
+/* Xiang Ye — site styles. */
 
 :root {
   --celadon: #dce4dc;
@@ -16,14 +6,14 @@
   --paper: #f4f0e5;
   --paper-soft: #ebe9dd;
   --ink: #283630;
-  /* Both secondary inks retain AA contrast on the celadon field. */
+  /* Secondary text colors meet AA contrast on the light background. */
   --ink-soft: #4f5d56;
   --ink-faint: #58665f;
   --cinnabar: #a04b3e;
   --cinnabar-soft: #bc7668;
   --line: rgba(40, 54, 48, 0.22);
   --line-soft: rgba(40, 54, 48, 0.12);
-  /* A fine, open diagonal lattice recalls the original porcelain surface. */
+  /* Diagonal background grid. */
   --glaze-grid:
     linear-gradient(112deg, transparent calc(50% - 1px),
       color-mix(in srgb, var(--ink) 7%, transparent) 50%, transparent calc(50% + 1px)),
@@ -37,7 +27,7 @@
   --sans: Inter, "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", system-ui, sans-serif;
 }
 
-/* The optional ink theme keeps the same hierarchy and changes only materials. */
+/* Dark palette. */
 html[data-theme="ink"] {
   --celadon: #18241f;
   --celadon-deep: #202f28;
@@ -137,7 +127,7 @@ address {
   margin-inline: auto;
 }
 
-/* Shared lattice: legible in open margins, softened through reading areas. */
+/* Background grid shared by the page and homepage hero. */
 .celadon-crackle,
 .song-hero::after {
   background-image: var(--glaze-grid);
@@ -384,7 +374,7 @@ html[data-theme="ink"] .theme-toggle__ink {
 }
 
 /* ==========================================================================
-   HOMEPAGE · SOUTHERN SONG ONE-CORNER HERO
+   HOMEPAGE HERO
    ========================================================================== */
 
 .song-hero {
@@ -396,7 +386,7 @@ html[data-theme="ink"] .theme-toggle__ink {
   padding: clamp(50px, 6vh, 80px) 0 46px;
 }
 
-/* An opaque celadon underlayer lets the white ink-paper asset blend cleanly. */
+/* Opaque background for blending the landscape image's white paper. */
 .song-hero::before {
   position: absolute;
   z-index: -4;
@@ -408,7 +398,7 @@ html[data-theme="ink"] .theme-toggle__ink {
   content: "";
 }
 
-/* Repeat the lattice above the opaque glaze and below the landscape. */
+/* Grid layer between the background and landscape. */
 .song-hero::after {
   position: absolute;
   z-index: -3;
@@ -418,7 +408,7 @@ html[data-theme="ink"] .theme-toggle__ink {
   content: "";
 }
 
-/* An album-leaf fragment fades into the lower-left margin, below the copy. */
+/* Landscape image at the lower left of the hero. */
 .hero-landscape {
   position: absolute;
   z-index: -2;
@@ -477,7 +467,7 @@ html[data-theme="ink"] .hero-landscape {
   background: linear-gradient(to right, var(--line-soft) 0%, var(--line-soft) 52%, transparent 78%);
 }
 
-/* One jade node per string, stepping diagonally toward the moon portrait. */
+/* One marker per line, positioned diagonally. */
 .qin-lines i::before {
   position: absolute;
   top: 50%;
@@ -855,7 +845,7 @@ html[data-theme="ink"] .moon-window img {
   background: var(--line);
 }
 
-/* Research ribbon deliberately resembles editorial note cards, not buttons. */
+/* Latest notes. */
 .notes-ribbon {
   position: relative;
   z-index: 3;
@@ -953,7 +943,7 @@ html[data-theme="ink"] .moon-window img {
 }
 
 /* ==========================================================================
-   SHARED EDITORIAL SECTIONS
+   SHARED SECTIONS
    ========================================================================== */
 
 .paper-section {
@@ -1469,7 +1459,7 @@ html[data-theme="ink"] .moon-window img {
   text-transform: uppercase;
 }
 
-/* Placeholder pages are intentionally useful and visually complete. */
+/* Placeholder pages. */
 .placeholder {
   display: grid;
   min-height: calc(100svh - var(--header-height));
@@ -1710,7 +1700,7 @@ html[data-theme="ink"] .moon-window img {
 }
 
 /* ========================================================================== 
-   RESEARCH · direction windows, project divisions, and article shelves
+   RESEARCH
    ========================================================================== */
 
 .research-programme {
@@ -2036,7 +2026,7 @@ html[data-theme="ink"] .moon-window img {
 }
 
 /* ==========================================================================
-   RESOURCES · packages first, compact tutorials second
+   RESOURCES
    ========================================================================== */
 
 .resources-section {

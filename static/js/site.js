@@ -90,7 +90,6 @@
   }
 
   function setTheme(theme, persist = true) {
-    // The dark palette is called "ink" to match the Southern Song art system.
     const nextTheme = theme === "ink" ? "ink" : "light";
     root.dataset.theme = nextTheme;
 

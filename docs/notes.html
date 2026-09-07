@@ -27,7 +27,7 @@
       const root = document.documentElement;
       const savedTheme = localStorage.getItem("xiangye-theme");
       if (savedTheme === "ink" || savedTheme === "light" || savedTheme === "night") {
-        /* "night" migrates the preference used by the previous design. */
+        /* Migrate the old "night" preference to "ink". */
         root.dataset.theme = savedTheme === "night" ? "ink" : savedTheme;
       }
       const savedLanguage = localStorage.getItem("xiangye-language");
@@ -36,7 +36,7 @@
         root.lang = "zh-Hans";
       }
     } catch (error) {
-      /* Celadon daylight remains the safe default. */
+      /* Keep the defaults if browser storage is unavailable. */
     }
   </script>
   <link rel="stylesheet" href="assets/css/site.css?v=20260907b">
@@ -45,7 +45,7 @@
 <body data-page="notes">
   <a class="skip-link" href="#main-content"><span data-language-content="en" lang="en">Skip to content</span><span data-language-content="zh" lang="zh-Hans">跳至主要内容</span></a>
 
-  <!-- Purely decorative Southern Song layers: celadon crackle and qin strings. -->
+  <!-- Background texture and washes. -->
   <div class="celadon-crackle" aria-hidden="true"></div>
   <div class="page-wash page-wash--one" aria-hidden="true"></div>
   <div class="page-wash page-wash--two" aria-hidden="true"></div>
@@ -54,7 +54,6 @@
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="Xiang Ye — home"
         data-label-en="Xiang Ye — home" data-label-zh="叶翔 — 首页">
-        <!-- Edit the seal character here if the family mark ever changes. -->
         <span class="brand-seal" aria-hidden="true">葉</span>
         <span class="brand-wordmark">
           <strong><span data-language-content="en" lang="en">Xiang Ye</span><span data-language-content="zh" lang="zh-Hans">叶翔</span></strong>
