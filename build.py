@@ -46,6 +46,7 @@ PAGES = [
     {
         "template": "index.html",
         "output": "index.html",
+        "url_path": "",
         "active": "home",
         "title": "Home",
         "title_cn": "首页",

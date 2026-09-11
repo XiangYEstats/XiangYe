@@ -117,6 +117,13 @@ To change the design, edit `static/favicon.svg`, export matching ICO and PNG
 versions, then rebuild. Update the icon links' `?v=` value in
 `templates/base.html` to refresh browsers' cached icons.
 
+Home navigation, the logo, and homepage metadata use the directory URL
+(`./`, published as `/XiangYe/`) consistently. Keep these aligned so returning
+Home does not switch to a separately cached `/XiangYe/index.html` address.
+The build still writes `docs/index.html`, which serves both URLs. After
+publishing an icon update, reload any already-open homepage once to replace
+the browser's cached page.
+
 ## Add packages, tutorials, questions, and direction websites
 
 Edit `site_data.py`, then run `python build.py` and `python validate.py`.

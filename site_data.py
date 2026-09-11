@@ -35,7 +35,7 @@ SITE = {
 }
 
 NAVIGATION = [
-    {"key": "home", "label": "Home", "label_cn": "首页", "href": "index.html"},
+    {"key": "home", "label": "Home", "label_cn": "首页", "href": "./"},
     {"key": "research", "label": "Research", "label_cn": "研究", "href": "research.html"},
     {
         "key": "publications",
