@@ -85,6 +85,8 @@ In VS Code, use `Terminal` → `Run Task`:
 | Page titles, character labels, and descriptions | `build.py` → `PAGES` |
 | Homepage structure | `templates/index.html` |
 | Header, navigation, footer, seal character | `templates/base.html` |
+| Browser-tab and bookmark icon | `static/favicon.svg` and `static/favicon.ico`; links in `templates/base.html` |
+| Apple home-screen icon | `static/apple-touch-icon.png` |
 | Research / Resources / Notes / Activity / About / Contact structure | matching file under `templates/` |
 | Colours | top of `static/css/site.css` → `:root` |
 | Spacing, typography, responsive layout | labelled sections in `static/css/site.css` |
@@ -102,6 +104,18 @@ the next build will overwrite it.
 
 The background image is `static/images/decoration/song-shoreline.webp`.
 Its opacity and dark-mode styling are set in `static/css/site.css`.
+
+### Website icon
+
+The favicon repeats the circular cinnabar `葉` seal on a celadon background,
+with a larger, bolder character for small browser tabs. The SVG contains an
+outlined character, so visitors do not need a Chinese font installed.
+`favicon.ico` includes 16, 32, and 48 pixel fallbacks; `apple-touch-icon.png` is
+180 × 180 pixels. These checked-in assets need no extra build dependencies.
+
+To change the design, edit `static/favicon.svg`, export matching ICO and PNG
+versions, then rebuild. Update the icon links' `?v=` value in
+`templates/base.html` to refresh browsers' cached icons.
 
 ## Add packages, tutorials, questions, and direction websites
 
