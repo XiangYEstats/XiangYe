@@ -3,7 +3,9 @@
 {% for page in pages %}
   <url>
     <loc>{{ base_url }}/{{ page.url_path|default(page.output) }}</loc>
-    <lastmod>{{ page.last_modified|default(last_modified) }}</lastmod>
+{% if page.last_modified is defined %}
+    <lastmod>{{ page.last_modified }}</lastmod>
+{% endif %}
   </url>
 {% endfor %}
 </urlset>

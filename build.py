@@ -454,7 +454,6 @@ def build() -> None:
     sitemap = environment.get_template("sitemap.xml").render(
         pages=public_pages,
         base_url=BASE_URL,
-        last_modified=date.today().isoformat(),
     )
     (OUTPUT_DIR / "sitemap.xml").write_text(sitemap, encoding="utf-8")
     (OUTPUT_DIR / "robots.txt").write_text(

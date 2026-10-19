@@ -100,6 +100,22 @@ In VS Code, use `Terminal` → `Run Task`:
 Run `python build.py` after editing source files. Do not edit `docs/` by hand;
 the next build will overwrite it.
 
+### CV source and published copy
+
+Replace only `files/cv.pdf` when updating the CV. The build copies it to
+`docs/files/cv.pdf`, which is the download served by GitHub Pages. Both paths
+are needed: `files/` holds the source used by local and automated builds, and
+`docs/` contains the published website. Validation checks that the two PDFs
+match byte for byte.
+
+The updater at `~/git_repos/update-XiangYe.sh` skips local `docs/`, synchronizes
+the sources into a temporary worktree, and builds and validates the website
+there before committing. A stale local `docs/files/cv.pdf` therefore cannot
+replace the source CV during an update. Git records content changes only;
+rebuilding an unchanged PDF or asset does not add a change to the commit.
+The sitemap includes modification dates only when explicitly supplied by the
+content, so running the updater on another day does not change it needlessly.
+
 ### Homepage background
 
 The background image is `static/images/decoration/song-shoreline.webp`.
@@ -220,6 +236,17 @@ The latest five notes appear on the homepage. Empty archives display no entries.
 Keep these filenames when editing pages so existing links continue to work.
 
 ## Publish
+
+For routine updates from this workspace, run:
+
+```bash
+~/git_repos/update-XiangYe.sh "Update website"
+```
+
+This rebuilds and validates the staged site automatically. Run `python build.py`
+separately if you also want to refresh the local `docs/` preview.
+
+For a manual publication or a new checkout:
 
 1. Copy these project files into the root of the `XiangYe` repository, keeping
    the repository's existing `.git` folder.

@@ -188,6 +188,7 @@ def validate() -> None:
     for source, generated in (
         (ROOT / "static" / "css" / "site.css", DOCS / "assets" / "css" / "site.css"),
         (ROOT / "static" / "js" / "site.js", DOCS / "assets" / "js" / "site.js"),
+        (ROOT / "files" / "cv.pdf", DOCS / "files" / "cv.pdf"),
     ):
         if not generated.is_file() or source.read_bytes() != generated.read_bytes():
             errors.append(f"{generated.relative_to(ROOT)}: generated asset is stale")
