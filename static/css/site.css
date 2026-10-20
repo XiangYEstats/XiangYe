@@ -2100,12 +2100,34 @@ html[data-theme="ink"] .moon-window img {
   content: "·";
 }
 
+/* Original package artwork keeps its transparent exterior in both palettes. */
+.software-logo {
+  height: auto;
+  object-fit: contain;
+}
+
+.package-card__logo {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  width: 104px;
+}
+
+.package-card--with-logo .package-card__meta {
+  padding-right: 110px;
+  flex-wrap: wrap;
+}
+
 .package-card h3 {
   margin: 62px 0 18px;
   font-family: var(--serif);
   font-size: clamp(28px, 2.7vw, 39px);
   font-weight: 400;
   letter-spacing: -0.025em;
+}
+
+.package-card--with-logo h3 {
+  margin-top: 88px;
 }
 
 .package-card>p {
@@ -3637,6 +3659,16 @@ html[data-theme="ink"] .moon-window img {
 
   .package-card h3 {
     margin-top: 45px;
+  }
+
+  .package-card__logo {
+    top: 18px;
+    right: 20px;
+    width: 96px;
+  }
+
+  .package-card--with-logo h3 {
+    margin-top: 80px;
   }
 
   .resource-empty {

@@ -43,16 +43,21 @@
   <div class="package-grid">
     {% for package in packages %}
     {% if package.href %}
-    <a class="package-card package-card--linked" href="{{ package.href }}" target="_blank" rel="noopener"
+    <a class="package-card package-card--linked{% if package.logo %} package-card--with-logo{% endif %}" href="{{ package.href }}" target="_blank" rel="noopener"
       data-reveal data-reveal-delay="{{ loop.index0 % 3 }}">
     {% else %}
-    <article class="package-card" data-reveal data-reveal-delay="{{ loop.index0 % 3 }}">
+    <article class="package-card{% if package.logo %} package-card--with-logo{% endif %}" data-reveal data-reveal-delay="{{ loop.index0 % 3 }}">
     {% endif %}
       <div class="package-card__meta">
         <span>{{ "%02d"|format(loop.index) }}</span>
         {% if package.language %}<small lang="en">{{ package.language }}</small>{% endif %}
         {% if package.status %}<small>{{ t(package.status, package.status_cn) }}</small>{% endif %}
       </div>
+      {% if package.logo %}
+      <img class="software-logo package-card__logo" src="{{ package.logo }}"
+        alt="{{ package.logo_alt }}" data-alt-en="{{ package.logo_alt }}" data-alt-zh="{{ package.logo_alt_cn }}"
+        width="1254" height="1254" loading="lazy" decoding="async">
+      {% endif %}
       <h3 lang="en">{{ package.name }}</h3>
       <p>{{ t(package.description, package.description_cn) }}</p>
       {% if package.href %}<i aria-hidden="true">{{ t("Visit package", "查看软件包主页") }} ↗</i>{% endif %}

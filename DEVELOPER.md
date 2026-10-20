@@ -92,6 +92,7 @@ In VS Code, use `Terminal` → `Run Task`:
 | Spacing, typography, responsive layout | labelled sections in `static/css/site.css` |
 | Language/theme toggles, menu, reveal, portrait motion | `static/js/site.js` |
 | Portrait | `static/images/profile.jpg` |
+| INLAcircular logo (Resources) | `static/images/packages/inlacircular.png`; optional `logo`, `logo_alt`, and `logo_alt_cn` fields in `site_data.py` → `PACKAGES` |
 | Homepage background image | `static/images/decoration/song-shoreline.webp` |
 | Portrait border and decorative dots | `.moon-window` and `.qin-lines` in `static/css/site.css` |
 | Vertical Chinese-name calligraphy | `static/images/identity/xiang-ye-calligraphy.png` |

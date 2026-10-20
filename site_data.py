@@ -448,6 +448,9 @@ PACKAGES = [
         "description": "Fast approximate Bayesian inference for circular models using INLA.",
         "description_cn": "基于 INLA，为圆周模型提供快速近似贝叶斯推断。",
         "href": "https://github.com/XiangYEstats/INLAcircular",
+        "logo": "assets/images/packages/inlacircular.png",
+        "logo_alt": "INLAcircular logo",
+        "logo_alt_cn": "INLAcircular 软件包标志",
         "language": "R",
     },
 ]
